@@ -1,11 +1,9 @@
-import {Button} from "@/components/ui/button";
-
+import Navbar from "@/components/layout/main/Navbar";
 
 export default function Home() {
   return (
     <main>
-      <h2>Hello</h2>
-      <Button>Hello</Button>
+      <Navbar/>
     </main>
   );
 }
