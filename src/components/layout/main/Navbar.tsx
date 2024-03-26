@@ -2,14 +2,17 @@
 
 import Container from "../Container";
 import MobileNav from "./MobileNav";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
     <section className="bg-slate-100">
       <Container>
-        <nav className="flex items-center justify-between py-2 mb-24">
+        <nav className="flex items-center justify-between py-2">
           <div className="scale-100 cursor-pointer rounded-2xl px-3 lg:mx-0 py-2 text-xl font-semibold transition-all duration-200 hover:scale-110">
-            <h2>Shine Store</h2>
+            <Link href="/">
+              <h2>Shine Store</h2>
+            </Link>
           </div>
           <ul className="hidden font-semibold items-center justify-between gap-10 md:flex">
             <li className="group flex  cursor-pointer flex-col">
@@ -37,7 +40,7 @@ const Navbar = () => {
               <span className="navUnderline"></span>
             </li>
           </ul>
-          <div className="relative flex transition-transform lg:hidden">
+          <div className="lg:hidden">
             <MobileNav />
           </div>
         </nav>
