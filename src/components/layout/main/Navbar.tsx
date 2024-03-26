@@ -8,7 +8,7 @@ const Navbar = () => {
     <section className="bg-slate-100">
       <Container>
         <nav className="flex items-center justify-between py-2 mb-24">
-          <div className="scale-100 cursor-pointer rounded-2xl px-3 py-2 text-xl font-semibold transition-all duration-200 hover:scale-110">
+          <div className="scale-100 cursor-pointer rounded-2xl px-3 lg:mx-0 py-2 text-xl font-semibold transition-all duration-200 hover:scale-110">
             <h2>Shine Store</h2>
           </div>
           <ul className="hidden font-semibold items-center justify-between gap-10 md:flex">
