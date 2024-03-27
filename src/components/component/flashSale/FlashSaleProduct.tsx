@@ -1,3 +1,5 @@
+
+
 import Container from "@/components/layout/Container";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -5,19 +7,19 @@ import { Product } from "@/type";
 import { Heart } from "lucide-react";
 import Link from "next/link";
 
-const FlashSale = ({ flashSaleProducts }: { flashSaleProducts: Product[] }) => {
+const FlashSaleProduct = ({ flashSaleProducts }: { flashSaleProducts: Product[] }) => {
   return (
     <section className="my-20">
       <Container>
         <div className="flex justify-between items-center">
           <h2 className="text-2xl font-bold">Flash Sale</h2>
 
-          <Link href="/flash-sale">
-            <Button>View All</Button>
-          </Link>
+          
+            <Button>Count Down</Button>
+         
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
-          {flashSaleProducts?.slice(0, 4)?.map((product) => (
+          {flashSaleProducts?.map((product) => (
             <div
               key={product._id}
               className="py-5 px-10 md:px-1 shadow-lg rounded-xl space-y-5 my-10 mx-auto flex flex-col justify-between"
@@ -60,4 +62,4 @@ const FlashSale = ({ flashSaleProducts }: { flashSaleProducts: Product[] }) => {
   );
 };
 
-export default FlashSale;
+export default FlashSaleProduct;
