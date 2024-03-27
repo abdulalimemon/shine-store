@@ -1,7 +1,5 @@
 import Footer from "@/components/layout/main/Footer";
 import Navbar from "@/components/layout/main/Navbar";
-import HeroSlider from "@/components/component/home/HeroSlider";
-import FlashSale from "@/components/component/home/FlashSale";
 import { Product } from "@/type";
 import FlashSaleBreadcrumb from "@/components/component/flashSale/FlashSaleBreadcrumb";
 import FlashSaleProduct from "@/components/component/flashSale/FlashSaleProduct";

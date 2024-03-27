@@ -27,7 +27,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/"
+                    href="/trending-products"
                     className="cursor-pointer hover:underline text-base font-medium"
                   >
                     Trending Products
@@ -43,7 +43,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/"
+                    href="/flash-sale"
                     className="cursor-pointer hover:underline text-base font-medium"
                   >
                     Flash Sale

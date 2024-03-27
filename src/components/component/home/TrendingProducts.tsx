@@ -8,17 +8,17 @@ import Link from "next/link";
 const TrendingProducts = ({ sortedProducts }: { sortedProducts: Product[] }) => {
     // console.log(sortedProducts);
   return (
-    <section className="my-20">
+    <section className="py-20">
       <Container>
         <div className="flex justify-between items-center">
           <h2 className="text-2xl font-bold">Trending Products</h2>
 
-          <Link href="/flash-sale">
+          <Link href="/trending-products">
             <Button>View All</Button>
           </Link>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 my-10">
-          {sortedProducts?.slice(0, 4)?.map((product) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5 my-10">
+          {sortedProducts?.slice(0, 6)?.map((product) => (
             <div key={product._id} className="rounded-md border flex flex-col justify-between">
               <div className="flex justify-center  relative">
                 <div className="flex justify-between items-center left-4 right-4 top-4 absolute">

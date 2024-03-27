@@ -1,11 +1,9 @@
-
-
 import Container from "@/components/layout/Container";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Product } from "@/type";
 import { Heart } from "lucide-react";
-import Link from "next/link";
+
 
 const FlashSaleProduct = ({ flashSaleProducts }: { flashSaleProducts: Product[] }) => {
   return (
@@ -43,11 +41,12 @@ const FlashSaleProduct = ({ flashSaleProducts }: { flashSaleProducts: Product[] 
                 {product.name}
               </h2>
 
-              <div className="mt-3">
-                <p className="block text-sm font-semibold text-center">${product.price}</p>
-              </div>
+              
             </div>
             <div className="p-4">
+            <div className="mb-3">
+                <p className="block text-sm font-semibold text-center">${product.price}</p>
+              </div>
               <Button className="w-full">View Details</Button>
             </div>
           </div>
