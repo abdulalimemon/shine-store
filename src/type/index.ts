@@ -11,7 +11,7 @@ export type Product = {
   brand: string;
   category: string;
   price: number;
-  rating: number;
+  rating: string;
   description: string;
   flashSale: boolean;
   images: {

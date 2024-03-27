@@ -5,19 +5,20 @@ import { Product } from "@/type";
 import { Heart } from "lucide-react";
 import Link from "next/link";
 
-const FlashSale = ({ flashSaleProducts }: { flashSaleProducts: Product[] }) => {
+const TrendingProducts = ({ sortedProducts }: { sortedProducts: Product[] }) => {
+    // console.log(sortedProducts);
   return (
     <section className="my-20">
       <Container>
         <div className="flex justify-between items-center">
-          <h2 className="text-2xl font-bold">Flash Sale</h2>
+          <h2 className="text-2xl font-bold">Trending Products</h2>
 
           <Link href="/flash-sale">
             <Button>View All</Button>
           </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 my-10">
-          {flashSaleProducts?.slice(0, 4)?.map((product) => (
+          {sortedProducts?.slice(0, 4)?.map((product) => (
             <div key={product._id} className="rounded-md border flex flex-col justify-between">
               <div className="flex justify-center  relative">
                 <div className="flex justify-between items-center left-4 right-4 top-4 absolute">
@@ -40,12 +41,10 @@ const FlashSale = ({ flashSaleProducts }: { flashSaleProducts: Product[] }) => {
                 <h2 className="text-center text-base md:text-lg font-semibold">
                   {product.name}
                 </h2>
-
-                
               </div>
               <div className="p-4">
               <div className="mb-3">
-                  <p className="block text-sm font-semibold text-center">${product.price}</p>
+                  <p className="block text-sm font-semibold text-center">{product.rating} star</p>
                 </div>
                 <Button className="w-full">View Details</Button>
               </div>
@@ -57,4 +56,4 @@ const FlashSale = ({ flashSaleProducts }: { flashSaleProducts: Product[] }) => {
   );
 };
 
-export default FlashSale;
+export default TrendingProducts;

@@ -28,7 +28,7 @@ const Navbar = () => {
               <span className="navUnderline"></span>
             </li>
             <li className="group flex cursor-pointer flex-col">
-              Flash Sale
+              <Link href='/flash-sale'>Flash Sale</Link>
               <span className="navUnderline"></span>
             </li>
             <li className="group flex  cursor-pointer flex-col">
