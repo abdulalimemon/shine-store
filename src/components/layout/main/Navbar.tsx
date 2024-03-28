@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import Container from "../Container";
 import MobileNav from "./MobileNav";
 import Link from "next/link";
@@ -38,6 +39,9 @@ const Navbar = () => {
             <li className="group flex  cursor-pointer flex-col">
               Contact US
               <span className="navUnderline"></span>
+            </li>
+            <li className="group flex  cursor-pointer flex-col">
+            <Link href='/login'><Button>Login</Button></Link>
             </li>
           </ul>
           <div className="lg:hidden">
