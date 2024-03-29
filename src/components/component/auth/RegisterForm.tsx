@@ -1,5 +1,5 @@
 import Container from "@/components/layout/Container";
-import {Fingerprint, Mail, UserRound} from "lucide-react";
+import { Fingerprint, Mail, UserRound } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import LoginWithGoogle from "@/components/component/auth/LoginWithGoogle";

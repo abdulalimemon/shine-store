@@ -1,5 +1,3 @@
-import Footer from "@/components/layout/main/Footer";
-import Navbar from "@/components/layout/main/Navbar";
 import HeroSlider from "@/components/component/home/HeroSlider";
 import FlashSale from "@/components/component/home/FlashSale";
 import { Product } from "@/type";
@@ -28,11 +26,11 @@ const HomePage = async () => {
 
   return (
     <main>
-      <Navbar />
+      
       <HeroSlider />
       <FlashSale flashSaleProducts={flashSaleProducts} />
       <TrendingProducts sortedProducts={sortedProducts} />
-      <Footer />
+     
     </main>
   );
 };

@@ -4,8 +4,10 @@ import { Button } from "@/components/ui/button";
 import Container from "../Container";
 import MobileNav from "./MobileNav";
 import Link from "next/link";
+import { UserProps } from "@/type";
+import { signOut } from "next-auth/react";
 
-const Navbar = () => {
+const Navbar = ({ session }: { session: UserProps | null }) => {
   return (
     <section className="bg-slate-100">
       <Container>
@@ -29,7 +31,7 @@ const Navbar = () => {
               <span className="navUnderline"></span>
             </li>
             <li className="group flex cursor-pointer flex-col">
-              <Link href='/flash-sale'>Flash Sale</Link>
+              <Link href="/flash-sale">Flash Sale</Link>
               <span className="navUnderline"></span>
             </li>
             <li className="group flex  cursor-pointer flex-col">
@@ -41,7 +43,13 @@ const Navbar = () => {
               <span className="navUnderline"></span>
             </li>
             <li className="group flex  cursor-pointer flex-col">
-            <Link href='/login'><Button>Login</Button></Link>
+              {session?.user ? (
+                <Button onClick={() => signOut()}>Logout</Button>
+              ) : (
+                <Link href="/login">
+                  <Button>Login</Button>
+                </Link>
+              )}
             </li>
           </ul>
           <div className="lg:hidden">

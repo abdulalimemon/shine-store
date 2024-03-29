@@ -1,5 +1,3 @@
-import Footer from "@/components/layout/main/Footer";
-import Navbar from "@/components/layout/main/Navbar";
 import { Product } from "@/type";
 import TrendingProductsBreadcrumb from "@/components/component/trendingProducts/TrendingProductsBreadcrumb";
 import TrendingProduct from "@/components/component/trendingProducts/TrendingProduct";
@@ -23,10 +21,8 @@ const TrendingProductsPage = async () => {
 
   return (
     <main>
-      <Navbar />
       <TrendingProductsBreadcrumb />
       <TrendingProduct sortedProducts={sortedProducts} />
-      <Footer />
     </main>
   );
 };
