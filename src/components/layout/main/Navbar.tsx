@@ -17,7 +17,7 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
               <h2>Shine Store</h2>
             </Link>
           </div>
-          <ul className="hidden font-semibold items-center justify-between gap-10 md:flex">
+          <ul className="hidden font-semibold items-center justify-between gap-10 lg:flex">
             <li className="group flex  cursor-pointer flex-col">
               Home
               <span className="navUnderline"></span>
