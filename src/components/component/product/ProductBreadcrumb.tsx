@@ -8,7 +8,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
-const ProductBreadcrumb = () => {
+const ProductBreadcrumb = ({name}: {name: string}) => {
   return (
     <section className="my-5">
       <Container>
@@ -21,14 +21,14 @@ const ProductBreadcrumb = () => {
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink href="/" className="font-semibold">
-                Home
+              <BreadcrumbLink href="/cleaning-supplies" className="font-semibold">
+              All Cleaning Supplies
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
               <BreadcrumbPage className="font-semibold">
-                Flash Sale
+                {name}
               </BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>

@@ -27,7 +27,7 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
               <span className="navUnderline"></span>
             </li>
             <li className="group flex cursor-pointer flex-col">
-              Products
+              <Link href="/cleaning-supplies">Products</Link>
               <span className="navUnderline"></span>
             </li>
             <li className="group flex cursor-pointer flex-col">

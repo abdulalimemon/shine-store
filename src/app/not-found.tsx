@@ -2,13 +2,10 @@ import Container from "@/components/layout/Container";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
-import Navbar from "@/components/layout/main/Navbar";
-import Footer from "@/components/layout/main/Footer";
 
 const NotFound = () => {
   return (
     <>
-      <Navbar />
       <section className="my-10 h-[80vh] flex justify-center items-center">
         <Container>
           <div className="py-10">
@@ -33,7 +30,6 @@ const NotFound = () => {
           </div>
         </Container>
       </section>
-      <Footer />
     </>
   );
 };

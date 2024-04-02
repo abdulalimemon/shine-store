@@ -38,15 +38,17 @@ const MobileNav = () => {
                   <div className="space-y-3 ">
                     <li className="mobileNav">Home</li>
                     <li className="mobileNav">Categories</li>
-                    <li className="mobileNav">Products</li>
+                    <li className="mobileNav">
+                      <Link href="/cleaning-supplies">Products</Link>
+                    </li>
                     <li className="mobileNav">
                       <Link href="/flash-sale">Flash Sale</Link>
                     </li>
                     <li className="mobileNav">About Us</li>
                     <li className="mobileNav">Contact US</li>
                     <li className="mobileNav">
-                      <Link href="/login" className='w-full'>
-                        <Button className='w-1/2'>Login</Button>
+                      <Link href="/login" className="w-full">
+                        <Button className="w-1/2">Login</Button>
                       </Link>
                     </li>
                   </div>

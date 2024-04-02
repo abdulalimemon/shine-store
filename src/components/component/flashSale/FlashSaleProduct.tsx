@@ -2,7 +2,7 @@ import Container from "@/components/layout/Container";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Product } from "@/type";
-import { Heart } from "lucide-react";
+import { Heart, Zap } from "lucide-react";
 
 
 const FlashSaleProduct = ({ flashSaleProducts }: { flashSaleProducts: Product[] }) => {
@@ -10,7 +10,7 @@ const FlashSaleProduct = ({ flashSaleProducts }: { flashSaleProducts: Product[] 
     <section className="my-20">
       <Container>
         <div className="flex justify-between items-center">
-          <h2 className="text-2xl font-bold">Flash Sale</h2>
+        <h2 className="text-2xl font-bold flex items-center justify-center">Flash Sale <Zap className='size-6 ml-2 font-bold text-red-500' /></h2>
 
           
             <Button>Count Down</Button>

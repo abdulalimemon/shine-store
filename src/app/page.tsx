@@ -9,28 +9,30 @@ const HomePage = async () => {
   });
   const data = await res.json();
   const flashSaleProducts: Product[] = data.filter(
-    (product : Product) => product.flashSale
+    (product: Product) => product.flashSale
   );
 
-  const sortedProducts = data.map((product: Product)  => ({
-    _id: product._id,
-    name: product.name,
-    brand: product.brand,
-    category: product.category,
-    price: product.price,
-    rating: String(parseFloat(product.rating)),
-    description: product.description,
-    flashSale: product.flashSale,
-    images: product.images
-  })).sort((a : Product, b: Product) => parseFloat(b.rating) - parseFloat(a.rating));
+  const sortedProducts = data
+    .map((product: Product) => ({
+      _id: product._id,
+      name: product.name,
+      brand: product.brand,
+      category: product.category,
+      price: product.price,
+      rating: String(parseFloat(product.rating)),
+      description: product.description,
+      flashSale: product.flashSale,
+      images: product.images,
+    }))
+    .sort(
+      (a: Product, b: Product) => parseFloat(b.rating) - parseFloat(a.rating)
+    );
 
   return (
     <main>
-      
       <HeroSlider />
       <FlashSale flashSaleProducts={flashSaleProducts} />
       <TrendingProducts sortedProducts={sortedProducts} />
-     
     </main>
   );
 };
