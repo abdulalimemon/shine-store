@@ -1,9 +1,13 @@
+"use client"
+
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { UserProps } from "@/type";
+import { signOut } from "next-auth/react";
 
-const MobileNav = () => {
+const MobileNav = ({ session }: { session: UserProps | null }) => {
   const [showSidebar, setShowSidebar] = useState(false);
 
   return (
@@ -47,9 +51,15 @@ const MobileNav = () => {
                     <li className="mobileNav">About Us</li>
                     <li className="mobileNav">Contact US</li>
                     <li className="mobileNav">
-                      <Link href="/login" className="w-full">
+
+                    {session?.user ? (
+                <Button onClick={() => signOut()} className="w-1/2">Logout</Button>
+              ) : (
+                <Link href="/login" className="w-full">
                         <Button className="w-1/2">Login</Button>
                       </Link>
+              )}
+                      
                     </li>
                   </div>
                 </nav>

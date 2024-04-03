@@ -53,7 +53,7 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
             </li>
           </ul>
           <div className="lg:hidden">
-            <MobileNav />
+            <MobileNav session={session} />
           </div>
         </nav>
       </Container>
