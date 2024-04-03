@@ -22,10 +22,7 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
               Home
               <span className="navUnderline"></span>
             </li>
-            <li className="group flex cursor-pointer flex-col">
-              Categories
-              <span className="navUnderline"></span>
-            </li>
+            
             <li className="group flex cursor-pointer flex-col">
               <Link href="/cleaning-supplies">Products</Link>
               <span className="navUnderline"></span>
@@ -34,14 +31,14 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
               <Link href="/flash-sale">Flash Sale</Link>
               <span className="navUnderline"></span>
             </li>
-            <li className="group flex  cursor-pointer flex-col">
-              About Us
-              <span className="navUnderline"></span>
-            </li>
-            <li className="group flex  cursor-pointer flex-col">
-              Contact US
-              <span className="navUnderline"></span>
-            </li>
+
+            {session?.user && (
+              <li className="group flex  cursor-pointer flex-col">
+                <Link href="/dashboard">Dashboard</Link>
+                <span className="navUnderline"></span>
+              </li>
+            )}
+
             <li className="group flex  cursor-pointer flex-col">
               {session?.user ? (
                 <Button onClick={() => signOut()}>Logout</Button>

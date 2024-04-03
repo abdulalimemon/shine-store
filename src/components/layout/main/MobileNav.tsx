@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
@@ -41,25 +41,36 @@ const MobileNav = ({ session }: { session: UserProps | null }) => {
                 <nav className="-mx-3 space-y-6 ">
                   <div className="space-y-3 ">
                     <li className="mobileNav">Home</li>
-                    <li className="mobileNav">Categories</li>
                     <li className="mobileNav">
                       <Link href="/cleaning-supplies">Products</Link>
                     </li>
                     <li className="mobileNav">
                       <Link href="/flash-sale">Flash Sale</Link>
                     </li>
-                    <li className="mobileNav">About Us</li>
-                    <li className="mobileNav">Contact US</li>
-                    <li className="mobileNav">
 
-                    {session?.user ? (
-                <Button onClick={() => signOut()} className="w-1/2">Logout</Button>
-              ) : (
-                <Link href="/login" className="w-full">
-                        <Button className="w-1/2">Login</Button>
-                      </Link>
-              )}
-                      
+                    {session?.user && (
+                      <>
+                        <li className="mobileNav">
+                          <Link href="/dashboard">Dashboard</Link>
+                        </li>
+                        <li className="mobileNav">
+                          <Link href="/dashboard/all-products">
+                            All Products
+                          </Link>
+                        </li>
+                      </>
+                    )}
+
+                    <li className="mobileNav">
+                      {session?.user ? (
+                        <Button onClick={() => signOut()} className="w-1/2">
+                          Logout
+                        </Button>
+                      ) : (
+                        <Link href="/login" className="w-full">
+                          <Button className="w-1/2">Login</Button>
+                        </Link>
+                      )}
                     </li>
                   </div>
                 </nav>
