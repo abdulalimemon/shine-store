@@ -6,16 +6,22 @@ import { Product } from "@/type";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Heart } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+type TSearchParams = {
+  category: string;
+};
 
 const AllProduct = ({
   data,
   searchParams,
 }: {
   data: Product[];
-  searchParams: string;
+  searchParams: TSearchParams;
 }) => {
   const [newData, setNewData] = useState(data);
+
+  console.log("data", newData);
 
   const filterCategory = (value: string) => {
     const result = data.filter((curData) => {
@@ -28,11 +34,14 @@ const AllProduct = ({
     const ratingValue = parseFloat(value);
     const minValue = ratingValue - 0.1;
     const maxValue = ratingValue + 0.9;
-    
+
     const result = data.filter((curData) => {
-      return parseFloat(curData.rating) >= minValue && parseFloat(curData.rating)  <= maxValue;
+      return (
+        parseFloat(curData.rating) >= minValue &&
+        parseFloat(curData.rating) <= maxValue
+      );
     });
-    
+
     setNewData(result);
   };
 
@@ -41,30 +50,39 @@ const AllProduct = ({
     let minValue: number, maxValue: number;
 
     if (priceValue >= 0 && priceValue <= 10) {
-        minValue = 0;
-        maxValue = 10;
+      minValue = 0;
+      maxValue = 10;
     } else if (priceValue >= 11 && priceValue <= 20) {
-        minValue = 11;
-        maxValue = 20;
+      minValue = 11;
+      maxValue = 20;
     } else if (priceValue >= 21 && priceValue <= 30) {
-        minValue = 21;
-        maxValue = 30;
+      minValue = 21;
+      maxValue = 30;
     } else {
-        return;
+      return;
     }
-    
+
     const result = data.filter((curData) => {
-      return curData.price >= (minValue) && curData.price <= maxValue;
+      return curData.price >= minValue && curData.price <= maxValue;
     });
-    
+
     setNewData(result);
-};
+  };
 
   const resetData = () => {
     const result = data;
     setNewData(result);
   };
 
+
+  const filterSearchParams = () => {
+    const result = data.filter((curData) => {
+      return curData.category === searchParams.category;
+    });
+    setNewData(result);
+  };
+
+  
   return (
     <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
       <div className="text-center border-r bg-muted/40 md:block">
@@ -135,7 +153,7 @@ const AllProduct = ({
                 className="flex items-center justify-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:bg-primary cursor-pointer hover:text-white"
                 onClick={() => filterRating("4")}
               >
-                 4 star
+                4 star
               </p>
 
               <p
@@ -163,7 +181,7 @@ const AllProduct = ({
                 className="flex items-center justify-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:bg-primary cursor-pointer hover:text-white"
                 onClick={() => filterPrice("20")}
               >
-                 $11 to $20
+                $11 to $20
               </p>
 
               <p
