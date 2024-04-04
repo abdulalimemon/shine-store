@@ -7,19 +7,19 @@ import Image from "next/image";
 
 const sliders: HeroSliderItem[] = [
   {
-    id: 1,
+    id: "1",
     title: "Get Your Home Sparkling Clean",
     subtitle: "Discover premium cleaning supplies for a pristine home",
     img: "https://cdn.dockwalk.com/files/2022/08/7a475d60-1824-11ed-b706-d366c8308a58-eco-bio-friendly-cleaning-products-iStock.jpg",
   },
   {
-    id: 2,
+    id: "2",
     title: "Experience Freshness Every Day",
     subtitle: "Elevate your cleaning routine with our natural products",
     img: "https://cdn.sanity.io/images/tbvc1g2x/production/25b99ddabe34f4cc08c917b5c78c48e410a2dec3-2400x1296.jpg?w=2400&h=1296&auto=format",
   },
   {
-    id: 3,
+    id: "3",
     title: "Shop Smart, Clean Smart",
     subtitle: "Find the perfect cleaning solutions for your home",
     img: "https://empire-s3-production.bobvila.com/articles/wp-content/uploads/2022/03/eco-friendly-cleaning-products-main.jpg",

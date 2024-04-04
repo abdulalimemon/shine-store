@@ -1,12 +1,21 @@
 import ProductBreadcrumb from "@/components/component/product/ProductBreadcrumb";
 import ProductDetails from "@/components/component/product/ProductDetails";
 import ProductImageSlider from "@/components/component/product/ProductImageSlider";
+import { Product } from "@/type";
 
 interface ProductId {
   params: {
     productId: string;
   };
 }
+
+export const generateStaticParams = async () => {
+  const res = await fetch(`${process.env.BACKEND_URL}/product`);
+  const products = await res.json();
+  return products.slice(0, 5).map((product: Product) => ({
+    productId: product._id,
+  }));
+};
 
 const ProductPage = async ({ params }: ProductId) => {
   const res = await fetch(
@@ -16,8 +25,8 @@ const ProductPage = async ({ params }: ProductId) => {
 
   const dynamicLink = {
     name: "Flash Sale",
-    url: "flash-sale"
-  }
+    url: "flash-sale",
+  };
 
   return (
     <div className="mx-auto max-w-7xl px-4 md:px-8 2xl:px-16">
