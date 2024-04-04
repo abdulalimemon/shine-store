@@ -80,15 +80,11 @@ const AllProductPage = async () => {
                   </div>
 
                   <Link
-                      href={`/cleaning-supplies/${product._id}`}
-                      className="text-accent"
-                    >
-                        <Button className="w-full">
-                    
-                      View Details
-                    </Button>
-                    </Link>
-                  
+                    href={`/cleaning-supplies/${product._id}`}
+                    className="text-accent"
+                  >
+                    <Button className="w-full">View Details</Button>
+                  </Link>
                 </div>
               </div>
             ))}

@@ -8,7 +8,12 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
-const ProductBreadcrumb = ({name}: {name: string}) => {
+type TDynamicLink = {
+  name: string;
+  url: string;
+}
+
+const ProductBreadcrumb = ({name, dynamicLink}: {name: string, dynamicLink: TDynamicLink}) => {
   return (
     <section className="my-5">
       <Container>
@@ -21,8 +26,8 @@ const ProductBreadcrumb = ({name}: {name: string}) => {
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink href="/cleaning-supplies" className="font-semibold">
-              All Cleaning Supplies
+              <BreadcrumbLink href={`/${dynamicLink.url}`} className="font-semibold">
+             {dynamicLink.name}
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
