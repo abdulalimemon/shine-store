@@ -7,7 +7,7 @@ const LoginWithGoogle = () => {
       <button className="flex items-center justify-center px-6 py-3 mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600 w-full" 
       onClick={() =>
         signIn("google", {
-          callbackUrl: "http://localhost:3000/",
+          callbackUrl: "https://shine-store.vercel.app/dashboard",
         })}
       >
         <svg className="w-6 h-6 mx-2" viewBox="0 0 40 40">
