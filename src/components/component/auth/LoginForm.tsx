@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Container from "@/components/layout/Container";
 import { Fingerprint, Mail, UserRound } from "lucide-react";
@@ -29,16 +29,17 @@ const LoginForm = () => {
         password: data.password,
       };
 
-      const res = await loginUser(userInfo);
+      console.log(userInfo);
 
-      if(res.success){
+      const res = await loginUser(userInfo);
+      console.log(res);
+      if (res.accessToken) {
         toast({
           title: res.message,
         });
-
-        router.push('/dashboard');
+        localStorage.setItem("accessToken", res.accessToken);
+        router.push("/dashboard");
       }
-      
     } catch (err: any) {
       toast(err.message);
     }
@@ -50,6 +51,7 @@ const LoginForm = () => {
           <h2 className="mt-3 text-2xl font-semibold text-center sm:text-3xl dark:text-white">
             Log in
           </h2>
+          <p className="text-center">(Please login with Google)</p>
 
           <div className="relative flex items-center mt-5">
             <span className="absolute">
@@ -75,17 +77,17 @@ const LoginForm = () => {
           </div>
 
           <div className="pt-2">
-              {errors.email?.type === "required" && (
-                <span className="text-sm mt-2 text-red-600 font-semibold">
-                  {errors.email.message}
-                </span>
-              )}
-              {errors.email?.type === "pattern" && (
-                <span className="text-sm mt-2 text-red-600 font-semibold">
-                  {errors.email.message}
-                </span>
-              )}
-            </div>
+            {errors.email?.type === "required" && (
+              <span className="text-sm mt-2 text-red-600 font-semibold">
+                {errors.email.message}
+              </span>
+            )}
+            {errors.email?.type === "pattern" && (
+              <span className="text-sm mt-2 text-red-600 font-semibold">
+                {errors.email.message}
+              </span>
+            )}
+          </div>
 
           <div className="relative flex items-center mt-5">
             <span className="absolute">
@@ -111,20 +113,22 @@ const LoginForm = () => {
           </div>
 
           <div className="pt-2">
-              {errors.password?.type === "required" && (
-                <span className="text-sm mt-2 text-red-600 font-semibold">
-                  {errors.password.message}
-                </span>
-              )}
-              {errors.password?.type === "minLength" && (
-                <span className="text-sm mt-2 text-red-600 font-semibold">
-                  {errors.password.message}
-                </span>
-              )}
-            </div>
+            {errors.password?.type === "required" && (
+              <span className="text-sm mt-2 text-red-600 font-semibold">
+                {errors.password.message}
+              </span>
+            )}
+            {errors.password?.type === "minLength" && (
+              <span className="text-sm mt-2 text-red-600 font-semibold">
+                {errors.password.message}
+              </span>
+            )}
+          </div>
 
           <div className="mt-5">
-            <Button className="w-full h-12" type="submit">Log in</Button>
+            <Button className="w-full h-12" type="submit">
+              Log in
+            </Button>
           </div>
         </form>
 
