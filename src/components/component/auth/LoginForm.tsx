@@ -1,15 +1,52 @@
+"use client"
+
 import Container from "@/components/layout/Container";
-import { Fingerprint, Mail } from "lucide-react";
+import { Fingerprint, Mail, UserRound } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import LoginWithGoogle from "@/components/component/auth/LoginWithGoogle";
 import Link from "next/link";
+import { LoginUserData } from "@/type";
+import { FieldValues, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
+import { toast } from "@/components/ui/use-toast";
+import { loginUser } from "@/utils/actions/loginUser";
+import { useRouter } from "next/navigation";
 
 const LoginForm = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<LoginUserData>();
+
+  const router = useRouter();
+
+  const onSubmit: SubmitHandler<LoginUserData> = async (data: FieldValues) => {
+    try {
+      const userInfo = {
+        email: data.email,
+        password: data.password,
+      };
+
+      const res = await loginUser(userInfo);
+
+      if(res.success){
+        toast({
+          title: res.message,
+        });
+
+        router.push('/dashboard');
+      }
+      
+    } catch (err: any) {
+      toast(err.message);
+    }
+  };
   return (
     <section className="my-20">
       <Container className="flex flex-col items-center justify-center py-12  px-6 mx-auto">
-        <form className="w-full max-w-md">
+        <form className="w-full max-w-md" onSubmit={handleSubmit(onSubmit)}>
           <h2 className="mt-3 text-2xl font-semibold text-center sm:text-3xl dark:text-white">
             Log in
           </h2>
@@ -23,8 +60,32 @@ const LoginForm = () => {
               type="email"
               className="block w-full h-12 px-11"
               placeholder="Email address"
+              id="email"
+              {...register("email", {
+                required: {
+                  value: true,
+                  message: "Email is Required.",
+                },
+                pattern: {
+                  value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
+                  message: "Please provide a valid email address.",
+                },
+              })}
             />
           </div>
+
+          <div className="pt-2">
+              {errors.email?.type === "required" && (
+                <span className="text-sm mt-2 text-red-600 font-semibold">
+                  {errors.email.message}
+                </span>
+              )}
+              {errors.email?.type === "pattern" && (
+                <span className="text-sm mt-2 text-red-600 font-semibold">
+                  {errors.email.message}
+                </span>
+              )}
+            </div>
 
           <div className="relative flex items-center mt-5">
             <span className="absolute">
@@ -35,11 +96,35 @@ const LoginForm = () => {
               type="password"
               className="block w-full h-12 px-11"
               placeholder="Password"
+              id="password"
+              {...register("password", {
+                required: {
+                  value: true,
+                  message: "Password is Required.",
+                },
+                minLength: {
+                  value: 8,
+                  message: "Password must be 8 characters or longer.",
+                },
+              })}
             />
           </div>
 
+          <div className="pt-2">
+              {errors.password?.type === "required" && (
+                <span className="text-sm mt-2 text-red-600 font-semibold">
+                  {errors.password.message}
+                </span>
+              )}
+              {errors.password?.type === "minLength" && (
+                <span className="text-sm mt-2 text-red-600 font-semibold">
+                  {errors.password.message}
+                </span>
+              )}
+            </div>
+
           <div className="mt-5">
-            <Button className="w-full h-12">Log in</Button>
+            <Button className="w-full h-12" type="submit">Log in</Button>
           </div>
         </form>
 
