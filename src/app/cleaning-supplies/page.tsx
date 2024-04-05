@@ -10,10 +10,9 @@ const AllProductPage = async ({searchParams} : {searchParams: string}) => {
     (product: Product) => product.flashSale
   );
 
-  console.log(searchParams)
   return (
     <>
-    <AllProduct data={data} searchParams={searchParams} />
+    <AllProduct data={data}  />
     </>
   );
 };

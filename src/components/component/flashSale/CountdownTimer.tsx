@@ -7,7 +7,7 @@ const CountdownTimer = () => {
   const [minutes, setMinutes] = useState(0);
   const [second, setSecond] = useState(0);
 
-  const deadline = "April, 15,2024";
+  const deadline = "April, 16,2024";
 
   const getTime = ()=> {
     const time= Date.parse(deadline)- Date.now();

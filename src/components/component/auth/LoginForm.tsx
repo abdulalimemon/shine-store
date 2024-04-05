@@ -29,10 +29,10 @@ const LoginForm = () => {
         password: data.password,
       };
 
-      console.log(userInfo);
+     
 
       const res = await loginUser(userInfo);
-      console.log(res);
+     
       if (res.accessToken) {
         toast({
           title: res.message,

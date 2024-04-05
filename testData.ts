@@ -10,10 +10,10 @@ const productData = [
     flashSale: false,
     images: {
       cover:
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
+        "https://www.seventhgeneration.ca/sk-eu/content/dam/brands/seventh_generation/global_use/1638061-22829-8-9-svg-25oz-citrusginger-dishliq-r4-front-copy.jpg.rendition.767.767.jpg",
       details: [
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
+        "https://www.seventhgeneration.ca/sk-eu/content/dam/brands/seventh_generation/global_use/1638061-22829-8-9-svg-25oz-citrusginger-dishliq-r4-front-copy.jpg.rendition.767.767.jpg",
+        "https://www.americafreshclean.com/wp-content/uploads/dish-soap-CITRUS_860-400x470.png",
         "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
       ],
     },
@@ -29,10 +29,10 @@ const productData = [
     flashSale: true,
     images: {
       cover:
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
+        "https://images.othoba.com/images/thumbs/0048410_glitter-glass-cleaner-500ml.jpeg",
       details: [
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
+        "https://images.othoba.com/images/thumbs/0048410_glitter-glass-cleaner-500ml.jpeg",
+        "https://chaldn.com/_mpimage/magiclean-glass-cleaner-500-ml?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D110892&q=best&v=1",
         "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
       ],
     },
@@ -48,10 +48,10 @@ const productData = [
     flashSale: false,
     images: {
       cover:
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUCcn4HDecAQKY6u3nHdzJc57VxRIe-OzAkJgFtJHf-EdTwAt8DXcuPA5FmfApeRU-9Lc&usqp=CAU",
       details: [
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUCcn4HDecAQKY6u3nHdzJc57VxRIe-OzAkJgFtJHf-EdTwAt8DXcuPA5FmfApeRU-9Lc&usqp=CAU",
+        "https://cdn2.tellmebaby.com.au/wp-content/uploads/2017/09/milton-antibacterial-surface-wipes-new-30pk.jpg",
         "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
       ],
     },
@@ -67,10 +67,10 @@ const productData = [
     flashSale: false,
     images: {
       cover:
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
+        "https://m.media-amazon.com/images/I/71LyjbFvYCL._SL1500_.jpg",
       details: [
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
+        "https://m.media-amazon.com/images/I/71LyjbFvYCL._SL1500_.jpg",
+        "https://i5.walmartimages.com/seo/Lysol-All-Purpose-Cleaner-Spray-Mandarin-Ginger-Lily-32-oz-Brand-New-Day-Tested-Proven-to-Kill-COVID-19-Virus-Packaging-May-Vary_7b5a3140-bac0-42cf-8505-d97a82f94d21_1.dc816c475f97cd0d1960f42322e423c8.jpeg",
         "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
       ],
     },
@@ -86,10 +86,10 @@ const productData = [
     flashSale: true,
     images: {
       cover:
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
+        "https://images.othoba.com/images/thumbs/0322239_magiclean-floor-cleaner-fresh-lemon-2-liters.jpeg",
       details: [
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
+        "https://images.othoba.com/images/thumbs/0322239_magiclean-floor-cleaner-fresh-lemon-2-liters.jpeg",
+        "https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/Doctor_Bai_Refreshing_Lemon_Power_Form_F-Doctor_Bai-91dc1-375695.png",
         "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
       ],
     },
@@ -105,10 +105,10 @@ const productData = [
     flashSale: false,
     images: {
       cover:
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
+        "https://fixit.com.bd/wp-content/uploads/2023/09/DSC_0941-26-1020.webp",
       details: [
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
+        "https://fixit.com.bd/wp-content/uploads/2023/09/DSC_0941-26-1020.webp",
+        "https://m.media-amazon.com/images/I/71UB0Jks6qL._AC_SL1500_.jpg",
         "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
       ],
     },
@@ -124,10 +124,10 @@ const productData = [
     flashSale: false,
     images: {
       cover:
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
+        "https://m.media-amazon.com/images/I/81wczlTw9-L.jpg",
       details: [
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
+        "https://m.media-amazon.com/images/I/81wczlTw9-L.jpg",
+        "https://i5.walmartimages.com/asr/42231421-c5bd-475e-8aaf-7057ce0ad8ea.f339e7bfccf142c979754d3052bcea4d.jpeg",
         "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
       ],
     },
@@ -143,10 +143,10 @@ const productData = [
     flashSale: false,
     images: {
       cover:
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
+        "https://www.cloroxmalaysia.com/wp-content/uploads/sites/11/2019/01/050618-MMR-Packshot_960-cropped.png",
       details: [
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
+        "https://www.cloroxmalaysia.com/wp-content/uploads/sites/11/2019/01/050618-MMR-Packshot_960-cropped.png",
+        "https://i5.walmartimages.com/seo/Lysol-Mold-Mildew-Remover-Spray-with-Bleach-Disinfects-Cleans-and-Removes-Stains-For-Bathrooms-Showers-and-Kitchens-32oz_ac723e6e-e545-4e4e-bc5b-39742376ad01.e9456925d513de095cf38e879cdc82b0.jpeg",
         "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
       ],
     },
@@ -162,10 +162,10 @@ const productData = [
     flashSale: true,
     images: {
       cover:
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
+        "https://weavvehome.com/cdn/shop/products/CHR04098.jpg?v=1690741030&width=2000",
       details: [
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
+        "https://weavvehome.com/cdn/shop/products/CHR04098.jpg?v=1690741030&width=2000",
+        "https://weavvehome.com/cdn/shop/products/CHR04147.jpg?v=1690741030&width=2000",
         "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
       ],
     },
@@ -181,10 +181,10 @@ const productData = [
     flashSale: false,
     images: {
       cover:
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
+        "https://www.sscamerabd.com/wp-content/uploads/2022/08/SKU.1692-1-518x518-1.jpg",
       details: [
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
+        "https://www.sscamerabd.com/wp-content/uploads/2022/08/SKU.1692-1-518x518-1.jpg",
+        "https://m.media-amazon.com/images/I/61dSQPIrT0L._AC_UF1000,1000_QL80_.jpg",
         "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
       ],
     },
@@ -200,10 +200,10 @@ const productData = [
     flashSale: false,
     images: {
       cover:
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
+        "https://m.media-amazon.com/images/I/61xi+JUlMeL._AC_SL1273_.jpg",
       details: [
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
+        "https://m.media-amazon.com/images/I/61xi+JUlMeL._AC_SL1273_.jpg",
+        "https://target.scene7.com/is/image/Target/GUEST_0f04d54f-dfe5-44e8-8e3b-22a6af5fc998?wid=488&hei=488&fmt=pjpeg",
         "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
       ],
     },
@@ -219,10 +219,10 @@ const productData = [
     flashSale: true,
     images: {
       cover:
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
+        "https://www.doncastercarpetcleaners.co.uk/wp-content/uploads/2021/09/Pet-safe-Carpet-Stain-Remover.jpg",
       details: [
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
+        "https://www.doncastercarpetcleaners.co.uk/wp-content/uploads/2021/09/Pet-safe-Carpet-Stain-Remover.jpg",
+        "https://www.thesprucepets.com/thmb/Ev89UNkAPn_t3ZlzeUV0vQrSkUQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/sps-product-oxiclean-carpet-area-rug-stain-remover-spray-jthompson-0173-e94691d301c847e0a057f2cb71f3d1f7.jpg",
         "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
       ],
     },
@@ -238,10 +238,10 @@ const productData = [
     flashSale: false,
     images: {
       cover:
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
+        "https://m.media-amazon.com/images/I/51C8UH6hd3L._AC_UF1000,1000_QL80_.jpg",
       details: [
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
+        "https://m.media-amazon.com/images/I/51C8UH6hd3L._AC_UF1000,1000_QL80_.jpg",
+        "https://housewifehowtos.com/wp-content/uploads/2024/01/homemade-furniture-polish-recipe.jpg",
         "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
       ],
     },
@@ -257,10 +257,10 @@ const productData = [
     flashSale: false,
     images: {
       cover:
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
+        "https://www.clorox.ca/wp-content/uploads/sites/20/2019/01/Clorox_Spraus_FOAMER_500x960.png",
       details: [
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
+        "https://www.clorox.ca/wp-content/uploads/sites/20/2019/01/Clorox_Spraus_FOAMER_500x960.png",
+        "https://www.rbnainfo.com/ppmsds_uploaddata/images/productline/07940-Lysol%20Disinfectant%20Bathroom%20Foam%20Cleaner.jpg",
         "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
       ],
     },
@@ -276,10 +276,10 @@ const productData = [
     flashSale: true,
     images: {
       cover:
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
+        "https://m.media-amazon.com/images/I/61M6x57ct2L._AC_UF894,1000_QL80_.jpg",
       details: [
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
+        "https://m.media-amazon.com/images/I/61M6x57ct2L._AC_UF894,1000_QL80_.jpg",
+        "https://hips.hearstapps.com/hmg-prod/images/gh-best-grout-cleaners-65a95e4a6312c.png?crop=0.502xw:1.00xh;0.250xw,0&resize=640:*",
         "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
       ],
     },
@@ -295,10 +295,10 @@ const productData = [
     flashSale: false,
     images: {
       cover:
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
+        "https://www.drainbo.com/wp-content/uploads/2019/08/16oz-Drain-Cleaner-1000x1000.png",
       details: [
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
-        "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
+        "https://www.drainbo.com/wp-content/uploads/2019/08/16oz-Drain-Cleaner-1000x1000.png",
+        "https://www.drainbo.com/wp-content/uploads/2020/08/64oz-drain-with-gtw-square.png",
         "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
       ],
     },

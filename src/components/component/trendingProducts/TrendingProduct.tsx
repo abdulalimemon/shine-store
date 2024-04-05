@@ -27,13 +27,16 @@ const TrendingProduct = ({ sortedProducts }: { sortedProducts: Product[] }) => {
                     30% off
                   </button>
                 </div>
-                <Image
-                  className="rounded-lg bg-black/40 w-full h-full my-4"
-                  src={product?.images?.cover}
-                  alt={product.name}
-                  width={250}
-                  height={100}
-                />
+                
+                <div>
+                  <Image
+                    className="rounded-lg bg-black/40 my-4 h-40"
+                    src={product?.images?.cover}
+                    alt={product.name}
+                    width={250}
+                    height={100}
+                  />
+                  </div>
               </div>
               <div className="p-4">
                 <h2 className="text-center text-base md:text-lg font-semibold">

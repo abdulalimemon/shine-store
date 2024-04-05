@@ -8,7 +8,7 @@ type ImageArray = string[];
 const ProductImageSlider = ({images}: {images: ImageArray}) => {
   const [currentSlider, setCurrentSlider] = useState(0);
 
-  console.log(images);
+  
   return (
     <div className="flex flex-col lg:flex-row-reverse justify-between">
       <div

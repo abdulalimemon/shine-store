@@ -8,20 +8,14 @@ import Image from "next/image";
 import { Heart } from "lucide-react";
 import { useEffect, useState } from "react";
 
-type TSearchParams = {
-  category: string;
-};
+// type TSearchParams = {
+//   category: string;
+// };
 
-const AllProduct = ({
-  data,
-  searchParams,
-}: {
-  data: Product[];
-  searchParams: TSearchParams;
-}) => {
+const AllProduct = ({data}: {data: Product[]}) => {
   const [newData, setNewData] = useState(data);
 
-  console.log("data", newData);
+  
 
   const filterCategory = (value: string) => {
     const result = data.filter((curData) => {
@@ -75,12 +69,12 @@ const AllProduct = ({
   };
 
 
-  const filterSearchParams = () => {
-    const result = data.filter((curData) => {
-      return curData.category === searchParams.category;
-    });
-    setNewData(result);
-  };
+  // const filterSearchParams = () => {
+  //   const result = data.filter((curData) => {
+  //     return curData.category === searchParams.category;
+  //   });
+  //   setNewData(result);
+  // };
 
   
   return (
@@ -216,13 +210,15 @@ const AllProduct = ({
                       30% off
                     </button>
                   </div>
+                  <div>
                   <Image
-                    className="rounded-lg bg-black/40 w-full h-full my-4"
+                    className="rounded-lg bg-black/40 my-4 h-48"
                     src={product?.images?.cover}
                     alt={product.name}
                     width={250}
                     height={100}
                   />
+                  </div>
                 </div>
                 <div className="p-4">
                   <h2 className="text-center text-base md:text-lg font-semibold">
