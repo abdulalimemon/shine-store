@@ -5,9 +5,9 @@
 <h1 align="center">Shine Store</h1>
 
 <p align=center>
-  <a href="">Website Link</a> ·
+  <a href="https://shine-store.vercel.app">Website Link</a> ·
   <a href="https://github.com/abdulalimemon/shine-store">Frontend repository link</a> ·
-  <a href="https://github.com/abdulalimemon/">Backend repository link</a>
+  <a href="https://github.com/abdulalimemon/shine-store-server">Backend repository link</a>
 </p>
 
 ---
