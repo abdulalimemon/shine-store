@@ -1,22 +1,19 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import { useState } from "react";
 
 type ImageArray = string[];
 
-const ProductImageSlider = ({images}: {images: ImageArray}) => {
+const ProductImageSlider = ({ images }: { images: ImageArray }) => {
   const [currentSlider, setCurrentSlider] = useState(0);
 
-  
   return (
     <div className="flex flex-col lg:flex-row-reverse justify-between">
       <div
         className="w-full h-72 sm:h-96 md:h-[540px] flex flex-col items-center justify-center gap-5 lg:gap-10 bg-cover bg-center before:absolute before:bg-black/50 before:inset-0 transform duration-1000 ease-linear rounded-lg overflow-hidden"
         style={{ backgroundImage: `url(${images[currentSlider]})` }}
-      >
-        
-      </div>
+      ></div>
       {/* slider container */}
       <div className="flex lg:flex-col justify-center items-center gap-3 p-2">
         {/* sliders */}

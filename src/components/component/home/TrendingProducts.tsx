@@ -10,7 +10,6 @@ const TrendingProducts = ({
 }: {
   sortedProducts: Product[];
 }) => {
-  
   return (
     <section className="py-20">
       <Container>
@@ -21,7 +20,7 @@ const TrendingProducts = ({
             <Button>View All</Button>
           </Link>
         </div>
-        
+
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 md:gap-5 my-10">
           {sortedProducts?.slice(0, 6)?.map((product) => (
             <div
@@ -33,7 +32,7 @@ const TrendingProducts = ({
                   <div className="flex items-center">
                     <Heart className=" hover:fill-red-500 stroke-red-500 stroke-2 fill-transparent  w-[20px] md:w-[30px]" />
                   </div>
-                  <button className="bg-primary duration-200 text-white font-medium px-3 py-1 rounded-xl text-xs">
+                  <button className="bg-primary dark:bg-slate-100 dark:text-black duration-200 text-white font-medium px-3 py-1 rounded-xl text-xs">
                     30% off
                   </button>
                 </div>
@@ -45,7 +44,7 @@ const TrendingProducts = ({
                     width={250}
                     height={100}
                   />
-                  </div>
+                </div>
               </div>
               <div className="p-4">
                 <h2 className="text-center text-base font-semibold">
@@ -53,12 +52,15 @@ const TrendingProducts = ({
                 </h2>
               </div>
               <div className="p-4">
-              <div className="mb-3 flex justify-between items-center">
+                <div className="mb-3 flex justify-between items-center">
                   <p className="block text-sm font-semibold text-center">
                     ${product.price}
                   </p>
                   <p className="text-sm font-semibold text-center flex justify-center items-center">
-                    {product.rating} <span><Star className="size-6 fill-yellow-400 text-yellow-400 ml-1" /></span>
+                    {product.rating}{" "}
+                    <span>
+                      <Star className="size-6 fill-yellow-400 text-yellow-400 ml-1" />
+                    </span>
                   </p>
                 </div>
                 <Link href={`/trending-products/${product._id}`}>

@@ -1,7 +1,7 @@
 import { Product } from "@/type";
 
-const ProductDetails = ({product}: {product: Product}) => {
-  const {name, description, price, rating, category, brand} = product;
+const ProductDetails = ({ product }: { product: Product }) => {
+  const { name, description, price, rating, category, brand } = product;
   return (
     <div className="col-span-4 pt-8 lg:pt-0">
       <div className="mb-7 border-b border-gray-300 pb-7">
@@ -15,10 +15,9 @@ const ProductDetails = ({product}: {product: Product}) => {
           <div className="text-heading pr-2 text-base font-bold md:pr-0 md:text-xl lg:pr-2 lg:text-2xl 2xl:pr-0 2xl:text-4xl">
             ${price}
           </div>
-          
         </div>
       </div>
-      
+
       <div className="py-6 ">
         <ul className="space-y-5 pb-1 text-sm">
           <li>
@@ -35,7 +34,7 @@ const ProductDetails = ({product}: {product: Product}) => {
           </li>
           <li className="productTags">
             <span className="text-heading inline-block pr-2 font-semibold">
-            brand:
+              brand:
             </span>
             {brand}
           </li>

@@ -13,7 +13,9 @@ const TrendingProduct = ({ sortedProducts }: { sortedProducts: Product[] }) => {
           <h2 className="text-2xl font-bold">Trending Products</h2>
         </div>
         <div>
-          <h2 className="font-semibold my-5">Check Out the Exclusive {sortedProducts.length} Trending Products!</h2>
+          <h2 className="font-semibold my-5">
+            Check Out the Exclusive {sortedProducts.length} Trending Products!
+          </h2>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5 my-10">
           {sortedProducts?.map((product) => (
@@ -26,11 +28,11 @@ const TrendingProduct = ({ sortedProducts }: { sortedProducts: Product[] }) => {
                   <div className="flex items-center">
                     <Heart className=" hover:fill-red-500 stroke-red-500 stroke-2 fill-transparent  w-[20px] md:w-[30px]" />
                   </div>
-                  <button className="bg-primary text-xs duration-200 text-white font-medium px-3 py-1 rounded-xl">
+                  <button className="bg-primary dark:bg-slate-100 dark:text-black  text-xs duration-200 text-white font-medium px-3 py-1 rounded-xl">
                     30% off
                   </button>
                 </div>
-                
+
                 <div>
                   <Image
                     className="rounded-lg bg-black/40 md:my-2 h-40"
@@ -39,7 +41,7 @@ const TrendingProduct = ({ sortedProducts }: { sortedProducts: Product[] }) => {
                     width={250}
                     height={100}
                   />
-                  </div>
+                </div>
               </div>
               <div className="p-4">
                 <h2 className="text-center text-base font-semibold">
@@ -47,12 +49,15 @@ const TrendingProduct = ({ sortedProducts }: { sortedProducts: Product[] }) => {
                 </h2>
               </div>
               <div className="p-4">
-              <div className="mb-3 flex justify-between items-center">
+                <div className="mb-3 flex justify-between items-center">
                   <p className="block text-sm font-semibold text-center">
                     ${product.price}
                   </p>
                   <p className="text-sm font-semibold text-center flex justify-center items-center">
-                    {product.rating} <span><Star className="size-6 fill-yellow-400 text-yellow-400 ml-1" /></span>
+                    {product.rating}{" "}
+                    <span>
+                      <Star className="size-6 fill-yellow-400 text-yellow-400 ml-1" />
+                    </span>
                   </p>
                 </div>
                 <Link href={`/trending-products/${product._id}`}>

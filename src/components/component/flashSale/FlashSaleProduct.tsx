@@ -39,7 +39,7 @@ const FlashSaleProduct = ({
                   <div className="flex items-center">
                     <Heart className=" hover:fill-red-500 stroke-red-500 stroke-2 fill-transparent  w-[20px] md:w-[30px]" />
                   </div>
-                  <button className="bg-primary duration-200 text-white text-xs font-medium px-3 py-1 rounded-xl">
+                  <button className="bg-primary dark:bg-slate-100 dark:text-black  duration-200 text-white text-xs font-medium px-3 py-1 rounded-xl">
                     30% off
                   </button>
                 </div>

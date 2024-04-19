@@ -25,7 +25,7 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
               Home
               <span className="navUnderline"></span>
             </li>
-            
+
             <li className="group flex cursor-pointer flex-col">
               <Link href="/cleaning-supplies">Products</Link>
               <span className="navUnderline"></span>
@@ -42,7 +42,7 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
               </li>
             )}
 
-<li className="size-5 mr-4">
+            <li className="group flex cursor-pointer flex-col">
               <Sun
                 className="absolute h-[1.25rem] w-[1.25rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 cursor-pointer"
                 onClick={() => setTheme("dark")}
@@ -52,7 +52,6 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
                 onClick={() => setTheme("light")}
               />
             </li>
-            
 
             <li className="group flex  cursor-pointer flex-col">
               {session?.user ? (

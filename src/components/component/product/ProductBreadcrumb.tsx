@@ -11,9 +11,15 @@ import Link from "next/link";
 type TDynamicLink = {
   name: string;
   url: string;
-}
+};
 
-const ProductBreadcrumb = ({name, dynamicLink}: {name: string, dynamicLink: TDynamicLink}) => {
+const ProductBreadcrumb = ({
+  name,
+  dynamicLink,
+}: {
+  name: string;
+  dynamicLink: TDynamicLink;
+}) => {
   return (
     <section className="my-5">
       <Container>
@@ -27,14 +33,12 @@ const ProductBreadcrumb = ({name, dynamicLink}: {name: string, dynamicLink: TDyn
             <BreadcrumbSeparator />
             <BreadcrumbItem>
               <Link href={`/${dynamicLink.url}`} className="font-semibold">
-             {dynamicLink.name}
+                {dynamicLink.name}
               </Link>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage className="font-semibold">
-                {name}
-              </BreadcrumbPage>
+              <BreadcrumbPage className="font-semibold">{name}</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>

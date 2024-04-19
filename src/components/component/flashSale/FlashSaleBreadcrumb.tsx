@@ -2,7 +2,6 @@ import Container from "@/components/layout/Container";
 import {
   Breadcrumb,
   BreadcrumbItem,
-  
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
@@ -17,7 +16,7 @@ const FlashSaleBreadcrumb = () => {
           <BreadcrumbList>
             <BreadcrumbItem>
               <Link href="/" className="font-semibold">
-                Home 
+                Home
               </Link>
             </BreadcrumbItem>
             <BreadcrumbSeparator />

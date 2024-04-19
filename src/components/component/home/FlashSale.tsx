@@ -7,11 +7,12 @@ import Link from "next/link";
 
 const FlashSale = ({ flashSaleProducts }: { flashSaleProducts: Product[] }) => {
   return (
-    <section className="my-20">
+    <section className="py-20 dark:bg-slate-900">
       <Container>
         <div className="flex justify-between items-center">
           <h2 className="text-2xl font-bold flex items-center justify-center">
-            Flash Sale <Zap className="size-6 ml-2 font-bold fill-red-500 text-red-500" />
+            Flash Sale{" "}
+            <Zap className="size-6 ml-2 font-bold fill-red-500 text-red-500" />
           </h2>
 
           <Link href="/flash-sale">
@@ -29,7 +30,7 @@ const FlashSale = ({ flashSaleProducts }: { flashSaleProducts: Product[] }) => {
                   <div className="flex items-center">
                     <Heart className=" hover:fill-red-500 stroke-red-500 stroke-2 fill-transparent w-[20px] md:w-[30px]" />
                   </div>
-                  <button className="bg-primary text-xs duration-200 text-white font-medium px-3 py-1 rounded-xl">
+                  <button className="bg-primary dark:bg-slate-100 dark:text-black text-xs duration-200 text-white font-medium px-3 py-1 rounded-xl">
                     30% off
                   </button>
                 </div>
@@ -41,7 +42,7 @@ const FlashSale = ({ flashSaleProducts }: { flashSaleProducts: Product[] }) => {
                     width={250}
                     height={100}
                   />
-                  </div>
+                </div>
               </div>
               <div className="p-4">
                 <h2 className="text-center text-base font-semibold">
@@ -54,7 +55,10 @@ const FlashSale = ({ flashSaleProducts }: { flashSaleProducts: Product[] }) => {
                     ${product.price}
                   </p>
                   <p className="text-sm font-semibold text-center flex justify-center items-center">
-                    {product.rating} <span><Star className="size-6 fill-yellow-400 text-yellow-400 ml-1" /></span>
+                    {product.rating}{" "}
+                    <span>
+                      <Star className="size-6 fill-yellow-400 text-yellow-400 ml-1" />
+                    </span>
                   </p>
                 </div>
                 <Link href={`/flash-sale/${product._id}`}>

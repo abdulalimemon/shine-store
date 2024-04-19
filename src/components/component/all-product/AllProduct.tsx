@@ -206,7 +206,7 @@ const AllProduct = ({ data }: { data: Product[] }) => {
                     <div className="flex items-center">
                       <Heart className=" hover:fill-red-500 stroke-red-500 stroke-2 fill-transparent  w-[20px] md:w-[30px]" />
                     </div>
-                    <button className="bg-primary duration-200 text-white font-medium px-3 text-xs py-1 rounded-xl">
+                    <button className="bg-primary dark:bg-slate-100 dark:text-black duration-200 text-white font-medium px-3 text-xs py-1 rounded-xl">
                       30% off
                     </button>
                   </div>
@@ -226,14 +226,17 @@ const AllProduct = ({ data }: { data: Product[] }) => {
                   </h2>
                 </div>
                 <div className="p-4">
-                <div className="mb-3 flex justify-between items-center">
-                  <p className="block text-sm font-semibold text-center">
-                    ${product.price}
-                  </p>
-                  <p className="text-sm font-semibold text-center flex justify-center items-center">
-                    {product.rating} <span><Star className="size-6 fill-yellow-400 text-yellow-400 ml-1" /></span>
-                  </p>
-                </div>
+                  <div className="mb-3 flex justify-between items-center">
+                    <p className="block text-sm font-semibold text-center">
+                      ${product.price}
+                    </p>
+                    <p className="text-sm font-semibold text-center flex justify-center items-center">
+                      {product.rating}{" "}
+                      <span>
+                        <Star className="size-6 fill-yellow-400 text-yellow-400 ml-1" />
+                      </span>
+                    </p>
+                  </div>
 
                   <Link
                     href={`/cleaning-supplies/${product._id}`}
