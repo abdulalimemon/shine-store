@@ -64,7 +64,7 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
             </li>
           </ul>
           <div className="lg:hidden flex items-center justify-center">
-          <div className="group flex cursor-pointer flex-col mr-4">
+            <div className="group flex cursor-pointer flex-col mr-4">
               <Sun
                 className="h-[1.25rem] w-[1.25rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 cursor-pointer"
                 onClick={() => setTheme("dark")}

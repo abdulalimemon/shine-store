@@ -4,8 +4,14 @@ import Link from "next/link";
 import { Product } from "@/type";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { Heart, Star } from "lucide-react";
+import { Heart, Star, LayoutList, CircleDollarSign} from "lucide-react";
 import { useState } from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 // type TSearchParams = {
 //   category: string;
@@ -73,112 +79,134 @@ const AllProduct = ({ data }: { data: Product[] }) => {
   // };
 
   return (
-    <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
-      <div className="text-center border-r bg-muted/40 md:block">
-        <div className="flex h-full max-h-screen flex-col gap-2">
+    <div className="grid  w-full min-h-screen md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
+      <div className="hidden text-center border-r bg-muted/40 md:block">
+        <div className="flex h-full flex-col gap-2">
           <div className="flex-1">
             <nav className="grid items-center px-2 text-sm font-medium lg:px-4 pt-5">
-              <p className="text-lg font-semibold md:text-xl py-2">Category</p>
-              <p
-                className="flex items-center justify-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:bg-primary cursor-pointer hover:text-white"
-                onClick={() => resetData()}
-              >
-                All Categories
-              </p>
-              <p
-                className="flex items-center justify-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:bg-primary cursor-pointer hover:text-white"
-                onClick={() => filterCategory("Dishwashing Items")}
-              >
-                Dishwashing Items
-              </p>
-              <p
-                className="flex items-center justify-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:bg-primary cursor-pointer hover:text-white"
-                onClick={() => filterCategory("Cleaning Tools")}
-              >
-                Cleaning Tools
-              </p>
+              <Accordion type="multiple" className="w-[180px] mx-auto">
+                <AccordionItem value="item-1">
+                  <AccordionTrigger className="text-lg font-semibold py-2">
+                    <span className="flex justify-center items-center"><LayoutList className="size-5 mr-3" /> Category</span>
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <p className="accordionNav" onClick={() => resetData()}>
+                      All Categories
+                    </p>
+                    <p
+                      className="accordionNav"
+                      onClick={() => filterCategory("Dishwashing Items")}
+                    >
+                      Dishwashing Items
+                    </p>
+                    <p
+                      className="accordionNav"
+                      onClick={() => filterCategory("Cleaning Tools")}
+                    >
+                      Cleaning Tools
+                    </p>
 
-              <p
-                className="flex items-center justify-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:bg-primary cursor-pointer hover:text-white"
-                onClick={() => filterCategory("General Cleaning")}
-              >
-                General Cleaning
-              </p>
-              <p
-                className="flex items-center justify-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:bg-primary cursor-pointer hover:text-white"
-                onClick={() => filterCategory("Fabric Care")}
-              >
-                Fabric Care
-              </p>
+                    <p
+                      className="accordionNav"
+                      onClick={() => filterCategory("General Cleaning")}
+                    >
+                      General Cleaning
+                    </p>
+                    <p
+                      className="accordionNav"
+                      onClick={() => filterCategory("Fabric Care")}
+                    >
+                      Fabric Care
+                    </p>
 
-              <p
-                className="flex items-center justify-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:bg-primary cursor-pointer hover:text-white"
-                onClick={() => filterCategory("Metal Cleaning")}
-              >
-                Metal Cleaning
-              </p>
-              <p
-                className="flex items-center justify-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:bg-primary cursor-pointer hover:text-white"
-                onClick={() => filterCategory("Floor Cleaning")}
-              >
-                Floor Cleaning
-              </p>
-            </nav>
-            <nav className="grid items-center px-2 text-sm font-medium lg:px-4 pt-5">
-              <p className="text-lg font-semibold md:text-xl py-2">Rating</p>
-              <p
-                className="flex items-center justify-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:bg-primary cursor-pointer hover:text-white"
-                onClick={() => resetData()}
-              >
-                All
-              </p>
-              <p
-                className="flex items-center justify-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:bg-primary cursor-pointer hover:text-white"
-                onClick={() => filterRating("3")}
-              >
-                0 to 3 star
-              </p>
-              <p
-                className="flex items-center justify-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:bg-primary cursor-pointer hover:text-white"
-                onClick={() => filterRating("4")}
-              >
-                4 star
-              </p>
+                    <p
+                      className="accordionNav"
+                      onClick={() => filterCategory("Metal Cleaning")}
+                    >
+                      Metal Cleaning
+                    </p>
+                    <p
+                      className="accordionNav"
+                      onClick={() => filterCategory("Floor Cleaning")}
+                    >
+                      Floor Cleaning
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                  <AccordionTrigger className="text-lg font-semibold py-2">
+                  <span className="flex justify-center items-center"><Star className="size-5 mr-3" /> Rating</span> 
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <p className="accordionNav" onClick={() => resetData()}>
+                      All
+                    </p>
+                    <p
+                      className="accordionNav"
+                      onClick={() => filterRating("1")}
+                    >
+                      <Star className="size-5 fill-yellow-400 text-yellow-400" />
+                    </p>
+                    <p
+                      className="accordionNav"
+                      onClick={() => filterRating("2")}
+                    >
+                      <Star className="size-5 fill-yellow-400 text-yellow-400" /><Star className="size-5 fill-yellow-400 text-yellow-400" />
+                    </p>
+                    <p
+                      className="accordionNav"
+                      onClick={() => filterRating("3")}
+                    >
+                      <Star className="size-5 fill-yellow-400 text-yellow-400" /><Star className="size-5 fill-yellow-400 text-yellow-400" />
+                      <Star className="size-5 fill-yellow-400 text-yellow-400" />
+                    </p>
+                    <p
+                      className="accordionNav"
+                      onClick={() => filterRating("4")}
+                    >
+                      <Star className="size-5 fill-yellow-400 text-yellow-400" /><Star className="size-5 fill-yellow-400 text-yellow-400" />
+                      <Star className="size-5 fill-yellow-400 text-yellow-400" /><Star className="size-5 fill-yellow-400 text-yellow-400" />
+                    </p>
 
-              <p
-                className="flex items-center justify-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:bg-primary cursor-pointer hover:text-white"
-                onClick={() => filterRating("5")}
-              >
-                5 star
-              </p>
-            </nav>
-            <nav className="grid items-center px-2 text-sm font-medium lg:px-4 py-5">
-              <p className="text-lg font-semibold md:text-xl py-2">Price</p>
-              <p
-                className="flex items-center justify-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:bg-primary cursor-pointer hover:text-white"
-                onClick={() => resetData()}
-              >
-                All
-              </p>
-              <p
-                className="flex items-center justify-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:bg-primary cursor-pointer hover:text-white"
-                onClick={() => filterPrice("10")}
-              >
-                0 to $10
-              </p>
-              <p
-                className="flex items-center justify-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:bg-primary cursor-pointer hover:text-white"
-                onClick={() => filterPrice("20")}
-              >
-                $11 to $20
-              </p>
+                    <p
+                      className="accordionNav"
+                      onClick={() => filterRating("5")}
+                    >
+                      <Star className="size-5 fill-yellow-400 text-yellow-400" /><Star className="size-5 fill-yellow-400 text-yellow-400" />
+                      <Star className="size-5 fill-yellow-400 text-yellow-400" /><Star className="size-5 fill-yellow-400 text-yellow-400" /><Star className="size-5 fill-yellow-400 text-yellow-400" />
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-3">
+                  <AccordionTrigger className="text-lg font-semibold py-2">
+                  <span className="flex justify-center items-center"><CircleDollarSign className="size-5 mr-3" /> Price</span> 
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <p className="accordionNav" onClick={() => resetData()}>
+                      All
+                    </p>
+                    <p
+                      className="accordionNav"
+                      onClick={() => filterPrice("10")}
+                    >
+                      0 to $10
+                    </p>
+                    <p
+                      className="accordionNav"
+                      onClick={() => filterPrice("20")}
+                    >
+                      $11 to $20
+                    </p>
 
-              <p
-                className="flex items-center justify-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:bg-primary cursor-pointer hover:text-white mb-5"
-                onClick={() => filterPrice("30")}
-              >
-                $21 to $30
-              </p>
+                    <p
+                      className="accordionNav mb-5"
+                      onClick={() => filterPrice("30")}
+                    >
+                      $21 to $30
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </nav>
           </div>
         </div>
@@ -186,12 +214,138 @@ const AllProduct = ({ data }: { data: Product[] }) => {
       <div className="flex flex-col">
         <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
           <div className="flex items-center">
-            <h2 className="text-lg font-semibold md:text-2xl">
+            <h2 className="text-lg font-semibold md:text-2xl pt-5 md:pt-0">
               All Cleaning Supplies
             </h2>
           </div>
-          <div>
-            <h2 className="font-semibold">
+          
+          <nav className="grid items-center px-2 text-sm font-medium lg:px-4 pt-5 md:hidden">
+              <Accordion type="multiple" className="w-full px-5">
+                <AccordionItem value="item-1">
+                  <AccordionTrigger className="text-base font-semibold py-2">
+                    <span className="flex justify-center items-center"><LayoutList className="size-5 mr-3" /> Category</span>
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <p className="accordionNav" onClick={() => resetData()}>
+                      All Categories
+                    </p>
+                    <p
+                      className="accordionNav"
+                      onClick={() => filterCategory("Dishwashing Items")}
+                    >
+                      Dishwashing Items
+                    </p>
+                    <p
+                      className="accordionNav"
+                      onClick={() => filterCategory("Cleaning Tools")}
+                    >
+                      Cleaning Tools
+                    </p>
+
+                    <p
+                      className="accordionNav"
+                      onClick={() => filterCategory("General Cleaning")}
+                    >
+                      General Cleaning
+                    </p>
+                    <p
+                      className="accordionNav"
+                      onClick={() => filterCategory("Fabric Care")}
+                    >
+                      Fabric Care
+                    </p>
+
+                    <p
+                      className="accordionNav"
+                      onClick={() => filterCategory("Metal Cleaning")}
+                    >
+                      Metal Cleaning
+                    </p>
+                    <p
+                      className="accordionNav"
+                      onClick={() => filterCategory("Floor Cleaning")}
+                    >
+                      Floor Cleaning
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                  <AccordionTrigger className="text-base font-semibold py-2">
+                  <span className="flex justify-center items-center"><Star className="size-5 mr-3" /> Rating</span> 
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <p className="accordionNav" onClick={() => resetData()}>
+                      All
+                    </p>
+                    <p
+                      className="accordionNav"
+                      onClick={() => filterRating("1")}
+                    >
+                      <Star className="size-5 fill-yellow-400 text-yellow-400" />
+                    </p>
+                    <p
+                      className="accordionNav"
+                      onClick={() => filterRating("2")}
+                    >
+                      <Star className="size-5 fill-yellow-400 text-yellow-400" /><Star className="size-5 fill-yellow-400 text-yellow-400" />
+                    </p>
+                    <p
+                      className="accordionNav"
+                      onClick={() => filterRating("3")}
+                    >
+                      <Star className="size-5 fill-yellow-400 text-yellow-400" /><Star className="size-5 fill-yellow-400 text-yellow-400" />
+                      <Star className="size-5 fill-yellow-400 text-yellow-400" />
+                    </p>
+                    <p
+                      className="accordionNav"
+                      onClick={() => filterRating("4")}
+                    >
+                      <Star className="size-5 fill-yellow-400 text-yellow-400" /><Star className="size-5 fill-yellow-400 text-yellow-400" />
+                      <Star className="size-5 fill-yellow-400 text-yellow-400" /><Star className="size-5 fill-yellow-400 text-yellow-400" />
+                    </p>
+
+                    <p
+                      className="accordionNav"
+                      onClick={() => filterRating("5")}
+                    >
+                      <Star className="size-5 fill-yellow-400 text-yellow-400" /><Star className="size-5 fill-yellow-400 text-yellow-400" />
+                      <Star className="size-5 fill-yellow-400 text-yellow-400" /><Star className="size-5 fill-yellow-400 text-yellow-400" /><Star className="size-5 fill-yellow-400 text-yellow-400" />
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-3">
+                  <AccordionTrigger className="text-base font-semibold py-2">
+                  <span className="flex justify-center items-center"><CircleDollarSign className="size-5 mr-3" /> Price</span> 
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <p className="accordionNav" onClick={() => resetData()}>
+                      All
+                    </p>
+                    <p
+                      className="accordionNav"
+                      onClick={() => filterPrice("10")}
+                    >
+                      0 to $10
+                    </p>
+                    <p
+                      className="accordionNav"
+                      onClick={() => filterPrice("20")}
+                    >
+                      $11 to $20
+                    </p>
+
+                    <p
+                      className="accordionNav mb-5"
+                      onClick={() => filterPrice("30")}
+                    >
+                      $21 to $30
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </nav>
+            <div>
+            <h2 className="font-semibold pt-3">
               Showing all {newData.length} Products!
             </h2>
           </div>
