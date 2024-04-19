@@ -5,7 +5,8 @@ import {authOptions} from "@/utils/authOptions";
 import {getServerSession} from "next-auth";
 import Footer from "@/components/layout/main/Footer";
 import Navbar from "@/components/layout/main/Navbar";
-import { Toaster } from "@/components/ui/toaster"
+import { Toaster } from "@/components/ui/toaster";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,10 +24,15 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar session={session} />
+      <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+          >
+            <Navbar session={session} />
         {children}
         <Toaster />
         <Footer/>
+          </ThemeProvider>
         </body>
     </html>
   );

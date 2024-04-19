@@ -2,7 +2,7 @@ import Container from "@/components/layout/Container";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Product } from "@/type";
-import { Heart } from "lucide-react";
+import { Heart, Star } from "lucide-react";
 import Link from "next/link";
 
 const TrendingProducts = ({
@@ -53,9 +53,12 @@ const TrendingProducts = ({
                 </h2>
               </div>
               <div className="p-4">
-                <div className="mb-3">
+              <div className="mb-3 flex justify-between items-center">
                   <p className="block text-sm font-semibold text-center">
-                    {product.rating} star
+                    ${product.price}
+                  </p>
+                  <p className="text-sm font-semibold text-center flex justify-center items-center">
+                    {product.rating} <span><Star className="size-6 fill-yellow-400 text-yellow-400 ml-1" /></span>
                   </p>
                 </div>
                 <Link href={`/trending-products/${product._id}`}>

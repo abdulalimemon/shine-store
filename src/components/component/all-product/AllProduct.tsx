@@ -1,12 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { Home, ShoppingCart } from "lucide-react";
 import { Product } from "@/type";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { Heart } from "lucide-react";
-import { useEffect, useState } from "react";
+import { Heart, Star } from "lucide-react";
+import { useState } from "react";
 
 // type TSearchParams = {
 //   category: string;
@@ -227,11 +226,14 @@ const AllProduct = ({ data }: { data: Product[] }) => {
                   </h2>
                 </div>
                 <div className="p-4">
-                  <div className="mb-3">
-                    <p className="block text-sm font-semibold text-center">
-                      ${product.price}
-                    </p>
-                  </div>
+                <div className="mb-3 flex justify-between items-center">
+                  <p className="block text-sm font-semibold text-center">
+                    ${product.price}
+                  </p>
+                  <p className="text-sm font-semibold text-center flex justify-center items-center">
+                    {product.rating} <span><Star className="size-6 fill-yellow-400 text-yellow-400 ml-1" /></span>
+                  </p>
+                </div>
 
                   <Link
                     href={`/cleaning-supplies/${product._id}`}

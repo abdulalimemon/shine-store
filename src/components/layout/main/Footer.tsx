@@ -9,10 +9,11 @@ const Footer = () => {
       <Container>
         <footer>
           <div className="grid grid-cols-1 md:grid-cols-4 py-7 md:py-10  gap-10">
-            <div className="text-xl content-center">
-              <h2 className="font-semibold text-center md:text-left">
+            <div className="content-center">
+              <h2 className="font-semibold text-center md:text-left text-xl">
                 Shine Store
               </h2>
+              <p className="font-medium text-center md:text-left text-sm mt-2">Your source for premium cleaning supplies that make every surface gleam. Explore eco-friendly solutions and effective cleaners for a sparkling home.</p>
             </div>
             <nav className="place-content-center">
               <h2 className="font-semibold pb-2 text-lg">Pages</h2>
