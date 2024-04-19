@@ -18,7 +18,7 @@ const FlashSale = ({ flashSaleProducts }: { flashSaleProducts: Product[] }) => {
             <Button>View All</Button>
           </Link>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 my-10">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5 my-10">
           {flashSaleProducts?.slice(0, 4)?.map((product) => (
             <div
               key={product._id}
@@ -27,15 +27,15 @@ const FlashSale = ({ flashSaleProducts }: { flashSaleProducts: Product[] }) => {
               <div className="flex justify-center  relative">
                 <div className="flex justify-between items-center left-4 right-4 top-4 absolute">
                   <div className="flex items-center">
-                    <Heart className=" hover:fill-red-500 stroke-red-500 stroke-2 fill-transparent  w-[30px]" />
+                    <Heart className=" hover:fill-red-500 stroke-red-500 stroke-2 fill-transparent w-[20px] md:w-[30px]" />
                   </div>
-                  <button className="bg-[#0095FF] hover:bg-[#0095FF]/90 duration-200 text-white font-medium px-3 py-1 rounded-xl">
+                  <button className="bg-primary text-xs duration-200 text-white font-medium px-3 py-1 rounded-xl">
                     30% off
                   </button>
                 </div>
                 <div>
                   <Image
-                    className="rounded-lg bg-black/40 my-4 h-40"
+                    className="rounded-lg bg-black/40 md:my-2 h-40"
                     src={product?.images?.cover}
                     alt={product.name}
                     width={250}

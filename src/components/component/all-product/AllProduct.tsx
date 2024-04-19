@@ -12,10 +12,8 @@ import { useEffect, useState } from "react";
 //   category: string;
 // };
 
-const AllProduct = ({data}: {data: Product[]}) => {
+const AllProduct = ({ data }: { data: Product[] }) => {
   const [newData, setNewData] = useState(data);
-
-  
 
   const filterCategory = (value: string) => {
     const result = data.filter((curData) => {
@@ -68,7 +66,6 @@ const AllProduct = ({data}: {data: Product[]}) => {
     setNewData(result);
   };
 
-
   // const filterSearchParams = () => {
   //   const result = data.filter((curData) => {
   //     return curData.category === searchParams.category;
@@ -76,7 +73,6 @@ const AllProduct = ({data}: {data: Product[]}) => {
   //   setNewData(result);
   // };
 
-  
   return (
     <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
       <div className="text-center border-r bg-muted/40 md:block">
@@ -195,7 +191,12 @@ const AllProduct = ({data}: {data: Product[]}) => {
               All Cleaning Supplies
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 my-10">
+          <div>
+            <h2 className="font-semibold">
+              Showing all {newData.length} Products!
+            </h2>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5 my-10">
             {newData?.map((product: Product) => (
               <div
                 key={product._id}
@@ -204,24 +205,24 @@ const AllProduct = ({data}: {data: Product[]}) => {
                 <div className="flex justify-center  relative">
                   <div className="flex justify-between items-center left-4 right-4 top-4 absolute">
                     <div className="flex items-center">
-                      <Heart className=" hover:fill-red-500 stroke-red-500 stroke-2 fill-transparent  w-[30px]" />
+                      <Heart className=" hover:fill-red-500 stroke-red-500 stroke-2 fill-transparent  w-[20px] md:w-[30px]" />
                     </div>
-                    <button className="bg-[#0095FF] hover:bg-[#0095FF]/90 duration-200 text-white font-medium px-3 py-1 rounded-xl">
+                    <button className="bg-primary duration-200 text-white font-medium px-3 text-xs py-1 rounded-xl">
                       30% off
                     </button>
                   </div>
                   <div>
-                  <Image
-                    className="rounded-lg bg-black/40 my-4 h-48"
-                    src={product?.images?.cover}
-                    alt={product.name}
-                    width={250}
-                    height={100}
-                  />
+                    <Image
+                      className="rounded-lg bg-black/40 md:my-2 h-48"
+                      src={product?.images?.cover}
+                      alt={product.name}
+                      width={250}
+                      height={100}
+                    />
                   </div>
                 </div>
                 <div className="p-4">
-                  <h2 className="text-center text-base md:text-lg font-semibold">
+                  <h2 className="text-center text-base font-semibold">
                     {product.name}
                   </h2>
                 </div>

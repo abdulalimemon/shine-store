@@ -12,7 +12,7 @@ const TrendingProduct = ({ sortedProducts }: { sortedProducts: Product[] }) => {
         <div className="flex justify-between items-center">
           <h2 className="text-2xl font-bold">Trending Products</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 my-10">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5 my-10">
           {sortedProducts?.map((product) => (
             <div
               key={product._id}
@@ -21,16 +21,16 @@ const TrendingProduct = ({ sortedProducts }: { sortedProducts: Product[] }) => {
               <div className="flex justify-center  relative">
                 <div className="flex justify-between items-center left-4 right-4 top-4 absolute">
                   <div className="flex items-center">
-                    <Heart className=" hover:fill-red-500 stroke-red-500 stroke-2 fill-transparent  w-[30px]" />
+                    <Heart className=" hover:fill-red-500 stroke-red-500 stroke-2 fill-transparent  w-[20px] md:w-[30px]" />
                   </div>
-                  <button className="bg-[#0095FF] hover:bg-[#0095FF]/90 duration-200 text-white font-medium px-3 py-1 rounded-xl">
+                  <button className="bg-primary text-xs duration-200 text-white font-medium px-3 py-1 rounded-xl">
                     30% off
                   </button>
                 </div>
                 
                 <div>
                   <Image
-                    className="rounded-lg bg-black/40 my-4 h-40"
+                    className="rounded-lg bg-black/40 md:my-2 h-40"
                     src={product?.images?.cover}
                     alt={product.name}
                     width={250}
@@ -39,7 +39,7 @@ const TrendingProduct = ({ sortedProducts }: { sortedProducts: Product[] }) => {
                   </div>
               </div>
               <div className="p-4">
-                <h2 className="text-center text-base md:text-lg font-semibold">
+                <h2 className="text-center text-base font-semibold">
                   {product.name}
                 </h2>
               </div>
@@ -50,7 +50,7 @@ const TrendingProduct = ({ sortedProducts }: { sortedProducts: Product[] }) => {
                   </p>
                 </div>
                 <Link href={`/trending-products/${product._id}`}>
-                  <Button className="w-full">View Details</Button>
+                  <Button className="w-full text-sm">View Details</Button>
                 </Link>
               </div>
             </div>

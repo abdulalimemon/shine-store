@@ -57,7 +57,7 @@ const Category = () => {
                 className="object-cover object-center w-full h-24 rounded-md"
               />
               <div className="mt-5 mb-2">
-                <h2 className="text-base font-semibold">{item.name}</h2>
+                <h2 className="text-base text-center font-semibold">{item.name}</h2>
               </div>
             </Link>
             </div>
