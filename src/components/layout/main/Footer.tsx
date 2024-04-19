@@ -5,7 +5,7 @@ const Footer = () => {
   const d = new Date();
   const year = d.getFullYear();
   return (
-    <section className="bg-slate-100">
+    <section className="bg-slate-100 dark:bg-[#020817]">
       <Container>
         <footer>
           <div className="grid grid-cols-1 md:grid-cols-4 py-7 md:py-10  gap-10">
@@ -129,7 +129,7 @@ const Footer = () => {
           </div>
         </footer>
       </Container>
-      <div className="bg-sky-100 py-5 text-center text-sm text-semibold">
+      <div className="bg-sky-100 dark:bg-slate-900 py-5 text-center text-sm text-semibold">
         <Container>
           <p>&copy; {year} Shine Store. All Rights Reserved.</p>
         </Container>

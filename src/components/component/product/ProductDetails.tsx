@@ -1,4 +1,5 @@
 import { Product } from "@/type";
+import {  Star } from "lucide-react";
 
 const ProductDetails = ({ product }: { product: Product }) => {
   const { name, description, price, rating, category, brand } = product;
@@ -21,10 +22,10 @@ const ProductDetails = ({ product }: { product: Product }) => {
       <div className="py-6 ">
         <ul className="space-y-5 pb-1 text-sm">
           <li>
-            <span className="text-heading inline-block pr-2 font-semibold">
-              Rating:
+            <span className="text-heading inline-block pr-2 font-semibold flex">
+              Rating: <span className="flex ml-2 justify-center items-center"> {rating} <Star className="size-6 fill-yellow-400 text-yellow-400 ml-1" /></span> 
             </span>
-            {rating} star
+             
           </li>
           <li>
             <span className="text-heading inline-block pr-2 font-semibold">

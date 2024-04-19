@@ -56,7 +56,7 @@ const HeroSlider = () => {
         </div>
       </div>
       {/* slider container */}
-      <div className="flex justify-center items-center gap-3 p-2">
+      <div className="flex justify-center items-center gap-3 p-2 mb-10">
         {/* sliders */}
         {sliders.map((slide, inx) => (
           <Image
@@ -64,7 +64,7 @@ const HeroSlider = () => {
             key={inx}
             src={slide.img}
             className={`w-10 md:w-20 h-6 sm:h-8 md:h-12 bg-black/20 ${
-              currentSlider === inx ? "border-2 border-black p-px" : ""
+              currentSlider === inx ? "border-[3px] border-black dark:border-white p-px" : ""
             } rounded-md md:rounded-lg box-content cursor-pointer`}
             alt={slide.title}
             width={500}

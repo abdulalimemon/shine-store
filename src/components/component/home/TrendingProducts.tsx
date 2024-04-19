@@ -11,7 +11,7 @@ const TrendingProducts = ({
   sortedProducts: Product[];
 }) => {
   return (
-    <section className="py-20">
+    <section className="pt-10 pb-10">
       <Container>
         <div className="flex justify-between items-center">
           <h2 className="text-2xl font-bold">Trending Products</h2>
