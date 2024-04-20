@@ -45,7 +45,7 @@ const LoginForm = () => {
     }
   };
   return (
-    <section className="my-20">
+    <section className="py-20 dark:bg-slate-900">
       <Container className="flex flex-col items-center justify-center py-12  px-6 mx-auto">
         <form className="w-full max-w-md" onSubmit={handleSubmit(onSubmit)}>
           <h2 className="mt-3 text-2xl font-semibold text-center sm:text-3xl dark:text-white">

@@ -5,7 +5,7 @@ const Footer = () => {
   const d = new Date();
   const year = d.getFullYear();
   return (
-    <section className="bg-slate-100 dark:bg-[#020817]">
+    <section className="bg-slate-100 dark:bg-[#020817] border-t">
       <Container>
         <footer>
           <div className="grid grid-cols-1 md:grid-cols-4 py-7 md:py-10  gap-10">
