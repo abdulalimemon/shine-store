@@ -85,10 +85,18 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/"
+                    href="/privacy-policy"
                     className="cursor-pointer hover:underline text-base font-medium"
                   >
                     Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/terms-conditions"
+                    className="cursor-pointer hover:underline text-base font-medium"
+                  >
+                    Terms and Conditions
                   </Link>
                 </li>
               </ul>
