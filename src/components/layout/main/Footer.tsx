@@ -61,15 +61,15 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li>
                   <Link
-                    href="/"
+                    href="/about-us"
                     className="cursor-pointer hover:underline text-base font-medium"
                   >
-                    About us
+                    About Us
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/"
+                    href="/contact-us"
                     className="cursor-pointer hover:underline text-base font-medium"
                   >
                     Contact Us

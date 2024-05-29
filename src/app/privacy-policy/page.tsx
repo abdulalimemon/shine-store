@@ -27,7 +27,7 @@ const PrivacyPolicyPage = () => {
         </p>
         <h3 className="text-base lg:text-xl font-semibold pt-5">Definitions</h3>
         <p className="text-sm lg:text-base pb-5">For the purposes of this Privacy Policy:</p>
-        <ul className="space-y-3">
+        <ul className="space-y-1 list-disc px-3 lg:px-10">
           <li>
             <p className="text-sm lg:text-base pb-5">
               <strong className="text-base lg:text-xl font-semibold">Account</strong> means a unique account created for You to
@@ -128,7 +128,7 @@ const PrivacyPolicyPage = () => {
           identify You. Personally identifiable information may include, but is
           not limited to:
         </p>
-        <ul className="space-y-2 font-medium">
+        <ul className="space-y-1 list-disc px-3 lg:px-10">
           <li>
             <p className="text-sm lg:text-base pb-5">Email address</p>
           </li>
@@ -172,7 +172,7 @@ const PrivacyPolicyPage = () => {
           and to improve and analyze Our Service. The technologies We use may
           include:
         </p>
-        <ul className="space-y-3">
+        <ul className="space-y-1 list-disc px-3 lg:px-10">
           <li>
             <strong className="text-base lg:text-xl font-semibold">Cookies or Browser Cookies.</strong> A cookie is a small
             file placed on Your Device. You can instruct Your browser to refuse
@@ -201,7 +201,7 @@ const PrivacyPolicyPage = () => {
           We use both Session and Persistent Cookies for the purposes set out
           below:
         </p>
-        <ul className="space-y-3">
+        <ul className="space-y-1 list-disc px-3 lg:px-10">
           <li>
             <p className="text-sm lg:text-base pb-5">
               <strong className="text-base lg:text-xl font-semibold">Necessary / Essential Cookies</strong>
@@ -250,7 +250,7 @@ const PrivacyPolicyPage = () => {
         </p>
         <h3 className="text-base lg:text-xl font-semibold pt-5">Use of Your Personal Data</h3>
         <p className="text-sm lg:text-base pb-5">The Company may use Personal Data for the following purposes:</p>
-        <ul className="space-y-3">
+        <ul className="space-y-1 list-disc px-3 lg:px-10">
           <li>
             <p className="text-sm lg:text-base pb-5">
               <strong>To provide and maintain our Service</strong>, including to
@@ -323,7 +323,7 @@ const PrivacyPolicyPage = () => {
         <p className="text-sm lg:text-base pb-5">
           We may share Your personal information in the following situations:
         </p>
-        <ul className="space-y-3">
+        <ul className="space-y-1 list-disc px-3 lg:px-10">
           <li>
             <strong>With Service Providers:</strong> We may share Your personal
             information with Service Providers to monitor and analyze the use of
@@ -434,7 +434,7 @@ const PrivacyPolicyPage = () => {
           The Company may disclose Your Personal Data in the good faith belief
           that such action is necessary to:
         </p>
-        <ul className="space-y-3">
+        <ul className="space-y-1 list-disc px-3 lg:px-10">
           <li>Comply with a legal obligation</li>
           <li>Protect and defend the rights or property of the Company</li>
           <li>
@@ -501,7 +501,7 @@ const PrivacyPolicyPage = () => {
           If you have any questions about this Privacy Policy, You can contact
           us:
         </p>
-        <ul className="space-y-3">
+        <ul className="space-y-1 list-disc px-3 lg:px-10">
           <li>
             By visiting this page on our website:{" "}
             <a

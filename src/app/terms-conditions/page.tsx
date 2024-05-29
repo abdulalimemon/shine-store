@@ -52,7 +52,7 @@ const TermsConditionsPage = () => {
         </p>
 
         <p className="text-sm lg:text-base pb-5">You must not:</p>
-        <ul className="space-y-3 font-medium">
+        <ul className="space-y-1 list-disc px-3 lg:px-10 pb-5">
           <li>Republish material from Shine Store</li>
           <li>Sell, rent or sub-license material from Shine Store</li>
           <li>Reproduce, duplicate or copy material from Shine Store</li>
@@ -80,7 +80,7 @@ const TermsConditionsPage = () => {
 
         <p className="text-sm lg:text-base pb-5">You warrant and represent that:</p>
 
-        <ul className="space-y-3 font-medium">
+        <ul className="space-y-1 list-disc px-3 lg:px-10 pb-5">
           <li>
             You are entitled to post the Comments on our website and have all
             necessary licenses and consents to do so;
@@ -116,7 +116,7 @@ const TermsConditionsPage = () => {
           written approval:
         </p>
 
-        <ul className="space-y-3 font-medium">
+        <ul className="space-y-1 list-disc px-3 lg:px-10 pb-5">
           <li>Government agencies;</li>
           <li>Search engines;</li>
           <li>News organizations;</li>
@@ -145,7 +145,7 @@ const TermsConditionsPage = () => {
           types of organizations:
         </p>
 
-        <ul className="space-y-3 font-medium">
+        <ul className="space-y-1 list-disc px-3 lg:px-10 pb-5">
           <li>commonly-known consumer and/or business information sources;</li>
           <li>dot.com community sites;</li>
           <li>associations or other groups representing charities;</li>
@@ -184,7 +184,7 @@ const TermsConditionsPage = () => {
 
         <p className="text-sm lg:text-base pb-5">Approved organizations may hyperlink to our Website as follows:</p>
 
-        <ul className="space-y-3 font-medium">
+        <ul className="space-y-1 list-disc px-3 lg:px-10 pb-5">
           <li>By use of our corporate name; or</li>
           <li>By use of the uniform resource locator being linked to; or</li>
           <li>
@@ -263,7 +263,7 @@ const TermsConditionsPage = () => {
           the use of this website. Nothing in this disclaimer will:
         </p>
 
-        <ul className="space-y-3 font-medium">
+        <ul className="space-y-1 list-disc px-3 lg:px-10 pb-5">
           <li>
             limit or exclude our or your liability for death or personal injury;
           </li>
