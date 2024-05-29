@@ -4,7 +4,7 @@ const TermsConditionsPage = () => {
   return (
     <section className="py-10 lg:py-14">
       <Container>
-        <h2>
+        <h2 className="text-2xl lg:text-4xl font-semibold py-5">
           <strong>Terms and Conditions</strong>
         </h2>
 
