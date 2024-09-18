@@ -11,7 +11,7 @@ const ProductImageSlider = ({ images }: { images: ImageArray }) => {
   return (
     <div className="flex flex-col lg:flex-row-reverse justify-between">
       <div
-        className="w-full h-72 sm:h-96 md:h-[540px] flex flex-col items-center justify-center gap-5 lg:gap-10 bg-cover bg-center before:absolute before:bg-black/50 before:inset-0 transform duration-1000 ease-linear rounded-lg overflow-hidden"
+        className="w-full h-72 sm:h-96 md:h-[540px] flex flex-col items-center justify-center gap-5 lg:gap-10 bg-cover bg-center before:inset-0 transform duration-1000 ease-linear rounded-lg overflow-hidden"
         style={{ backgroundImage: `url(${images[currentSlider]})` }}
       ></div>
       {/* slider container */}
