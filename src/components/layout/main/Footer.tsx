@@ -106,7 +106,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li>
                   <a
-                    href="/"
+                    href="https://www.facebook.com/"
                     className="cursor-pointer hover:underline text-base font-medium"
                   >
                     Facebook
@@ -114,7 +114,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="/"
+                    href="https://x.com/"
                     className="cursor-pointer hover:underline text-base font-medium"
                   >
                     Twitter
@@ -122,7 +122,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="/"
+                    href="https://www.youtube.com/"
                     className="cursor-pointer hover:underline text-base font-medium"
                   >
                     Youtube
@@ -130,7 +130,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="/"
+                    href="https://www.instagram.com/"
                     className="cursor-pointer hover:underline text-base font-medium"
                   >
                     Instagram

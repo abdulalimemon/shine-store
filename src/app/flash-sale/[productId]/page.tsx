@@ -37,7 +37,13 @@ const ProductPage = async ({ params }: ProductId) => {
     moreProduct.category === product.category
   );
 
-  console.log(moreProductdata);
+  const newProduct = category.filter(
+    (item: Product) => item.name !== product.name
+  );
+
+  const browseCategory = moreProductdata.filter(
+    (moreProduct: Product) => moreProduct.category !== product.category
+  );
   return (
     <div className="mx-auto max-w-7xl px-4 md:px-8 2xl:px-16">
       <ProductBreadcrumb name={product.name} dynamicLink={dynamicLink} />
@@ -47,7 +53,11 @@ const ProductPage = async ({ params }: ProductId) => {
         </div>
         <ProductDetails product={product} />
       </div>
-      <MoreProducts product={category} />
+      {category.length === 1 ? (
+        <MoreProducts product={browseCategory} />
+      ) : (
+        <MoreProducts product={newProduct} />
+      )}
     </div>
   );
 };
