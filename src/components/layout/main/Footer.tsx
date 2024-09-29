@@ -19,7 +19,7 @@ const Footer = () => {
                 cleaners for a sparkling home.
               </p>
             </div>
-            <nav className="place-content-center">
+            <nav>
               <h2 className="font-semibold pb-2 text-lg">Pages</h2>
               <ul className="space-y-2">
                 <li>

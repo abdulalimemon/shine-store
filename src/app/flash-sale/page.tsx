@@ -10,6 +10,7 @@ const FlashSalePage = async () => {
   const flashSaleProducts: Product[] = data.filter(
     (product: Product) => product.flashSale
   );
+
   return (
     <main>
       <FlashSaleBreadcrumb />

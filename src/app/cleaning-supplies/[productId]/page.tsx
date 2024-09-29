@@ -1,3 +1,4 @@
+import MoreProducts from "@/components/component/product/MoreProduct";
 import ProductBreadcrumb from "@/components/component/product/ProductBreadcrumb";
 import ProductDetails from "@/components/component/product/ProductDetails";
 import ProductImageSlider from "@/components/component/product/ProductImageSlider";
@@ -28,6 +29,22 @@ const ProductPage = async ({ params }: ProductId) => {
     url: "cleaning-supplies",
   };
 
+  const moreProduct = await fetch(`${process.env.BACKEND_URL}/product`);
+
+  const moreProductdata = await moreProduct.json();
+
+  const category = moreProductdata.filter(
+    (moreProduct: Product) => moreProduct.category === product.category
+  );
+
+  const newProduct = category.filter(
+    (item: Product) => item.name !== product.name
+  );
+
+  const browseCategory = moreProductdata.filter(
+    (moreProduct: Product) => moreProduct.category !== product.category
+  );
+
   return (
     <div className="mx-auto max-w-7xl px-4 md:px-8 2xl:px-16">
       <ProductBreadcrumb name={product.name} dynamicLink={dynamicLink} />
@@ -37,6 +54,11 @@ const ProductPage = async ({ params }: ProductId) => {
         </div>
         <ProductDetails product={product} />
       </div>
+      {category.length === 1 ? (
+        <MoreProducts product={browseCategory} />
+      ) : (
+        <MoreProducts product={newProduct} />
+      )}
     </div>
   );
 };

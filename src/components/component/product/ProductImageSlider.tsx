@@ -9,26 +9,38 @@ const ProductImageSlider = ({ images }: { images: ImageArray }) => {
   const [currentSlider, setCurrentSlider] = useState(0);
 
   return (
-    <div className="flex flex-col lg:flex-row-reverse justify-between">
-      <div
-        className="w-full h-72 sm:h-96 md:h-[540px] flex flex-col items-center justify-center gap-5 lg:gap-10 bg-cover bg-center before:inset-0 transform duration-1000 ease-linear rounded-lg overflow-hidden"
-        style={{ backgroundImage: `url(${images[currentSlider]})` }}
-      ></div>
-      {/* slider container */}
-      <div className="flex lg:flex-col justify-center items-center gap-3 p-2">
-        {/* sliders */}
+    <div className="flex flex-col lg:flex-row-reverse justify-between gap-5">
+      {/* Main Image */}
+      <div className="w-full h-72 sm:h-96 md:h-[540px] lg:w-5/6">
+        <Image
+          src={images[currentSlider]} 
+          width={600}
+          height={600}
+          alt="Product Image"
+          className="w-full h-full rounded-md"
+        />
+      </div>
+
+      {/* Slider Thumbnails */}
+      <div className="flex lg:flex-col justify-center items-center gap-3 p-2 lg:w-1/6 overflow-x-auto lg:overflow-y-auto">
         {images.map((slide, inx) => (
-          <Image
-            onClick={() => setCurrentSlider(inx)}
+          <div
             key={inx}
-            src={slide}
-            className={`w-10 md:w-20 h-6 sm:h-8 md:h-12 bg-black/20 ${
-              currentSlider === inx ? "border-2 border-black p-px" : ""
-            } rounded-md md:rounded-lg box-content cursor-pointer`}
-            alt="images"
-            width={500}
-            height={100}
-          />
+            className="w-10 sm:w-14 md:w-20 h-10 sm:h-14 md:h-20 cursor-pointer"
+            onClick={() => setCurrentSlider(inx)}
+          >
+            <Image
+              src={slide}
+              alt={`Thumbnail ${inx}`}
+              width={100}
+              height={100}
+              className={`w-full h-full object-cover rounded-md transition-all duration-200 ease-in-out ${
+                currentSlider === inx
+                  ? "border-2 border-black dark:border-gray-500 p-0.5"
+                  : "opacity-70"
+              }`}
+            />
+          </div>
         ))}
       </div>
     </div>
@@ -36,3 +48,4 @@ const ProductImageSlider = ({ images }: { images: ImageArray }) => {
 };
 
 export default ProductImageSlider;
+
