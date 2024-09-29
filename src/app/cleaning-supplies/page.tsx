@@ -1,7 +1,7 @@
 import { Product } from "@/type";
 import AllProduct from "@/components/component/all-product/AllProduct";
 
-const AllProductPage = async ({searchParams} : {searchParams: string}) => {
+const AllProductPage = async ({ searchParams }: { searchParams: string }) => {
   const res = await fetch(`${process.env.BACKEND_URL}/product`, {
     next: { revalidate: 30 },
   });
@@ -12,7 +12,7 @@ const AllProductPage = async ({searchParams} : {searchParams: string}) => {
 
   return (
     <>
-    <AllProduct data={data}  />
+      <AllProduct data={data} />
     </>
   );
 };

@@ -5,6 +5,7 @@ const productData = [
     category: "Dishwashing Items",
     price: 5.99,
     rating: 4.5,
+    availableQuantity: 10,
     description:
       "Experience the refreshing scent of freshly picked citrus while tackling tough grease and stains with our Fresh Citrus Dish Soap. Made with natural ingredients and powerful cleaning agents, this dish soap cuts through grime effortlessly, leaving your dishes sparkling clean and your kitchen smelling delightful. Say goodbye to stubborn residues and hello to a brighter, fresher clean with our invigorating dish soap formula.",
     flashSale: false,

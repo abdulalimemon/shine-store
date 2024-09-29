@@ -10,7 +10,7 @@ const MoreProducts = ({ product }: { product: Product[] }) => {
     <section className="my-20">
       <Container>
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <h2 className="text-2xl font-bold flex items-center justify-center mb-5 md:mb-0">
+          <h2 className="text-xl font-bold flex items-center justify-center mb-5 md:mb-0">
           You may also like
           </h2>
         </div>

@@ -1,8 +1,12 @@
+import { Button } from "@/components/ui/button";
 import { Product } from "@/type";
-import { Star } from "lucide-react";
+import { Minus, Plus, Star } from "lucide-react";
 
 const ProductDetails = ({ product }: { product: Product }) => {
   const { name, description, price, rating, category, brand } = product;
+
+  
+
   return (
     <div className="col-span-4 pt-8 lg:pt-0">
       <div className="mb-7 border-b border-gray-300 pb-7">
@@ -16,6 +20,22 @@ const ProductDetails = ({ product }: { product: Product }) => {
           <div className="text-heading pr-2 text-base font-bold md:pr-0 md:text-xl lg:pr-2 lg:text-2xl 2xl:pr-0 2xl:text-4xl">
             ${price}
           </div>
+        </div>
+      </div>
+
+      <div className="py-3">
+        <div className="flex items-center gap-5">
+          <div className="flex border">
+            <button className="p-2 flex items-center justify-center">
+              <Minus />
+            </button>
+
+            <div className="p-2 px-4 border">11</div>
+            <button className="p-2 flex items-center justify-center">
+              <Plus />
+            </button>
+          </div>
+          <Button>Buy Now</Button>
         </div>
       </div>
 
@@ -45,6 +65,8 @@ const ProductDetails = ({ product }: { product: Product }) => {
           </li>
         </ul>
       </div>
+
+      
     </div>
   );
 };

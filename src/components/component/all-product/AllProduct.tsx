@@ -155,36 +155,42 @@ const AllProduct = ({ data }: { data: Product[] }) => {
                       className="accordionNav"
                       onClick={() => filterRating("2")}
                     >
-                      <Star className="star" />
-                      <Star className="star" />
+                      {Array(2)
+                        .fill(null)
+                        .map((_, index: number) => (
+                          <Star key={index} className="star" />
+                        ))}
                     </p>
                     <p
                       className="accordionNav"
                       onClick={() => filterRating("3")}
                     >
-                      <Star className="star" />
-                      <Star className="star" />
-                      <Star className="star" />
+                      {Array(3)
+                        .fill(null)
+                        .map((_, index: number) => (
+                          <Star key={index} className="star" />
+                        ))}
                     </p>
                     <p
                       className="accordionNav"
                       onClick={() => filterRating("4")}
                     >
-                      <Star className="star" />
-                      <Star className="star" />
-                      <Star className="star" />
-                      <Star className="star" />
+                      {Array(4)
+                        .fill(null)
+                        .map((_, index: number) => (
+                          <Star key={index} className="star" />
+                        ))}
                     </p>
 
                     <p
                       className="accordionNav"
                       onClick={() => filterRating("5")}
                     >
-                      <Star className="star" />
-                      <Star className="star" />
-                      <Star className="star" />
-                      <Star className="star" />
-                      <Star className="star" />
+                      {Array(5)
+                        .fill(null)
+                        .map((_, index: number) => (
+                          <Star key={index} className="star" />
+                        ))}
                     </p>
                   </AccordionContent>
                 </AccordionItem>
@@ -298,27 +304,33 @@ const AllProduct = ({ data }: { data: Product[] }) => {
                     <Star className="star" />
                   </p>
                   <p className="accordionNav" onClick={() => filterRating("2")}>
-                    <Star className="star" />
-                    <Star className="star" />
+                    {Array(2)
+                      .fill(null)
+                      .map((_, index: number) => (
+                        <Star key={index} className="star" />
+                      ))}
                   </p>
                   <p className="accordionNav" onClick={() => filterRating("3")}>
-                    <Star className="star" />
-                    <Star className="star" />
-                    <Star className="star" />
+                    {Array(3)
+                      .fill(null)
+                      .map((_, index: number) => (
+                        <Star key={index} className="star" />
+                      ))}
                   </p>
                   <p className="accordionNav" onClick={() => filterRating("4")}>
-                    <Star className="star" />
-                    <Star className="star" />
-                    <Star className="star" />
-                    <Star className="star" />
+                    {Array(4)
+                      .fill(null)
+                      .map((_, index: number) => (
+                        <Star key={index} className="star" />
+                      ))}
                   </p>
 
                   <p className="accordionNav" onClick={() => filterRating("5")}>
-                    <Star className="star" />
-                    <Star className="star" />
-                    <Star className="star" />
-                    <Star className="star" />
-                    <Star className="star" />
+                    {Array(5)
+                      .fill(null)
+                      .map((_, index: number) => (
+                        <Star key={index} className="star" />
+                      ))}
                   </p>
                 </AccordionContent>
               </AccordionItem>
