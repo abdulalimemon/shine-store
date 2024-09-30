@@ -1,11 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Product } from "@/type";
 import { Minus, Plus, Star } from "lucide-react";
+import Link from "next/link";
 
 const ProductDetails = ({ product }: { product: Product }) => {
   const { name, description, price, rating, category, brand } = product;
-
-  
 
   return (
     <div className="col-span-4 pt-8 lg:pt-0">
@@ -35,7 +34,9 @@ const ProductDetails = ({ product }: { product: Product }) => {
               <Plus />
             </button>
           </div>
-          <Button>Buy Now</Button>
+          <Link href="/cart">
+            <Button>Buy Now</Button>
+          </Link>
         </div>
       </div>
 
@@ -65,8 +66,6 @@ const ProductDetails = ({ product }: { product: Product }) => {
           </li>
         </ul>
       </div>
-
-      
     </div>
   );
 };

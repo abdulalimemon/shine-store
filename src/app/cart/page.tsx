@@ -28,7 +28,7 @@ const cartPage = () => {
                         </h3>
                         <p className="font-semibold">$59.99</p>
                       </div>
-                      <div className="md:text-right flex gap-5">
+                      <div className="md:text-right flex flex-wrap gap-5">
                         <div className="flex border">
                           <button className="p-2 flex items-center justify-center">
                             <Minus />
@@ -38,7 +38,7 @@ const cartPage = () => {
                             <Plus />
                           </button>
                         </div>
-                        <div className="flex text-sm px-3 divide-x">
+                        <div className="flex text-sm">
                           <button
                             type="button"
                             className="flex items-center px-2 py-1 pl-0 space-x-1"
@@ -69,7 +69,7 @@ const cartPage = () => {
                         </h3>
                         <p className="font-semibold">$59.99</p>
                       </div>
-                      <div className="md:text-right flex gap-5">
+                      <div className="md:text-right flex gap-5 flex-wrap">
                         <div className="flex border">
                           <button className="p-2 flex items-center justify-center">
                             <Minus />
@@ -79,7 +79,7 @@ const cartPage = () => {
                             <Plus />
                           </button>
                         </div>
-                        <div className="flex text-sm px-3 divide-x">
+                        <div className="flex text-sm">
                           <button
                             type="button"
                             className="flex items-center px-2 py-1 pl-0 space-x-1"
