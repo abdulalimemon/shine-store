@@ -8,14 +8,14 @@ import {
 } from "@/components/ui/breadcrumb";
 import Link from "next/link";
 
-const FlashSaleBreadcrumb = () => {
+const CartBreadcrumb = () => {
   return (
     <section className="my-5">
       <Container>
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
-            <Link
+              <Link
                 href="/"
                 className="font-semibold flex items-center justify-center gap-3"
               >
@@ -39,9 +39,7 @@ const FlashSaleBreadcrumb = () => {
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage className="font-semibold">
-                Flash Sale
-              </BreadcrumbPage>
+              <BreadcrumbPage className="font-semibold">Cart</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
@@ -50,4 +48,4 @@ const FlashSaleBreadcrumb = () => {
   );
 };
 
-export default FlashSaleBreadcrumb;
+export default CartBreadcrumb;

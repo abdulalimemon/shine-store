@@ -7,7 +7,8 @@ import Link from "next/link";
 import { UserProps } from "@/type";
 import { signOut } from "next-auth/react";
 import { useTheme } from "next-themes";
-import { Moon, Sun, Menu } from "lucide-react";
+import { Moon, Sun, ShoppingCart } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 const Navbar = ({ session }: { session: UserProps | null }) => {
   const { setTheme } = useTheme();
@@ -51,6 +52,10 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
                 className="absolute h-[1.25rem] w-[1.25rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 cursor-pointer"
                 onClick={() => setTheme("light")}
               />
+            </li>
+
+            <li className="group flex cursor-pointer flex-col">
+              <Link href='/cart'><ShoppingCart className="h-[1.25rem] w-[1.25rem]" /></Link>
             </li>
 
             <li className="group flex  cursor-pointer flex-col">

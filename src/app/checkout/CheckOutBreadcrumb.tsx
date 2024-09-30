@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import Link from "next/link";
 
-const FlashSaleBreadcrumb = () => {
+const CheckOutBreadcrumb = () => {
   return (
     <section className="my-5">
       <Container>
@@ -39,8 +39,14 @@ const FlashSaleBreadcrumb = () => {
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
+              <Link href="/cart" className="font-semibold">
+                Cart
+              </Link>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
               <BreadcrumbPage className="font-semibold">
-                Flash Sale
+                Checkout
               </BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
@@ -50,4 +56,4 @@ const FlashSaleBreadcrumb = () => {
   );
 };
 
-export default FlashSaleBreadcrumb;
+export default CheckOutBreadcrumb;

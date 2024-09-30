@@ -2,7 +2,7 @@ import Container from "@/components/layout/Container";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Product } from "@/type";
-import { Heart, Zap, Star } from "lucide-react";
+import { Heart, Star } from "lucide-react";
 import Link from "next/link";
 
 const MoreProducts = ({ product }: { product: Product[] }) => {
