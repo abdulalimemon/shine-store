@@ -48,7 +48,7 @@ const categoryData = [
 
 const Category = () => {
   return (
-    <section className="pt-10 pb-16 dark:bg-slate-900">
+    <section className="pt-10 pb-16">
       <Container>
         <h2 className="text-2xl font-bold py-7">Popular Categories</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">

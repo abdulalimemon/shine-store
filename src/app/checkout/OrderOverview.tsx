@@ -47,7 +47,7 @@ const OrderOverview = () => {
             name="radio"
             checked
           />
-          <span className="absolute right-4 top-1/2 box-content block h-3 w-3 -translate-y-1/2 rounded-full border-8 hidden lg:block"></span>
+          <span className="absolute right-4 top-1/2 box-content h-3 w-3 -translate-y-1/2 rounded-full border-8 hidden lg:block"></span>
           <label className="peer-checked:border-2   flex cursor-pointer select-none rounded-lg border  p-4">
             <Image
               className="rounded-lg bg-black/40 md:my-2 h-24"
