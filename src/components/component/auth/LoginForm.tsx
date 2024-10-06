@@ -1,17 +1,25 @@
 "use client";
 
 import Container from "@/components/layout/Container";
-import { Fingerprint, Mail, UserRound } from "lucide-react";
+import { Fingerprint, Mail } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import LoginWithGoogle from "@/components/component/auth/LoginWithGoogle";
 import Link from "next/link";
 import { LoginUserData } from "@/type";
-import { FieldValues, SubmitHandler } from "react-hook-form";
+import {  SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
 import { toast } from "@/components/ui/use-toast";
-import { loginUser } from "@/utils/actions/loginUser";
 import { useRouter } from "next/navigation";
+import { useLoginMutation } from "@/redux/feature/auth/authApi";
+import { useAppDispatch } from "@/redux/hooks";
+import { verifyToken } from "@/utils/verifyToken";
+import { setUser } from "@/redux/feature/auth/authSlice";
+
+export type TLoginInputs = {
+  email: string;
+  password: string;
+};
 
 const LoginForm = () => {
   const {
@@ -21,29 +29,44 @@ const LoginForm = () => {
   } = useForm<LoginUserData>();
 
   const router = useRouter();
+  const [login] = useLoginMutation();
+  const dispatch = useAppDispatch();
 
-  const onSubmit: SubmitHandler<LoginUserData> = async (data: FieldValues) => {
+  const onSubmit: SubmitHandler<TLoginInputs> = async (data) => {
     try {
       const userInfo = {
         email: data.email,
         password: data.password,
-      };
-
-     
-
-      const res = await loginUser(userInfo);
-     
-      if (res.accessToken) {
+      }; 
+      const res = await login(userInfo).unwrap();
+        
+      if (res?.token) {
+        const user = verifyToken(res.token);
+        console.log('Decoded User:', user);
+  
+        dispatch(setUser({ user, token: res.token }));
+  
         toast({
           title: res.message,
+          description: "Login Successful.",
         });
-        localStorage.setItem("accessToken", res.accessToken);
-        router.push("/dashboard");
+  
+        if (typeof window !== 'undefined') {
+          router.push("/dashboard");
+        }
+      } else {
+        console.error('No token received');
       }
-    } catch (err: any) {
-      toast(err.message);
+    } catch (error) {
+      console.error('Login Error:', error);
+  
+      toast({
+        title: (error as any)?.data?.message || 'Login failed',
+        description: "Please, try again.",
+      });
     }
   };
+
   return (
     <section className="py-20 dark:bg-slate-900">
       <Container className="flex flex-col items-center justify-center py-12  px-6 mx-auto">

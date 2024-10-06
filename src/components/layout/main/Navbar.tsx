@@ -8,10 +8,18 @@ import { UserProps } from "@/type";
 import { signOut } from "next-auth/react";
 import { useTheme } from "next-themes";
 import { Moon, Sun, ShoppingCart } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { logout, useCurrentToken } from "@/redux/feature/auth/authSlice";
 
 const Navbar = ({ session }: { session: UserProps | null }) => {
   const { setTheme } = useTheme();
+  const token = useAppSelector(useCurrentToken);
+  const dispatch = useAppDispatch();
+
+  const handleLogOut = () => {
+    dispatch(logout());
+    signOut();
+  };
   return (
     <section className="bg-slate-100 dark:bg-slate-900 border-b">
       <Container>
@@ -36,7 +44,7 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
               <span className="navUnderline"></span>
             </li>
 
-            {session?.user && (
+            {(session?.user || token) && (
               <li className="group flex  cursor-pointer flex-col">
                 <Link href="/dashboard">Dashboard</Link>
                 <span className="navUnderline"></span>
@@ -55,12 +63,14 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
             </li>
 
             <li className="group flex cursor-pointer flex-col">
-              <Link href='/cart'><ShoppingCart className="h-[1.25rem] w-[1.25rem]" /></Link>
+              <Link href="/cart">
+                <ShoppingCart className="h-[1.25rem] w-[1.25rem]" />
+              </Link>
             </li>
 
             <li className="group flex  cursor-pointer flex-col">
-              {session?.user ? (
-                <Button onClick={() => signOut()}>Logout</Button>
+              {session?.user || token ? (
+                <Button onClick={handleLogOut}>Logout</Button>
               ) : (
                 <Link href="/login">
                   <Button>Login</Button>
