@@ -7,7 +7,7 @@ const CountdownTimer = () => {
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
 
-  const deadline = new Date("April 26, 2024").getTime();
+  const deadline = new Date("December 26, 2024").getTime();
 
   useEffect(() => {
     const getTime = () => {

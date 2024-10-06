@@ -21,24 +21,21 @@ const TrendingProducts = ({
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 md:gap-5 my-10">
-          {sortedProducts?.slice(0, 6)?.map((product) => (
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5 my-10">
+          {sortedProducts?.slice(0, 8)?.map((product) => (
             <div
               key={product._id}
               className="rounded-md border flex flex-col justify-between"
             >
-              <div className="flex justify-center  relative">
+              <div className="flex relative">
                 <div className="flex justify-between items-center left-4 right-4 top-4 absolute">
-                  <div className="flex items-center">
-                    <Heart className=" hover:fill-red-500 stroke-red-500 stroke-2 fill-transparent  w-[20px] md:w-[30px]" />
-                  </div>
-                  <button className="bg-primary dark:bg-slate-100 dark:text-black duration-200 text-white font-medium px-3 py-1 rounded-xl text-xs">
+                  <button className="bg-primary dark:bg-slate-100 dark:text-black text-xs duration-200 text-white font-medium px-3 py-1 rounded-xl">
                     30% off
                   </button>
                 </div>
-                <div>
+                <div className="w-full">
                   <Image
-                    className="rounded-lg bg-black/40 md:my-2 h-40"
+                    className="rounded-t-lg bg-black/40 h-40 w-full"
                     src={product?.images?.cover}
                     alt={product.name}
                     width={250}
@@ -48,10 +45,12 @@ const TrendingProducts = ({
               </div>
               <div className="p-4">
                 <h2 className="text-center text-base font-semibold">
-                  {product.name}
+                  {product.name.length > 25
+                    ? product.name.slice(0, 24) + "..."
+                    : product.name}
                 </h2>
               </div>
-              <div className="p-4">
+              <div className="px-4 pb-4">
                 <div className="mb-3 flex justify-between items-center">
                   <p className="block text-sm font-semibold text-center">
                     ${product.price}
@@ -63,7 +62,7 @@ const TrendingProducts = ({
                     </span>
                   </p>
                 </div>
-                <Link href={`/trending-products/${product._id}`}>
+                <Link href={`/flash-sale/${product._id}`}>
                   <Button className="w-full">View Details</Button>
                 </Link>
               </div>
