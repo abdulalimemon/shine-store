@@ -12,12 +12,6 @@ import { toast } from "@/components/ui/use-toast";
 import { useRouter } from "next/navigation";
 import { registerUser } from "@/utils/actions/registerUsers";
 
-export type TRegisterInputs = {
-  name: string;
-  email: string;
-  password: string;
-};
-
 const RegisterForm = () => {
   const {
     register,
