@@ -1,9 +1,13 @@
+import AboutBreadcrumb from "./AboutBreadcrumb";
+import AboutHeroSection from "./AboutHeroSection";
+
 const AboutUsPage = () => {
-    return (
-      <div>
-        <h2>Welcome to About Us Page.</h2>
-      </div>
-    );
-  };
-  
-  export default AboutUsPage;
+  return (
+    <>
+      <AboutBreadcrumb />
+      <AboutHeroSection/>
+    </>
+  );
+};
+
+export default AboutUsPage;
