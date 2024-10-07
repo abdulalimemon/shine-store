@@ -20,18 +20,15 @@ const MoreProducts = ({ product }: { product: Product[] }) => {
             key={item._id}
             className="rounded-md border flex flex-col justify-between"
           >
-            <div className="flex justify-center  relative">
+            <div className="flex relative">
               <div className="flex justify-between items-center left-4 right-4 top-4 absolute">
-                <div className="flex items-center">
-                  <Heart className=" hover:fill-red-500 stroke-red-500 stroke-2 fill-transparent  w-[20px] md:w-[30px]" />
-                </div>
-                <button className="bg-primary dark:bg-slate-100 dark:text-black  duration-200 text-white text-xs font-medium px-3 py-1 rounded-xl">
+                <button className="bg-primary dark:bg-slate-100 dark:text-black text-xs duration-200 text-white font-medium px-3 py-1 rounded-xl">
                   30% off
                 </button>
               </div>
-              <div>
+              <div className="w-full">
                 <Image
-                  className="rounded-lg bg-black/40 md:my-2 h-40"
+                  className="rounded-t-lg bg-black/40 h-40 w-full"
                   src={item?.images?.cover}
                   alt={item.name}
                   width={250}
@@ -40,11 +37,13 @@ const MoreProducts = ({ product }: { product: Product[] }) => {
               </div>
             </div>
             <div className="p-4">
-              <h2 className="text-center text-base font-semibold">
-                {item.name}
+              <h2 className="text-center text-sm font-semibold">
+                {item.name.length > 30
+                  ? item.name.slice(0, 26) + "..."
+                  : item.name}
               </h2>
             </div>
-            <div className="p-4">
+            <div className="px-4 pb-4">
               <div className="mb-3 flex justify-between items-center">
                 <p className="block text-sm font-semibold text-center">
                   ${item.price}
@@ -57,7 +56,7 @@ const MoreProducts = ({ product }: { product: Product[] }) => {
                 </p>
               </div>
               <Link href={`/flash-sale/${item._id}`}>
-                <Button className="w-full text-sm ">View Details</Button>
+                <Button className="w-full text-sm">View Details</Button>
               </Link>
             </div>
           </div>

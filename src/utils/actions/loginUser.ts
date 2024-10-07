@@ -4,7 +4,7 @@ import { LoginUserData } from "@/type";
 
 export const loginUser = async (data: LoginUserData) => {
   try {
-    const res = await fetch(`${process.env.BACKEND_URL}/api/v1/login`, {
+    const res = await fetch(`http://localhost:5000/api/v1/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -13,8 +13,8 @@ export const loginUser = async (data: LoginUserData) => {
       cache: "no-store",
     });
 
+    // Check if the response is OK (200)
     if (!res.ok) {
-      // Throw an error if login failed
       const errorResponse = await res.json();
       throw new Error(errorResponse.message || "Login failed");
     }

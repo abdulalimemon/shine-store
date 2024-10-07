@@ -10,7 +10,7 @@ const FlashSale = ({ flashSaleProducts }: { flashSaleProducts: Product[] }) => {
     <section className="pt-10 pb-10 dark:bg-slate-900">
       <Container>
         <div className="flex justify-between items-center">
-          <h2 className="text-2xl font-bold flex items-center justify-center">
+          <h2 className="text-xl md:text-2xl font-bold flex items-center justify-center">
             Flash Sale{" "}
             <Zap className="size-6 ml-2 font-bold fill-red-500 text-red-500" />
           </h2>
@@ -42,11 +42,10 @@ const FlashSale = ({ flashSaleProducts }: { flashSaleProducts: Product[] }) => {
                 </div>
               </div>
               <div className="p-4">
-                <h2 className="text-center text-base font-semibold">
-                {product.name.length > 25
-            ? product.name.slice(0, 24) + "..."
-            : product.name}
-                  
+                <h2 className="text-center text-sm font-semibold">
+                  {product.name.length > 30
+                    ? product.name.slice(0, 26) + "..."
+                    : product.name}
                 </h2>
               </div>
               <div className="px-4 pb-4">
@@ -62,7 +61,7 @@ const FlashSale = ({ flashSaleProducts }: { flashSaleProducts: Product[] }) => {
                   </p>
                 </div>
                 <Link href={`/flash-sale/${product._id}`}>
-                  <Button className="w-full">View Details</Button>
+                  <Button className="w-full text-sm">View Details</Button>
                 </Link>
               </div>
             </div>

@@ -8,136 +8,104 @@ const Footer = () => {
     <section className="bg-slate-100 dark:bg-[#020817] border-t">
       <Container>
         <footer>
-          <div className="grid grid-cols-1 md:grid-cols-4 py-7 md:py-10  gap-10">
-            <div className="content-center">
-              <h2 className="font-semibold text-center md:text-left text-xl">
-                Shine Store
-              </h2>
-              <p className="font-medium text-center md:text-left text-sm mt-2">
-                Your source for premium cleaning supplies that make every
-                surface gleam. Explore eco-friendly solutions and effective
-                cleaners for a sparkling home.
-              </p>
+          <div className="flex flex-col lg:flex-row">
+            <div className="w-full lg:w-1/3 py-7 md:py-10">
+              <div className="content-center md:content-start pl-5 md:pl-0 pr-5">
+                <h2 className="font-semibold pb-2 text-center md:text-left text-xl">
+                  Shine Store
+                </h2>
+                <p className="font-medium text-center md:text-left text-sm mt-2">
+                  Your source for premium cleaning supplies that make every
+                  surface gleam. Explore eco-friendly solutions and effective
+                  cleaners for a sparkling home.
+                </p>
+              </div>
             </div>
-            <nav>
-              <h2 className="font-semibold pb-2 text-lg">Pages</h2>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="/"
-                    className="cursor-pointer hover:underline text-base font-medium"
-                  >
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/trending-products"
-                    className="cursor-pointer hover:underline text-base font-medium"
-                  >
-                    Trending Products
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/"
-                    className="cursor-pointer hover:underline text-base font-medium"
-                  >
-                    Categories
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/flash-sale"
-                    className="cursor-pointer hover:underline text-base font-medium"
-                  >
-                    Flash Sale
-                  </Link>
-                </li>
-              </ul>
-            </nav>
-            <nav>
-              <h2 className="font-semibold pb-2 text-lg">About</h2>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="/about-us"
-                    className="cursor-pointer hover:underline text-base font-medium"
-                  >
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/contact-us"
-                    className="cursor-pointer hover:underline text-base font-medium"
-                  >
-                    Contact Us
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/"
-                    className="cursor-pointer hover:underline text-base font-medium"
-                  >
-                    Customer Care
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/privacy-policy"
-                    className="cursor-pointer hover:underline text-base font-medium"
-                  >
-                    Privacy Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/terms-conditions"
-                    className="cursor-pointer hover:underline text-base font-medium"
-                  >
-                    Terms and Conditions
-                  </Link>
-                </li>
-              </ul>
-            </nav>
-            <nav>
-              <h2 className="font-semibold pb-2 text-lg">Social</h2>
-              <ul className="space-y-2">
-                <li>
-                  <a
-                    href="https://www.facebook.com/"
-                    className="cursor-pointer hover:underline text-base font-medium"
-                  >
-                    Facebook
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://x.com/"
-                    className="cursor-pointer hover:underline text-base font-medium"
-                  >
-                    Twitter
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.youtube.com/"
-                    className="cursor-pointer hover:underline text-base font-medium"
-                  >
-                    Youtube
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.instagram.com/"
-                    className="cursor-pointer hover:underline text-base font-medium"
-                  >
-                    Instagram
-                  </a>
-                </li>
-              </ul>
-            </nav>
+            <div className="grid grid-cols-2 md:grid-cols-3 py-7 md:py-10 w-full lg:w-2/3 gap-10">
+              <nav>
+                <h2 className="font-semibold pb-2 text-lg">Pages</h2>
+                <ul className="space-y-2">
+                  <li>
+                    <Link href="/" className="footer-link">
+                      Home
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/trending-products" className="footer-link">
+                      Trending Products
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/" className="footer-link">
+                      Categories
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/flash-sale" className="footer-link">
+                      Flash Sale
+                    </Link>
+                  </li>
+                </ul>
+              </nav>
+              <nav>
+                <h2 className="font-semibold pb-2 text-lg">About</h2>
+                <ul className="space-y-2">
+                  <li>
+                    <Link href="/about-us" className="footer-link">
+                      About Us
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/contact-us" className="footer-link">
+                      Contact Us
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/" className="footer-link">
+                      Customer Care
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/privacy-policy" className="footer-link">
+                      Privacy Policy
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/terms-conditions" className="footer-link">
+                      Terms and Conditions
+                    </Link>
+                  </li>
+                </ul>
+              </nav>
+              <nav>
+                <h2 className="font-semibold pb-2 text-lg">Social</h2>
+                <ul className="space-y-2">
+                  <li>
+                    <a href="https://www.facebook.com/" className="footer-link">
+                      Facebook
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://x.com/" className="footer-link">
+                      Twitter
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.youtube.com/" className="footer-link">
+                      Youtube
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.instagram.com/"
+                      className="footer-link"
+                    >
+                      Instagram
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
           </div>
         </footer>
       </Container>

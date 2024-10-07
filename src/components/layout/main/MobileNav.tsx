@@ -40,21 +40,44 @@ const MobileNav = ({ session }: { session: UserProps | null }) => {
               <div className="mt-6 flex flex-1 flex-col justify-between ">
                 <nav className="-mx-3 space-y-6 ">
                   <div className="space-y-3 ">
-                    <li className="mobileNav">Home</li>
-                    <li className="mobileNav">
-                      <Link href="/cleaning-supplies">Products</Link>
+                    <li
+                      className="mobileNav"
+                      onClick={() => setShowSidebar(!showSidebar)}
+                    >
+                      Home
                     </li>
                     <li className="mobileNav">
-                      <Link href="/flash-sale">Flash Sale</Link>
+                      <Link
+                        href="/cleaning-supplies"
+                        onClick={() => setShowSidebar(!showSidebar)}
+                      >
+                        Products
+                      </Link>
+                    </li>
+                    <li className="mobileNav">
+                      <Link
+                        href="/flash-sale"
+                        onClick={() => setShowSidebar(!showSidebar)}
+                      >
+                        Flash Sale
+                      </Link>
                     </li>
 
                     {session?.user && (
                       <>
                         <li className="mobileNav">
-                          <Link href="/dashboard">Dashboard</Link>
+                          <Link
+                            href="/dashboard"
+                            onClick={() => setShowSidebar(!showSidebar)}
+                          >
+                            Dashboard
+                          </Link>
                         </li>
                         <li className="mobileNav">
-                          <Link href="/dashboard/all-products">
+                          <Link
+                            href="/dashboard/all-products"
+                            onClick={() => setShowSidebar(!showSidebar)}
+                          >
                             All Products
                           </Link>
                         </li>
@@ -67,7 +90,11 @@ const MobileNav = ({ session }: { session: UserProps | null }) => {
                           Logout
                         </Button>
                       ) : (
-                        <Link href="/login" className="w-full">
+                        <Link
+                          href="/login"
+                          className="w-full"
+                          onClick={() => setShowSidebar(!showSidebar)}
+                        >
                           <Button className="w-1/2">Login</Button>
                         </Link>
                       )}

@@ -1,4 +1,3 @@
-import DashboardSidebar from "@/components/component/dashboard/DashboardSidebar";
 import { Product } from "@/type";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -23,7 +22,7 @@ const DashboardProduct = async () => {
             <TableHeader className="overflow-x-auto">
               <TableRow>
                 <TableHead>Name</TableHead>
-                <TableHead>Brand</TableHead>
+                <TableHead className="hidden lg:block">Brand</TableHead>
                 <TableHead>Rating</TableHead>
                 <TableHead>Category</TableHead>
                 <TableHead className="text-right">Amount</TableHead>
@@ -35,7 +34,7 @@ const DashboardProduct = async () => {
                   <TableCell>
                     <div className="font-medium">{item.name}</div>
                   </TableCell>
-                  <TableCell>{item.brand}</TableCell>
+                  <TableCell className="hidden lg:block">{item.brand}</TableCell>
                   <TableCell>
                     <Badge className="text-xs" variant="secondary">
                       {item.rating}
@@ -47,8 +46,6 @@ const DashboardProduct = async () => {
               ))}
             </TableBody>
           </Table>
-
-          
         </div>
       </main>
     </div>

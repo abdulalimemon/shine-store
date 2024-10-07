@@ -22,8 +22,6 @@ const RegisterForm = () => {
   const router = useRouter();
 
   const onSubmit = async (data: UserData) => {
-    console.log(data);
-
     try {
       const res = await registerUser(data);
       if (res.success) {
@@ -34,7 +32,10 @@ const RegisterForm = () => {
         router.push("/login");
       }
     } catch (err: any) {
-      console.error(err.message);
+      toast({
+        title: err.message,
+        description: "Please, Try again.",
+      });
       throw new Error(err.message);
     }
   };

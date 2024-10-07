@@ -85,6 +85,9 @@
   .star {
     @apply size-5 fill-yellow-400 text-yellow-400;
   }
+  .footer-link {
+    @apply cursor-pointer hover:underline text-sm font-medium;
+  }
 }
 
 .newsLetterBg {

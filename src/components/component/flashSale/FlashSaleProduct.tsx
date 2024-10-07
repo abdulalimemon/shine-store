@@ -51,9 +51,9 @@ const FlashSaleProduct = ({
                 </div>
               </div>
               <div className="p-4">
-                <h2 className="text-center text-base font-semibold">
-                  {product.name.length > 25
-                    ? product.name.slice(0, 24) + "..."
+                <h2 className="text-center text-sm font-semibold">
+                  {product.name.length > 30
+                    ? product.name.slice(0, 26) + "..."
                     : product.name}
                 </h2>
               </div>
@@ -70,7 +70,7 @@ const FlashSaleProduct = ({
                   </p>
                 </div>
                 <Link href={`/flash-sale/${product._id}`}>
-                  <Button className="w-full">View Details</Button>
+                  <Button className="w-full text-sm">View Details</Button>
                 </Link>
               </div>
             </div>

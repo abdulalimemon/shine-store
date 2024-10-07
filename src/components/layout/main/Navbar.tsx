@@ -12,6 +12,7 @@ import { Moon, Sun, ShoppingCart } from "lucide-react";
 const Navbar = ({ session }: { session: UserProps | null }) => {
   const { setTheme } = useTheme();
   
+  console.log(session?.user, "Navbar");
   return (
     <section className="bg-slate-100 dark:bg-slate-900 border-b">
       <Container>

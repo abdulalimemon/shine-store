@@ -14,7 +14,7 @@ const TrendingProducts = ({
     <section className="pt-10 pb-10">
       <Container>
         <div className="flex justify-between items-center">
-          <h2 className="text-2xl font-bold">Trending Products</h2>
+          <h2 className="text-xl md:text-2xl font-bold">Trending Products</h2>
 
           <Link href="/trending-products">
             <Button>View All</Button>
@@ -44,9 +44,9 @@ const TrendingProducts = ({
                 </div>
               </div>
               <div className="p-4">
-                <h2 className="text-center text-base font-semibold">
-                  {product.name.length > 25
-                    ? product.name.slice(0, 24) + "..."
+                <h2 className="text-center text-sm font-semibold">
+                  {product.name.length > 30
+                    ? product.name.slice(0, 26) + "..."
                     : product.name}
                 </h2>
               </div>
@@ -63,7 +63,7 @@ const TrendingProducts = ({
                   </p>
                 </div>
                 <Link href={`/flash-sale/${product._id}`}>
-                  <Button className="w-full">View Details</Button>
+                  <Button className="w-full text-sm">View Details</Button>
                 </Link>
               </div>
             </div>
