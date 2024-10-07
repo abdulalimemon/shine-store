@@ -5,9 +5,9 @@ import { ArrowRight, AtSign, Lock } from "lucide-react";
 
 const Newsletter = () => {
   return (
-    <section className="pt-10 pb-10">
+    <section className="newsLetterBg">
       <Container>
-        <div className="px-5 lg:px-10 py-16 newsLetterBg rounded-md text-white">
+        <div className="px-5 lg:px-10 py-16 rounded-md text-white">
           <div className="max-w-2xl mx-auto text-left sm:text-center">
             <h2 className="text-3xl text-center font-bold leading-tight sm:text-4xl lg:text-5xl text-white">
               Subscribe to Our Newsletter

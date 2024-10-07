@@ -7,19 +7,10 @@ import { Button } from "@/components/ui/button";
 import LoginWithGoogle from "@/components/component/auth/LoginWithGoogle";
 import Link from "next/link";
 import { LoginUserData } from "@/type";
-import {  SubmitHandler } from "react-hook-form";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "@/components/ui/use-toast";
 import { useRouter } from "next/navigation";
-import { useLoginMutation } from "@/redux/feature/auth/authApi";
-import { useAppDispatch } from "@/redux/hooks";
-import { verifyToken } from "@/utils/verifyToken";
-import { setUser } from "@/redux/feature/auth/authSlice";
-
-export type TLoginInputs = {
-  email: string;
-  password: string;
-};
+import { loginUser } from "@/utils/actions/loginUser";
 
 const LoginForm = () => {
   const {
@@ -29,125 +20,87 @@ const LoginForm = () => {
   } = useForm<LoginUserData>();
 
   const router = useRouter();
-  const [login] = useLoginMutation();
-  const dispatch = useAppDispatch();
 
-  const onSubmit: SubmitHandler<TLoginInputs> = async (data) => {
+  // Login form submit handler
+  const onSubmit: SubmitHandler<LoginUserData> = async (data) => {
     try {
-      const userInfo = {
-        email: data.email,
-        password: data.password,
-      }; 
-      const res = await login(userInfo).unwrap();
-        
-      if (res?.token) {
-        const user = verifyToken(res.token);
-        console.log('Decoded User:', user);
-  
-        dispatch(setUser({ user, token: res.token }));
-  
+      const res = await loginUser(data);
+
+      if (res?.accessToken) {
+        localStorage.setItem("accessToken", res.accessToken);
         toast({
-          title: res.message,
-          description: "Login Successful.",
+          title: "Login Successful",
+          description: res.message,
         });
-  
-        if (typeof window !== 'undefined') {
-          router.push("/dashboard");
-        }
+        router.push("/");
       } else {
-        console.error('No token received');
+        console.error("No token received");
       }
-    } catch (error) {
-      console.error('Login Error:', error);
-  
+    } catch (err: any) {
+      console.error("Login Error:", err.message);
       toast({
-        title: (error as any)?.data?.message || 'Login failed',
-        description: "Please, try again.",
+        title: "Login Failed",
+        description: err.message || "Please, try again.",
       });
     }
   };
 
   return (
     <section className="py-20 dark:bg-slate-900">
-      <Container className="flex flex-col items-center justify-center py-12  px-6 mx-auto">
+      <Container className="flex flex-col items-center justify-center py-12 px-6 mx-auto">
         <form className="w-full max-w-md" onSubmit={handleSubmit(onSubmit)}>
           <h2 className="mt-3 text-2xl font-semibold text-center sm:text-3xl dark:text-white">
             Log in
           </h2>
           <p className="text-center">(Please login with Google)</p>
 
+          {/* Email Input */}
           <div className="relative flex items-center mt-5">
             <span className="absolute">
               <Mail className="size-6 mx-3 text-gray-300" />
             </span>
-
             <Input
               type="email"
               className="block w-full h-12 px-11"
               placeholder="Email address"
-              id="email"
               {...register("email", {
-                required: {
-                  value: true,
-                  message: "Email is Required.",
-                },
+                required: "Email is required",
                 pattern: {
-                  value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
-                  message: "Please provide a valid email address.",
+                  value: /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/i,
+                  message: "Provide a valid email address",
                 },
               })}
             />
           </div>
+          {errors.email && (
+            <p className="text-red-600 text-sm mt-2">{errors.email.message}</p>
+          )}
 
-          <div className="pt-2">
-            {errors.email?.type === "required" && (
-              <span className="text-sm mt-2 text-red-600 font-semibold">
-                {errors.email.message}
-              </span>
-            )}
-            {errors.email?.type === "pattern" && (
-              <span className="text-sm mt-2 text-red-600 font-semibold">
-                {errors.email.message}
-              </span>
-            )}
-          </div>
-
+          {/* Password Input */}
           <div className="relative flex items-center mt-5">
             <span className="absolute">
               <Fingerprint className="size-6 mx-3 text-gray-300" />
             </span>
-
             <Input
               type="password"
               className="block w-full h-12 px-11"
               placeholder="Password"
-              id="password"
               {...register("password", {
-                required: {
-                  value: true,
-                  message: "Password is Required.",
-                },
+                required: "Password is required",
                 minLength: {
                   value: 8,
-                  message: "Password must be 8 characters or longer.",
+                  message: "Password must be 8 characters or longer",
                 },
               })}
             />
           </div>
+          {errors.password && (
+            <p className="text-red-600 text-sm mt-2">
+              {errors.password.message}
+            </p>
+          )}
 
-          <div className="pt-2">
-            {errors.password?.type === "required" && (
-              <span className="text-sm mt-2 text-red-600 font-semibold">
-                {errors.password.message}
-              </span>
-            )}
-            {errors.password?.type === "minLength" && (
-              <span className="text-sm mt-2 text-red-600 font-semibold">
-                {errors.password.message}
-              </span>
-            )}
-          </div>
-
+          {/* Submit Button */}
           <div className="mt-5">
             <Button className="w-full h-12" type="submit">
               Log in
@@ -155,14 +108,17 @@ const LoginForm = () => {
           </div>
         </form>
 
+        {/* Social Login Section */}
         <div className="flex items-center pt-5 pb-1 space-x-2 w-full max-w-md">
           <div className="flex-1 h-px bg-gray-500"></div>
           <p className="text-sm">Login with social accounts</p>
           <div className="flex-1 h-px bg-gray-500"></div>
         </div>
         <LoginWithGoogle />
+
+        {/* Signup Redirect */}
         <div className="mt-5 text-center ">
-          <p className="text-sm text-center gap-2 flex justify-center sm:px-6 ">
+          <p className="text-sm flex justify-center gap-2">
             Don&apos;t have an account?
             <Link href="/sign-up" className="underline hover:text-blue-600">
               Sign up

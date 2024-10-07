@@ -7,11 +7,10 @@ import { Button } from "@/components/ui/button";
 import LoginWithGoogle from "@/components/component/auth/LoginWithGoogle";
 import Link from "next/link";
 import { UserData } from "@/type";
-import { FieldValues, SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
 import { toast } from "@/components/ui/use-toast";
 import { useRouter } from "next/navigation";
-import { useSigninMutation } from "@/redux/feature/auth/authApi";
+import { registerUser } from "@/utils/actions/registerUsers";
 
 export type TRegisterInputs = {
   name: string;
@@ -27,30 +26,22 @@ const RegisterForm = () => {
   } = useForm<UserData>();
 
   const router = useRouter();
-  const [signin] = useSigninMutation();
 
-  const onSubmit: SubmitHandler<TRegisterInputs> = async (
-    data: FieldValues
-  ) => {
+  const onSubmit = async (data: UserData) => {
+    console.log(data);
+
     try {
-      const userInfo = {
-        name: data.name,
-        email: data.email,
-        password: data.password,
-      };
-
-      // const res = await signin(userInfo).unwrap();
-
-      // toast({
-      //   title: res.message,
-      //   description: "Please, Login.",
-      // });
-      router.push("/login");
-    } catch (error) {
-      toast({
-        title: (error as any)?.data?.message,
-        description: "Please, try again.",
-      });
+      const res = await registerUser(data);
+      if (res.success) {
+        toast({
+          title: res.message,
+          description: "Please, Login.",
+        });
+        router.push("/login");
+      }
+    } catch (err: any) {
+      console.error(err.message);
+      throw new Error(err.message);
     }
   };
 
