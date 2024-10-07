@@ -8,6 +8,7 @@ import Navbar from "@/components/layout/main/Navbar";
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "@/components/theme-provider";
 import Providers from "@/lib/Providers";
+import BackToTop from "@/components/layout/main/BackToTop";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,6 +32,7 @@ export default async function RootLayout({
             <Navbar session={session} />
             {children}
             <Toaster />
+            <BackToTop />
             <Footer />
           </ThemeProvider>
         </Providers>
