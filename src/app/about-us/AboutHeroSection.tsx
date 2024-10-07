@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const AboutHeroSection = () => {
   return (
-    <section className="py-16">
+    <section className="pt-16 pb-10">
       <Container>
         <div>
           <div className="grid items-stretch grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-12 xl:gap-x-24">

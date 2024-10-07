@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const FlashSale = ({ flashSaleProducts }: { flashSaleProducts: Product[] }) => {
   return (
-    <section className="pt-10 pb-10 dark:bg-slate-900">
+    <section className="pt-10 pb-10">
       <Container>
         <div className="flex justify-between items-center">
           <h2 className="text-xl md:text-2xl font-bold flex items-center justify-center">
