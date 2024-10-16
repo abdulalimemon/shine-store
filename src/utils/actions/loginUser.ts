@@ -2,6 +2,8 @@
 
 import { LoginUserData } from "@/type";
 
+// http://localhost:5000/api/v1/login
+
 export const loginUser = async (data: LoginUserData) => {
   try {
     const res = await fetch(`http://localhost:5000/api/v1/login`, {

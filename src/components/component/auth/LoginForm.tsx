@@ -11,7 +11,11 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { toast } from "@/components/ui/use-toast";
 import { useRouter } from "next/navigation";
 import { loginUser } from "@/utils/actions/loginUser";
-import { useEffect } from "react";
+// Redux
+// import { useLoginMutation } from "@/redux/feature/auth/authApi";
+// import { useAppDispatch } from "@/redux/hooks";
+// import { verifyToken } from "@/utils/verifyToken";
+// import { setUser } from "@/redux/feature/auth/authSlice";
 
 const LoginForm = () => {
   const {
@@ -19,35 +23,26 @@ const LoginForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<LoginUserData>();
+  // const [login] = useLoginMutation();
+  // const dispatch = useAppDispatch();
 
   const router = useRouter();
 
-  const onSubmit: SubmitHandler<LoginUserData> = async (data) => {
+  // server action
+  const onSubmit = async (data: LoginUserData) => {
     try {
-      // Call the server action to login the user
       const res = await loginUser(data);
 
-      // If we have a valid token, log the user in
-      if (res?.accessToken) {
+      console.log(res);
+      if (res.token) {
         toast({
           title: res.message,
-          description: "Login successful!",
+          description: "Thank you!",
         });
-
-        // Save the token in localStorage
-        localStorage.setItem("accessToken", res.accessToken);
-
-        // Debugging check - Make sure token is stored correctly
-        const token = localStorage.getItem("accessToken");
-        console.log("Token stored in localStorage: ", token);
-
-        // Redirect the user to the dashboard
+        localStorage.setItem("accessToken", res.token);
         router.push("/dashboard");
-      } else {
-        throw new Error("No access token received");
       }
     } catch (error: any) {
-      console.error("Login Error: ", error.message);
       toast({
         title: "Login failed",
         description: error.message,
@@ -55,14 +50,31 @@ const LoginForm = () => {
     }
   };
 
-  // Use effect to check if the user is already logged in
-  useEffect(() => {
-    const token = localStorage.getItem("accessToken");
-    if (token) {
-      // If token exists, redirect to dashboard
-      router.push("/dashboard");
-    }
-  }, [router]);
+  // Redux
+  // const onSubmit = async (data: LoginUserData) => {
+  //   try {
+  //     const userInfo = {
+  //       email: data.email,
+  //       password: data.password,
+  //     };
+
+  //     const res = await login(userInfo).unwrap();
+  //     const user = verifyToken(res.token);
+
+  //     dispatch(setUser({ user: user, token: res.token }));
+  //     toast({
+  //       title: res.message,
+  //       description: "Thank you!",
+  //     });
+  //     router.push("/");
+  //     localStorage.setItem("accessToken", res.token);
+  //   } catch (error: any) {
+  //     toast({
+  //       title: "Login failed",
+  //       description: error?.message,
+  //     });
+  //   }
+  // };
 
   return (
     <section className="py-10">

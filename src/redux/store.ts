@@ -1,5 +1,4 @@
 import { configureStore } from "@reduxjs/toolkit";
-import authReducer from "./feature/auth/authSlice";
 import {
   persistStore,
   persistReducer,
@@ -10,35 +9,16 @@ import {
   PURGE,
   REGISTER,
 } from "redux-persist";
+import storage from "redux-persist/lib/storage";
 import { baseApi } from "./api/baseApi";
-import createWebStorage from "redux-persist/lib/storage/createWebStorage";
+import authReducer from "./feature/auth/authSlice";
 
-const createNoopStorage = () => {
-  return {
-    getItem() {
-      return Promise.resolve(null);
-    },
-    setItem(_key: string, value: number) {
-      return Promise.resolve(value);
-    },
-    removeItem() {
-      return Promise.resolve();
-    },
-  };
-};
-
-const storage =
-  typeof window !== "undefined"
-    ? createWebStorage("local")
-    : createNoopStorage();
-
-const authPersistConfig = {
+const persistConfig = {
   key: "auth",
-  storage: storage,
-  whitelist: ["authState"],
+  storage,
 };
 
-const persistedAuthReducer = persistReducer(authPersistConfig, authReducer);
+const persistedAuthReducer = persistReducer(persistConfig, authReducer);
 
 export const store = configureStore({
   reducer: {

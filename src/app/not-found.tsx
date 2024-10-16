@@ -6,7 +6,7 @@ import { ArrowLeft } from "lucide-react";
 const NotFound = () => {
   return (
     <>
-      <section className="my-10 h-[80vh] flex justify-center items-center">
+      <section className="my-10 h-[100vh] flex justify-center items-center">
         <Container>
           <div className="py-10">
             <div className="text-center">

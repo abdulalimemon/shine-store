@@ -12,7 +12,7 @@ import { Moon, Sun, ShoppingCart } from "lucide-react";
 const Navbar = ({ session }: { session: UserProps | null }) => {
   const { setTheme } = useTheme();
   
-  console.log(session?.user, "Navbar");
+ console.log(session);
   return (
     <section className="bg-slate-100 dark:bg-slate-900 border-b">
       <Container>
@@ -29,7 +29,7 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
             </li>
 
             <li className="group flex cursor-pointer flex-col">
-              <Link href="/cleaning-supplies">Products</Link>
+              <Link href="/products">Products</Link>
               <span className="navUnderline"></span>
             </li>
             <li className="group flex cursor-pointer flex-col">

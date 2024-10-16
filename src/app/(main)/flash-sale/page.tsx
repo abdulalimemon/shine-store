@@ -1,6 +1,6 @@
 import { Product } from "@/type";
-import FlashSaleBreadcrumb from "@/components/component/flashSale/FlashSaleBreadcrumb";
-import FlashSaleProduct from "@/components/component/flashSale/FlashSaleProduct";
+import FlashSaleBreadcrumb from "@/app/(main)/flash-sale/FlashSaleBreadcrumb";
+import FlashSaleProduct from "@/app/(main)/flash-sale/FlashSaleProduct";
 
 const FlashSalePage = async () => {
   const res = await fetch(`${process.env.BACKEND_URL}/product`, {

@@ -1,6 +1,6 @@
 import { Product } from "@/type";
-import TrendingProductsBreadcrumb from "@/components/component/trendingProducts/TrendingProductsBreadcrumb";
-import TrendingProduct from "@/components/component/trendingProducts/TrendingProduct";
+import TrendingProductsBreadcrumb from "@/app/(main)/trending-products/TrendingProductsBreadcrumb";
+import TrendingProduct from "@/app/(main)/trending-products/TrendingProduct";
 
 const TrendingProductsPage = async () => {
   const res = await fetch(`${process.env.BACKEND_URL}/product`, {

@@ -407,7 +407,7 @@ const AllProduct = ({ data }: { data: Product[] }) => {
                       </span>
                     </p>
                   </div>
-                  <Link href={`/flash-sale/${product._id}`}>
+                  <Link href={`/products/${product._id}`}>
                     <Button className="w-full text-sm">View Details</Button>
                   </Link>
                 </div>

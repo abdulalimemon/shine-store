@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
-import { Toaster } from "@/components/ui/toaster";
-import { ThemeProvider } from "@/components/theme-provider";
-import Providers from "@/lib/Providers";
+import { authOptions } from "@/utils/authOptions";
+import { getServerSession } from "next-auth";
+import Footer from "@/components/layout/main/Footer";
+import Navbar from "@/components/layout/main/Navbar";
+import BackToTop from "@/components/layout/main/BackToTop";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,15 +19,14 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const session = await getServerSession(authOptions);
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Providers>
-          <ThemeProvider attribute="class" defaultTheme="system">
-            {children}
-            <Toaster />
-          </ThemeProvider>
-        </Providers>
+        <Navbar session={session} />
+        {children}
+        <BackToTop />
+        <Footer />
       </body>
     </html>
   );

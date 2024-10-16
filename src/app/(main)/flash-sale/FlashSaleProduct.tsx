@@ -2,23 +2,34 @@ import Container from "@/components/layout/Container";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Product } from "@/type";
-import { Heart, Star } from "lucide-react";
+import { Heart, Zap, Star } from "lucide-react";
 import Link from "next/link";
+import CountdownTimer from "@/app/(main)/flash-sale/CountdownTimer";
 
-const TrendingProduct = ({ sortedProducts }: { sortedProducts: Product[] }) => {
+const FlashSaleProduct = ({
+  flashSaleProducts,
+}: {
+  flashSaleProducts: Product[];
+}) => {
   return (
     <section className="my-20">
       <Container>
-        <div className="flex justify-between items-center">
-          <h2 className="text-2xl font-bold">Trending Products</h2>
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          <h2 className="text-2xl font-bold flex items-center justify-center mb-5 md:mb-0">
+            Flash Sale{" "}
+            <Zap className="size-6 ml-2 font-bold text-red-500 fill-red-500" />
+          </h2>
+
+          <CountdownTimer />
         </div>
         <div>
           <h2 className="font-semibold my-5">
-            Check Out the Exclusive {sortedProducts.length} Trending Products!
+            Check Out the Exclusive {flashSaleProducts.length} Flash Sale
+            Products!
           </h2>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5 my-10">
-          {sortedProducts?.map((product) => (
+          {flashSaleProducts?.map((product) => (
             <div
               key={product._id}
               className="rounded-md border flex flex-col justify-between"
@@ -70,4 +81,4 @@ const TrendingProduct = ({ sortedProducts }: { sortedProducts: Product[] }) => {
   );
 };
 
-export default TrendingProduct;
+export default FlashSaleProduct;
