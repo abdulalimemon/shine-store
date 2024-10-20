@@ -133,7 +133,7 @@ const LoginForm = () => {
           )}
 
           <div className="mt-5">
-            <Button className="w-full h-12 bg-[#3d5940] text-white hover:bg-[#3d5940]/90" type="submit">
+            <Button className="w-full h-12 bg-[#265450] text-white hover:bg-[#265450]/90" type="submit">
               Log in
             </Button>
           </div>

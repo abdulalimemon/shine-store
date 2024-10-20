@@ -12,7 +12,7 @@ const ProductDetails = ({ product }: { product: Product }) => {
         <h2 className="text-heading mb-3.5 text-lg font-bold md:text-xl lg:text-2xl 2xl:text-3xl">
           {name}
         </h2>
-        <p className="text-body text-sm leading-6  lg:text-base lg:leading-8">
+        <p className="text-body text-sm leading-6">
           {description}
         </p>
         <div className="mt-5 flex items-center ">
@@ -35,7 +35,7 @@ const ProductDetails = ({ product }: { product: Product }) => {
             </button>
           </div>
           <Link href="/cart">
-            <Button>Buy Now</Button>
+            <button className="product-btn">Buy Now</button>
           </Link>
         </div>
       </div>
@@ -48,7 +48,7 @@ const ProductDetails = ({ product }: { product: Product }) => {
               <span className="flex ml-2 items-center">
                 {" "}
                 {rating}{" "}
-                <Star className="size-6 fill-yellow-400 text-yellow-400 ml-1" />
+                <Star className="size-5 fill-yellow-400 text-yellow-400 ml-1" />
               </span>
             </span>
           </li>

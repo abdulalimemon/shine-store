@@ -22,7 +22,7 @@ const ProductImageSlider = ({ images }: { images: ImageArray }) => {
       </div>
 
       {/* Slider Thumbnails */}
-      <div className="flex lg:flex-col justify-center items-center gap-3 p-2 lg:w-1/6 overflow-x-auto lg:overflow-y-auto">
+      <div className="flex lg:flex-col justify-center items-center gap-5 p-2 lg:w-1/6 overflow-x-auto lg:overflow-y-auto">
         {images.map((slide, inx) => (
           <div
             key={inx}
@@ -36,7 +36,7 @@ const ProductImageSlider = ({ images }: { images: ImageArray }) => {
               height={100}
               className={`w-full h-full object-cover rounded-md transition-all duration-200 ease-in-out ${
                 currentSlider === inx
-                  ? "border-2 border-black dark:border-gray-500 p-0.5"
+                  ? "border-2 border-[#265450] dark:border-[#FF6464] p-0.5"
                   : "opacity-70"
               }`}
             />

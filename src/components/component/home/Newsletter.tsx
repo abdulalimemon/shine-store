@@ -38,7 +38,7 @@ const Newsletter = () => {
                
                 <Button
                   type="submit"
-                  className="inline-flex mx-auto bg-[#3d5940] items-center justify-center w-auto px-4 py-4 mt-4 font-semibold text-white transition-all duration-200  border border-transparent rounded-full sm:ml-4 sm:mt-0 sm:w-auto"
+                  className="inline-flex mx-auto bg-[#265450] items-center justify-center w-auto px-4 py-4 mt-4 font-semibold text-white transition-all duration-200  border border-transparent hover:bg-[#265450]/90 rounded-full sm:ml-4 sm:mt-0 sm:w-auto"
                 >
                   Subscribe
                   <ArrowRight className="size-5 ml-3 -mr-1" />

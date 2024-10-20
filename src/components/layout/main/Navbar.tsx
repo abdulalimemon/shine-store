@@ -23,8 +23,8 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
             </Link>
           </div>
           <ul className="hidden font-semibold items-center justify-between gap-10 lg:flex">
-            <li className="group flex  cursor-pointer flex-col">
-              Home
+            <li className="group flex cursor-pointer flex-col">
+              <Link href='/'>Home</Link>
               <span className="navUnderline"></span>
             </li>
 
@@ -63,10 +63,10 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
 
             <li className="group flex  cursor-pointer flex-col">
               {session?.user ? (
-                <Button onClick={() => signOut()} className="bg-[#3d5940] hover:bg-[#3d5940]/90 text-white">Logout</Button>
+                <Button onClick={() => signOut()} className="bg-[#265450] hover:bg-[#265450]/90 text-white">Logout</Button>
               ) : (
                 <Link href="/login">
-                  <Button className="bg-[#3d5940] hover:bg-[#3d5940]/90 text-white">Login</Button>
+                  <Button className="bg-[#265450] hover:bg-[#265450]/90 text-white">Login</Button>
                 </Link>
               )}
             </li>

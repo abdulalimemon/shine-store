@@ -74,7 +74,7 @@
     @apply bg-background text-foreground;
   }
   .navUnderline {
-    @apply mt-[2px] h-[3px] w-[0px] rounded-full bg-red-500 transition-all duration-300 group-hover:w-full;
+    @apply mt-[2px] h-[3px] w-[0px] rounded-full bg-[#265450] transition-all duration-300 group-hover:w-full;
   }
   .mobileNav {
     @apply flex transform items-center rounded-lg px-3 py-2 text-gray-900 dark:text-gray-100 transition-colors duration-300 font-semibold;
@@ -88,11 +88,21 @@
   .footer-link {
     @apply cursor-pointer hover:underline text-sm font-medium;
   }
-  .btn-color {
-    @apply bg-[#570DF8] text-white hover:bg-[#570DF8]/90 rounded-full;
+  .product-btn {
+    @apply inline-flex items-center justify-center whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 w-full text-sm bg-[#265450] text-white hover:bg-[#265450]/90 rounded-full;
   }
 }
 
 .newsLetterBg {
-  background: linear-gradient(60deg, #2B2E4A 0%, #2B2E4A 30%, #E84545 calc(30% + 1px), #E84545 60%, #903749 calc(60% + 1px), #903749 70%, #53354A calc(70% + 1px), #53354A 100%);
+  background: linear-gradient(
+    60deg,
+    #2b2e4a 0%,
+    #2b2e4a 30%,
+    #e84545 calc(30% + 1px),
+    #e84545 60%,
+    #903749 calc(60% + 1px),
+    #903749 70%,
+    #53354a calc(70% + 1px),
+    #53354a 100%
+  );
 }

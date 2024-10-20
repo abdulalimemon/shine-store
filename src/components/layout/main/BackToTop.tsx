@@ -34,7 +34,7 @@ const BackToTop = () => {
       <button
         type="button"
         onClick={scrollToTop}
-        className={`inline-flex items-center p-2 rounded-full shadow-lg text-white bg-[#3d5940] hover:opacity-80 transition-opacity overflow-y-auto ${
+        className={`inline-flex items-center p-2 rounded-full shadow-lg text-white bg-[#265450] hover:opacity-80 transition-opacity overflow-y-auto ${
           isVisible ? "flex" : "hidden"
         }`}
       >

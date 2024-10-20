@@ -86,7 +86,7 @@ const MobileNav = ({ session }: { session: UserProps | null }) => {
 
                     <li className="mobileNav">
                       {session?.user ? (
-                        <Button onClick={() => signOut()} className="w-1/2">
+                        <Button onClick={() => signOut()} className="w-1/2 bg-[#265450] hover:bg-[#265450]/90">
                           Logout
                         </Button>
                       ) : (
@@ -95,7 +95,7 @@ const MobileNav = ({ session }: { session: UserProps | null }) => {
                           className="w-full"
                           onClick={() => setShowSidebar(!showSidebar)}
                         >
-                          <Button className="w-1/2">Login</Button>
+                          <Button className="w-1/2 bg-[#265450] hover:bg-[#265450]/90">Login</Button>
                         </Link>
                       )}
                     </li>

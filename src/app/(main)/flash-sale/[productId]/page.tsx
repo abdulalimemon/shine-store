@@ -54,9 +54,9 @@ const ProductPage = async ({ params }: ProductId) => {
         <ProductDetails product={product} />
       </div>
       {category.length === 1 ? (
-        <MoreProducts product={browseCategory} />
+        <MoreProducts products={browseCategory} />
       ) : (
-        <MoreProducts product={newProduct} />
+        <MoreProducts products={newProduct} />
       )}
     </div>
   );
