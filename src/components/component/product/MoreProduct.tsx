@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const MoreProducts = ({ product }: { product: Product[] }) => {
   return (
-    <section className="mb-10 mt-5">
+    <section className="mb-10 mt-2">
       <div className="flex flex-col md:flex-row justify-between items-center">
         <h2 className="text-xl font-bold flex items-center justify-center mb-5 md:mb-0">
           You may also like
@@ -55,8 +55,10 @@ const MoreProducts = ({ product }: { product: Product[] }) => {
                   </span>
                 </p>
               </div>
-              <Link href={`/flash-sale/${item._id}`}>
-                <Button className="w-full text-sm">View Details</Button>
+              <Link href={`/products/${item._id}`}>
+                <Button className="w-full text-sm bg-[#00b388] text-white hover:bg-[#00b388]/90 rounded-full">
+                  View Details
+                </Button>
               </Link>
             </div>
           </div>

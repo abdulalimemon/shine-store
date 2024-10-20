@@ -88,6 +88,9 @@
   .footer-link {
     @apply cursor-pointer hover:underline text-sm font-medium;
   }
+  .btn-color {
+    @apply bg-[#570DF8] text-white hover:bg-[#570DF8]/90 rounded-full;
+  }
 }
 
 .newsLetterBg {

@@ -63,10 +63,10 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
 
             <li className="group flex  cursor-pointer flex-col">
               {session?.user ? (
-                <Button onClick={() => signOut()}>Logout</Button>
+                <Button onClick={() => signOut()} className="bg-[#3d5940] hover:bg-[#3d5940]/90 text-white">Logout</Button>
               ) : (
                 <Link href="/login">
-                  <Button>Login</Button>
+                  <Button className="bg-[#3d5940] hover:bg-[#3d5940]/90 text-white">Login</Button>
                 </Link>
               )}
             </li>

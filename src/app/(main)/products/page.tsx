@@ -1,5 +1,5 @@
 import { Product } from "@/type";
-import AllProduct from "@/app/(withAdmin)/admin/all-products/AllProduct";
+import AllProduct from "./AllProduct";
 
 const AllProductPage = async ({ searchParams }: { searchParams: string }) => {
   const res = await fetch(`${process.env.BACKEND_URL}/product`, {

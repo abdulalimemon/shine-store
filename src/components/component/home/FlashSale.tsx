@@ -2,7 +2,7 @@ import Container from "@/components/layout/Container";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Product } from "@/type";
-import { Heart, Zap, Star } from "lucide-react";
+import { Zap, Star, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 const FlashSale = ({ flashSaleProducts }: { flashSaleProducts: Product[] }) => {
@@ -12,11 +12,13 @@ const FlashSale = ({ flashSaleProducts }: { flashSaleProducts: Product[] }) => {
         <div className="flex justify-between items-center">
           <h2 className="text-xl md:text-2xl font-bold flex items-center justify-center">
             Flash Sale{" "}
-            <Zap className="size-6 ml-2 font-bold fill-red-500 text-red-500" />
+            <Zap className="size-6 ml-2 font-bold fill-[#FF6464] text-[#FF6464]" />
           </h2>
 
           <Link href="/flash-sale">
-            <Button>View All</Button>
+            <Button className="bg-[#3d5940] text-white hover:bg-[#3d5940]/90 rounded-full flex items-center justify-center">
+              View All <ArrowRight className="size-5 ml-2" />
+            </Button>
           </Link>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5 my-10">
@@ -56,12 +58,14 @@ const FlashSale = ({ flashSaleProducts }: { flashSaleProducts: Product[] }) => {
                   <p className="text-sm font-semibold text-center flex justify-center items-center">
                     {product.rating}{" "}
                     <span>
-                      <Star className="size-6 fill-yellow-400 text-yellow-400 ml-1" />
+                      <Star className="size-5 fill-yellow-400 text-yellow-400 ml-1" />
                     </span>
                   </p>
                 </div>
                 <Link href={`/flash-sale/${product._id}`}>
-                  <Button className="w-full text-sm">View Details</Button>
+                  <Button className="w-full text-sm bg-[#265450] text-white hover:bg-[#265450]/90 rounded-full">
+                    View Details
+                  </Button>
                 </Link>
               </div>
             </div>

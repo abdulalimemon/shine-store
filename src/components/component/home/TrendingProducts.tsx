@@ -2,7 +2,7 @@ import Container from "@/components/layout/Container";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Product } from "@/type";
-import { Heart, Star } from "lucide-react";
+import { ArrowRight, Heart, Star } from "lucide-react";
 import Link from "next/link";
 
 const TrendingProducts = ({
@@ -17,7 +17,9 @@ const TrendingProducts = ({
           <h2 className="text-xl md:text-2xl font-bold">Trending Products</h2>
 
           <Link href="/trending-products">
-            <Button>View All</Button>
+          <Button className="bg-[#3d5940] text-white hover:bg-[#3d5940]/90 rounded-full flex items-center justify-center">
+              View All <ArrowRight className="size-5 ml-2" />
+            </Button>
           </Link>
         </div>
 
@@ -58,12 +60,14 @@ const TrendingProducts = ({
                   <p className="text-sm font-semibold text-center flex justify-center items-center">
                     {product.rating}{" "}
                     <span>
-                      <Star className="size-6 fill-yellow-400 text-yellow-400 ml-1" />
+                      <Star className="size-5 fill-yellow-400 text-yellow-400 ml-1" />
                     </span>
                   </p>
                 </div>
-                <Link href={`/flash-sale/${product._id}`}>
-                  <Button className="w-full text-sm">View Details</Button>
+                <Link href={`/trending-products/${product._id}`}>
+                <Button className="w-full text-sm bg-[#00b388] text-white hover:bg-[#00b388]/90 rounded-full">
+                    View Details
+                  </Button>
                 </Link>
               </div>
             </div>

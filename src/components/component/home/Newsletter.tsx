@@ -18,7 +18,7 @@ const Newsletter = () => {
           </div>
 
           <form className="max-w-xl mx-auto mt-10">
-            <div className="sm:p-2 sm:bg-white sm:border-2 sm:border-transparent sm:rounded-full sm:focus-within:border-black sm:focus-within:ring-1 sm:focus-within:ring-black">
+            <div className="sm:p-2 sm:bg-white sm:border-1 sm:border-transparent sm:rounded-full sm:focus-within:border-[#3d5940] sm:focus-within:ring-1 sm:focus-within:ring-[#3d5940]">
               <div className="flex flex-col items-start sm:flex-row sm:justify-center">
                 <div className="flex-1 w-full min-w-0">
                   <div className="relative">
@@ -35,10 +35,10 @@ const Newsletter = () => {
                     />
                   </div>
                 </div>
-
+               
                 <Button
                   type="submit"
-                  className="inline-flex mx-auto bg-black items-center justify-center w-auto px-4 py-4 mt-4 font-semibold text-white transition-all duration-200  border border-transparent rounded-full sm:ml-4 sm:mt-0 sm:w-auto"
+                  className="inline-flex mx-auto bg-[#3d5940] items-center justify-center w-auto px-4 py-4 mt-4 font-semibold text-white transition-all duration-200  border border-transparent rounded-full sm:ml-4 sm:mt-0 sm:w-auto"
                 >
                   Subscribe
                   <ArrowRight className="size-5 ml-3 -mr-1" />

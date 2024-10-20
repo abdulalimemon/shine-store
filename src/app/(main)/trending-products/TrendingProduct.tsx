@@ -54,12 +54,14 @@ const TrendingProduct = ({ sortedProducts }: { sortedProducts: Product[] }) => {
                   <p className="text-sm font-semibold text-center flex justify-center items-center">
                     {product.rating}{" "}
                     <span>
-                      <Star className="size-6 fill-yellow-400 text-yellow-400 ml-1" />
+                      <Star className="size-5 fill-yellow-400 text-yellow-400 ml-1" />
                     </span>
                   </p>
                 </div>
                 <Link href={`/trending-products/${product._id}`}>
-                  <Button className="w-full text-sm">View Details</Button>
+                  <Button className="w-full text-sm bg-[#00b388] text-white hover:bg-[#00b388]/90 rounded-full">
+                    View Details
+                  </Button>
                 </Link>
               </div>
             </div>

@@ -72,7 +72,7 @@ const HeroSlider = () => {
             src={slide.img}
             className={`w-10 sm:w-14 md:w-20 h-6 sm:h-8 md:h-12 object-cover cursor-pointer transition-all duration-200 ease-in-out ${
               currentSlider === inx
-                ? "border-2 border-black dark:border-white p-0.5 opacity-100"
+                ? "border-2 border-[#FF6464] p-0.5 opacity-100"
                 : "opacity-90"
             } rounded-md md:rounded-lg`}
             alt={slide.title}

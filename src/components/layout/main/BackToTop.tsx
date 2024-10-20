@@ -34,11 +34,11 @@ const BackToTop = () => {
       <button
         type="button"
         onClick={scrollToTop}
-        className={`inline-flex items-center p-2 rounded-full shadow-lg text-black bg-black dark:bg-white hover:opacity-80 transition-opacity overflow-y-auto ${
+        className={`inline-flex items-center p-2 rounded-full shadow-lg text-white bg-[#3d5940] hover:opacity-80 transition-opacity overflow-y-auto ${
           isVisible ? "flex" : "hidden"
         }`}
       >
-        <ChevronUp className="size-6 text-white dark:text-black" aria-hidden="true" />
+        <ChevronUp className="size-6 text-white" aria-hidden="true" />
       </button>
     </div>
   );

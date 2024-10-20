@@ -6,41 +6,41 @@ const categoryData = [
   {
     id: "1",
     name: "Dishwashing Items",
-    URL: "/cleaning-supplies?category=Dishwashing Items",
+    URL: "/products?category=Dishwashing Items",
     image:
       "https://chaldn.com/_mpimage/dishwashing-supplies?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D83456&q=best&v=1",
   },
   {
     id: "2",
     name: "Cleaning Tools",
-    URL: "/cleaning-supplies?category=Cleaning Tools",
+    URL: "/products?category=Cleaning Tools",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3Hu82VObdYtYqya-aY6k51sb8hnlrCQDiVFRzx4JRQ4Qr13nl4ZQ9Z7zFDSnsw7NcOO4&usqp=CAU",
   },
   {
     id: "3",
     name: "General Cleaning",
-    URL: "/cleaning-supplies?category=General Cleaning",
+    URL: "/products?category=General Cleaning",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXxsOZA86TIV0jaegN8CoXui_v9WjINaa7v0UQCN4EpiqWlan1BBuWE7Lcw6BKg_pg-4s&usqp=CAU",
   },
   {
     id: "4",
     name: "Fabric Care",
-    URL: "/cleaning-supplies?category=Fabric Care",
+    URL: "/products?category=Fabric Care",
     image: "https://4.imimg.com/data4/VD/KD/MY-3521651/fabric-care-500x500.jpg",
   },
   {
     id: "5",
     name: "Metal Cleaning",
-    URL: "/cleaning-supplies?category=Metal Cleaning",
+    URL: "/products?category=Metal Cleaning",
     image:
       "https://media.wd40.in/app/uploads/2021/07/01100548/CLEANING-EQUIPMENT-1-1.jpg.webp",
   },
   {
     id: "6",
     name: "Floor Cleaning",
-    URL: "/cleaning-supplies?category=Floor Cleaning",
+    URL: "/products?category=Floor Cleaning",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIGoex0lxMSdSl2Yfc02kC6Le1MoT1yqdJ1-u7jX3L4snaQml7GhThU2b4BPX2Vm3m9jM&usqp=CAU",
   },
