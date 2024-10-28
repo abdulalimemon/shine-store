@@ -8,11 +8,23 @@ import { UserProps } from "@/type";
 import { signOut } from "next-auth/react";
 import { useTheme } from "next-themes";
 import { Moon, Sun, ShoppingCart } from "lucide-react";
+import { getUserInfo, removeUser } from "@/utils/auth.services";
+import { useRouter } from "next/navigation";
 
 const Navbar = ({ session }: { session: UserProps | null }) => {
   const { setTheme } = useTheme();
-  
- console.log(session);
+  const userInfo = getUserInfo();
+  const router = useRouter();
+
+  console.log(userInfo);
+
+  const handleLogOut = () => {
+    removeUser();
+    signOut();
+    router.refresh();
+  };
+
+  console.log(session);
   return (
     <section className="bg-slate-100 dark:bg-slate-900 border-b">
       <Container>
@@ -24,7 +36,7 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
           </div>
           <ul className="hidden font-semibold items-center justify-between gap-10 lg:flex">
             <li className="group flex cursor-pointer flex-col">
-              <Link href='/'>Home</Link>
+              <Link href="/">Home</Link>
               <span className="navUnderline"></span>
             </li>
 
@@ -37,7 +49,7 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
               <span className="navUnderline"></span>
             </li>
 
-            {session?.user  && (
+            {(session?.user || userInfo?.email) && (
               <li className="group flex  cursor-pointer flex-col">
                 <Link href="/dashboard">Dashboard</Link>
                 <span className="navUnderline"></span>
@@ -62,11 +74,18 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
             </li>
 
             <li className="group flex  cursor-pointer flex-col">
-              {session?.user ? (
-                <Button onClick={() => signOut()} className="bg-[#265450] hover:bg-[#265450]/90 text-white">Logout</Button>
+              {session?.user || userInfo?.email ? (
+                <Button
+                  onClick={handleLogOut}
+                  className="bg-[#265450] hover:bg-[#265450]/90 text-white"
+                >
+                  Logout
+                </Button>
               ) : (
                 <Link href="/login">
-                  <Button className="bg-[#265450] hover:bg-[#265450]/90 text-white">Login</Button>
+                  <Button className="bg-[#265450] hover:bg-[#265450]/90 text-white">
+                    Login
+                  </Button>
                 </Link>
               )}
             </li>

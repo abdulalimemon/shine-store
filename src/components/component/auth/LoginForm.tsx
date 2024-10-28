@@ -11,11 +11,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { toast } from "@/components/ui/use-toast";
 import { useRouter } from "next/navigation";
 import { loginUser } from "@/utils/actions/loginUser";
-// Redux
-// import { useLoginMutation } from "@/redux/feature/auth/authApi";
-// import { useAppDispatch } from "@/redux/hooks";
-// import { verifyToken } from "@/utils/verifyToken";
-// import { setUser } from "@/redux/feature/auth/authSlice";
+import { storeUserInfo } from "@/utils/auth.services";
 
 const LoginForm = () => {
   const {
@@ -23,9 +19,6 @@ const LoginForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<LoginUserData>();
-  // const [login] = useLoginMutation();
-  // const dispatch = useAppDispatch();
-
   const router = useRouter();
 
   // server action
@@ -34,13 +27,19 @@ const LoginForm = () => {
       const res = await loginUser(data);
 
       console.log(res);
-      if (res.token) {
+      if (res?.token) {
         toast({
           title: res.message,
           description: "Thank you!",
         });
-        localStorage.setItem("accessToken", res.token);
-        router.push("/dashboard");
+        storeUserInfo({ accessToken: res?.token });
+        router.push("/");
+        router.refresh();
+      } else {
+        toast({
+          title: res.message,
+        });
+        console.log(res);
       }
     } catch (error: any) {
       toast({
@@ -49,32 +48,6 @@ const LoginForm = () => {
       });
     }
   };
-
-  // Redux
-  // const onSubmit = async (data: LoginUserData) => {
-  //   try {
-  //     const userInfo = {
-  //       email: data.email,
-  //       password: data.password,
-  //     };
-
-  //     const res = await login(userInfo).unwrap();
-  //     const user = verifyToken(res.token);
-
-  //     dispatch(setUser({ user: user, token: res.token }));
-  //     toast({
-  //       title: res.message,
-  //       description: "Thank you!",
-  //     });
-  //     router.push("/");
-  //     localStorage.setItem("accessToken", res.token);
-  //   } catch (error: any) {
-  //     toast({
-  //       title: "Login failed",
-  //       description: error?.message,
-  //     });
-  //   }
-  // };
 
   return (
     <section className="py-10">
@@ -133,7 +106,10 @@ const LoginForm = () => {
           )}
 
           <div className="mt-5">
-            <Button className="w-full h-12 bg-[#265450] text-white hover:bg-[#265450]/90" type="submit">
+            <Button
+              className="w-full h-12 bg-[#265450] text-white hover:bg-[#265450]/90"
+              type="submit"
+            >
               Log in
             </Button>
           </div>
