@@ -1,7 +1,7 @@
 import Container from "@/components/layout/Container";
 import { Button } from "@/components/ui/button";
 import { Product } from "@/type";
-import { Zap, ArrowRight } from "lucide-react";
+import { Zap, MoveRight } from "lucide-react";
 import Link from "next/link";
 import ProductCard from "../product/ProductCard";
 
@@ -17,7 +17,7 @@ const FlashSale = ({ flashSaleProducts }: { flashSaleProducts: Product[] }) => {
 
           <Link href="/flash-sale">
             <Button className="bg-[#265450] text-white hover:bg-[#265450]/90 rounded-full flex items-center justify-center">
-              View All <ArrowRight className="size-5 ml-2" />
+              View All <MoveRight className="size-5 ml-2" />
             </Button>
           </Link>
         </div>

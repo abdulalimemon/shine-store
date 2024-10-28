@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "Discover top-quality cleaning supplies at Shine Store. Explore our wide range of products, including dish soaps, surface cleaners, and more. Shop now for a sparkling clean home!",
 };
 
-export default function AdminLayout({
+export default function DashboardLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

@@ -10,13 +10,13 @@ import { useTheme } from "next-themes";
 import { Moon, Sun, ShoppingCart } from "lucide-react";
 import { getUserInfo, removeUser } from "@/utils/auth.services";
 import { useRouter } from "next/navigation";
+import { useAppSelector } from "@/redux/hooks";
 
 const Navbar = ({ session }: { session: UserProps | null }) => {
   const { setTheme } = useTheme();
   const userInfo = getUserInfo();
   const router = useRouter();
-
-  console.log(userInfo);
+  const products = useAppSelector((store) => store.cart.products);
 
   const handleLogOut = () => {
     removeUser();
@@ -67,9 +67,12 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
               />
             </li>
 
-            <li className="group flex cursor-pointer flex-col">
+            <li className="relative group flex cursor-pointer flex-col">
               <Link href="/cart">
-                <ShoppingCart className="h-[1.25rem] w-[1.25rem]" />
+                <ShoppingCart className="size-[1.25rem]" />
+                <span className="rounded-full absolute text-xs top-[-10px] left-[15px] bg-[#265450] text-white flex items-center justify-center size-[1.25rem]">
+                  {products.length}
+                </span>
               </Link>
             </li>
 

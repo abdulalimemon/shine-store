@@ -1,7 +1,7 @@
 import Container from "@/components/layout/Container";
 import { Button } from "@/components/ui/button";
 import { Product } from "@/type";
-import { ArrowRight } from "lucide-react";
+import { MoveRight } from "lucide-react";
 import Link from "next/link";
 import ProductCard from "../product/ProductCard";
 
@@ -18,7 +18,7 @@ const TrendingProducts = ({
 
           <Link href="/trending-products">
             <Button className="bg-[#265450] text-white hover:bg-[#265450]/90 rounded-full flex items-center justify-center">
-              View All <ArrowRight className="size-5 ml-2" />
+              View All <MoveRight className="size-5 ml-2" />
             </Button>
           </Link>
         </div>

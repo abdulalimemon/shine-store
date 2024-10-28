@@ -2,7 +2,7 @@ import DashboardSidebar from "@/app/(withUser)/user/DashboardSidebar";
 import { authOptions } from "@/utils/authOptions";
 import { getServerSession } from "next-auth";
 
-const AdminPage = async () => {
+const UserPage = async () => {
   const session = await getServerSession(authOptions);
 
   return (
@@ -20,4 +20,4 @@ const AdminPage = async () => {
   );
 };
 
-export default AdminPage;
+export default UserPage;

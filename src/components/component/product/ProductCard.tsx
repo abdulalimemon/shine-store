@@ -1,9 +1,11 @@
 import { Product } from "@/type";
-import { Star } from "lucide-react";
+import { ArrowRight, ShoppingCart, Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import AddProductToCart from "./AddProductToCart";
 
 const ProductCard = ({ product, link }: { product: Product; link: string }) => {
+  
   return (
     <>
       <div className="flex relative">
@@ -41,9 +43,14 @@ const ProductCard = ({ product, link }: { product: Product; link: string }) => {
             </span>
           </p>
         </div>
-        <Link href={`/${link}/${product._id}`}>
-          <button className="product-btn">View Details</button>
-        </Link>
+        <div className="flex gap-5 justify-center items-center">
+          <Link href={`/${link}/${product._id}`} className="w-full">
+            <button className="product-btn">
+              View Details <ArrowRight className="size-5 ml-2" />
+            </button>
+          </Link>
+          <AddProductToCart product={product} />  
+        </div>
       </div>
     </>
   );
