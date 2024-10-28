@@ -1,11 +1,10 @@
 import { Product } from "@/type";
-import { ArrowRight, ShoppingCart, Star } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import AddProductToCart from "./AddProductToCart";
 
 const ProductCard = ({ product, link }: { product: Product; link: string }) => {
-  
   return (
     <>
       <div className="flex relative">
@@ -26,9 +25,11 @@ const ProductCard = ({ product, link }: { product: Product; link: string }) => {
       </div>
       <div className="p-4">
         <h2 className="text-center text-sm font-semibold">
-          {product.name.length > 30
-            ? product.name.slice(0, 26) + "..."
-            : product.name}
+          <Link href={`/${link}/${product._id}`} className="w-full">
+            {product.name.length > 30
+              ? product.name.slice(0, 26) + "..."
+              : product.name}
+          </Link>
         </h2>
       </div>
       <div className="px-4 pb-4">
@@ -49,7 +50,7 @@ const ProductCard = ({ product, link }: { product: Product; link: string }) => {
               View Details <ArrowRight className="size-5 ml-2" />
             </button>
           </Link>
-          <AddProductToCart product={product} />  
+          <AddProductToCart product={product} />
         </div>
       </div>
     </>

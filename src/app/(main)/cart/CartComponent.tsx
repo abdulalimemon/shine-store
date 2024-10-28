@@ -19,7 +19,7 @@ const CartComponent = () => {
             <h2 className="text-xl font-semibold border-b p-5">
               My Cart ({products.length})
             </h2>
-            <ul className="flex flex-col px-5">
+            <ul className="flex flex-col p-5">
               {products.length ? (
                 products.map((product: Product) => (
                   <li className="py-3" key={product._id}>
@@ -65,15 +65,18 @@ const CartComponent = () => {
                   </li>
                 ))
               ) : (
-                <div className="flex justify-center items-center">
-                  {" "}
+                <div className="flex flex-col justify-center items-center mb-8">
                   <Image
-                    className="rounded-lg md:my-2"
-                    src='/emptyCart.png'
+                    className="rounded-lg"
+                    src="/emptyCart.png"
                     alt="Empty cart"
-                    width={400}
+                    width={300}
                     height={100}
                   />
+                  <p className="">
+                    Your cart is currently empty.{" "}
+                    <Link href="/products" className="underline hover:text-blue-500">Back to shopping</Link>
+                  </p>
                 </div>
               )}
               {}

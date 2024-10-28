@@ -21,7 +21,7 @@ const FlashSale = ({ flashSaleProducts }: { flashSaleProducts: Product[] }) => {
             </Button>
           </Link>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5 my-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5 my-10">
           {flashSaleProducts?.slice(0, 4)?.map((product) => (
             <div
               key={product._id}
