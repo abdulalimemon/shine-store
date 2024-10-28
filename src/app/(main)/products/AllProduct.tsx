@@ -367,7 +367,7 @@ const AllProduct = ({ data }: { data: Product[] }) => {
               Showing all {newData.length} Products!
             </h2>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5 my-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5 my-10">
             {newData?.map((product: Product) => (
               <div
                 key={product._id}

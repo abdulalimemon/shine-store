@@ -1,7 +1,7 @@
 "use client";
 
 import Container from "@/components/layout/Container";
-import { Fingerprint, Mail, UserRound } from "lucide-react";
+import { EyeIcon, EyeOffIcon, Fingerprint, Mail, UserRound } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import LoginWithGoogle from "@/components/component/auth/LoginWithGoogle";
@@ -11,6 +11,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "@/components/ui/use-toast";
 import { useRouter } from "next/navigation";
 import { registerUser } from "@/utils/actions/registerUsers";
+import { useState } from "react";
 
 const RegisterForm = () => {
   const {
@@ -20,6 +21,8 @@ const RegisterForm = () => {
   } = useForm<UserData>();
 
   const router = useRouter();
+  const [isVisible, setIsVisible] = useState(false);
+  const toggleVisibility = () => setIsVisible(!isVisible);
 
   const onSubmit = async (data: UserData) => {
     try {
@@ -119,27 +122,32 @@ const RegisterForm = () => {
             )}
           </div>
 
-          <div className="relative flex items-center mt-3">
-            <span className="absolute">
-              <Fingerprint className="size-6 mx-3 text-gray-300" />
+          <div className="relative flex items-center mt-5">
+            <span className="absolute left-3">
+              <Fingerprint className="size-6 text-gray-300" />
             </span>
 
             <Input
-              type="password"
+              type={isVisible ? "text" : "password"}
               className="block w-full h-12 px-11"
               placeholder="Password"
-              id="password"
               {...register("password", {
-                required: {
-                  value: true,
-                  message: "Password is Required.",
-                },
+                required: "Password is required",
                 minLength: {
                   value: 8,
-                  message: "Password must be 8 characters or longer.",
+                  message: "Password must be 8 characters or longer",
                 },
               })}
             />
+
+            {/* Second icon (right side) */}
+            <span className="absolute right-3" onClick={toggleVisibility}>
+              {isVisible ? (
+                <EyeIcon className="size-5 text-gray-500 cursor-pointer" />
+              ) : (
+                <EyeOffIcon className="size-5 cursor-pointer text-gray-500" />
+              )}
+            </span>
           </div>
 
           <div className="pt-2">

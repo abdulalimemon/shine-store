@@ -79,7 +79,6 @@ const CartComponent = () => {
                   </p>
                 </div>
               )}
-              {}
             </ul>
           </div>
           <div className="flex flex-col space-y-4 border shadow-md rounded-md w-full lg:w-1/3">
@@ -113,7 +112,7 @@ const CartComponent = () => {
           <div className="flex flex-col items-end w-full lg:w-2/3">
             <div>
               <Link href="/checkout">
-                <Button className="px-10 py-7">Proceed to checkout</Button>
+                <Button className="px-10 py-7 bg-[#265450] hover:bg-[#265450]/90 text-white">Proceed to checkout</Button>
               </Link>
             </div>
           </div>

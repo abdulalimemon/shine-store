@@ -1,7 +1,7 @@
 "use client";
 
 import Container from "@/components/layout/Container";
-import { Fingerprint, Mail } from "lucide-react";
+import { EyeIcon, EyeOffIcon, Fingerprint, Mail } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import LoginWithGoogle from "@/components/component/auth/LoginWithGoogle";
@@ -12,6 +12,7 @@ import { toast } from "@/components/ui/use-toast";
 import { useRouter } from "next/navigation";
 import { loginUser } from "@/utils/actions/loginUser";
 import { storeUserInfo } from "@/utils/auth.services";
+import { useState } from "react";
 
 const LoginForm = () => {
   const {
@@ -20,13 +21,14 @@ const LoginForm = () => {
     formState: { errors },
   } = useForm<LoginUserData>();
   const router = useRouter();
+  const [isVisible, setIsVisible] = useState(false);
+  const toggleVisibility = () => setIsVisible(!isVisible);
 
   // server action
   const onSubmit = async (data: LoginUserData) => {
     try {
       const res = await loginUser(data);
 
-      console.log(res);
       if (res?.token) {
         toast({
           title: res.message,
@@ -39,7 +41,6 @@ const LoginForm = () => {
         toast({
           title: res.message,
         });
-        console.log(res);
       }
     } catch (error: any) {
       toast({
@@ -82,11 +83,12 @@ const LoginForm = () => {
           )}
 
           <div className="relative flex items-center mt-5">
-            <span className="absolute">
-              <Fingerprint className="size-6 mx-3 text-gray-300" />
+            <span className="absolute left-3">
+              <Fingerprint className="size-6 text-gray-300" />
             </span>
+
             <Input
-              type="password"
+              type={isVisible ? "text" : "password"}
               className="block w-full h-12 px-11"
               placeholder="Password"
               {...register("password", {
@@ -97,6 +99,15 @@ const LoginForm = () => {
                 },
               })}
             />
+
+            {/* Second icon (right side) */}
+            <span className="absolute right-3" onClick={toggleVisibility}>
+              {isVisible ? (
+                <EyeIcon className="size-5 text-gray-500 cursor-pointer" />
+              ) : (
+                <EyeOffIcon className="size-5 cursor-pointer text-gray-500" />
+              )}
+            </span>
           </div>
 
           {errors.password && (
