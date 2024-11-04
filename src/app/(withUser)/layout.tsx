@@ -1,5 +1,8 @@
+import Footer from "@/components/layout/main/Footer";
+import Navbar from "@/components/layout/main/Navbar";
+import { authOptions } from "@/utils/authOptions";
 import type { Metadata } from "next";
-import DashboardSidebar from "@/app/(withUser)/user/DashboardSidebar";
+import { getServerSession } from "next-auth";
 
 export const metadata: Metadata = {
   title: "Dashboard | Shine Store",
@@ -7,15 +10,17 @@ export const metadata: Metadata = {
     "Discover top-quality cleaning supplies at Shine Store. Explore our wide range of products, including dish soaps, surface cleaners, and more. Shop now for a sparkling clean home!",
 };
 
-export default function DashboardLayout({
+export default async function DashboardLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const session = await getServerSession(authOptions);
   return (
-    <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
-      <DashboardSidebar />
+    <>
+      <Navbar session={session} />
       {children}
-    </div>
+      <Footer />
+    </>
   );
 }

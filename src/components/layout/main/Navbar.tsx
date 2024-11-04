@@ -36,7 +36,7 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
 
   console.log(session);
   return (
-    <section className="bg-slate-100 dark:bg-slate-900 border-b">
+    <section className="bg-slate-100 dark:bg-[#010313] border-b">
       <Container>
         <nav className="flex items-center justify-between py-2">
           <div className="scale-100 cursor-pointer rounded-2xl px-3 lg:mx-0 py-2 text-xl font-semibold transition-all duration-200 hover:scale-110">
