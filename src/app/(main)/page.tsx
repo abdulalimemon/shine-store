@@ -4,6 +4,7 @@ import { Product } from "@/type";
 import TrendingProducts from "@/components/component/home/TrendingProducts";
 import Category from "@/components/component/home/Category";
 import Newsletter from "@/components/component/home/Newsletter";
+import OfferInfo from "@/components/component/home/OfferInfo";
 
 const HomePage = async () => {
   const res = await fetch(`${process.env.BACKEND_URL}/product`, {
@@ -36,6 +37,7 @@ const HomePage = async () => {
       <FlashSale flashSaleProducts={flashSaleProducts} />
       <TrendingProducts sortedProducts={sortedProducts} />
       <Category />
+      <OfferInfo />
       <Newsletter />
     </main>
   );
