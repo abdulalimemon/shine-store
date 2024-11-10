@@ -34,7 +34,6 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
     router.refresh();
   };
 
-  console.log(session);
   return (
     <section className="bg-slate-100 dark:bg-[#010313] border-b">
       <Container>

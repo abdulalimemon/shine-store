@@ -1,3 +1,5 @@
+import UserSidebar from "@/components/component/user/UserSidebar";
+import Container from "@/components/layout/Container";
 import Footer from "@/components/layout/main/Footer";
 import Navbar from "@/components/layout/main/Navbar";
 import { authOptions } from "@/utils/authOptions";
@@ -19,7 +21,18 @@ export default async function DashboardLayout({
   return (
     <>
       <Navbar session={session} />
-      {children}
+      <section className="py-10">
+        <Container>
+          <div className="flex flex-col md:flex-row gap-5">
+            <div className="hidden md:flex flex-col space-y-4 md:w-1/4 border  rounded-md">
+              <UserSidebar />
+            </div>
+            <div className="hidden md:flex flex-col space-y-4 border rounded-md w-full lg:w-3/4">
+              <div className="flex flex-col">{children}</div>
+            </div>
+          </div>
+        </Container>
+      </section>
       <Footer />
     </>
   );
