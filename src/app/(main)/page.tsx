@@ -5,6 +5,7 @@ import TrendingProducts from "@/components/component/home/TrendingProducts";
 import Category from "@/components/component/home/Category";
 import Newsletter from "@/components/component/home/Newsletter";
 import OfferInfo from "@/components/component/home/OfferInfo";
+import LoadingPage from "@/components/layout/main/Loading";
 
 const HomePage = async () => {
   const res = await fetch(`${process.env.BACKEND_URL}/product`, {
