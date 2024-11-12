@@ -11,6 +11,7 @@ import { Moon, Sun, ShoppingCart } from "lucide-react";
 import { getUserInfo, removeUser } from "@/utils/auth.services";
 import { useRouter } from "next/navigation";
 import { useAppSelector } from "@/redux/hooks";
+import userIcon from "../../../../public/user.png";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -85,17 +86,17 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
                 <>
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                      <div className="border-2 rounded-full p-2 border-[#265450]">
+                      <div className="border-2 rounded-full border-[#265450] p-[2px]">
                         <Image
-                          src="/user.png"
-                          width={20}
-                          height={20}
-                          className="size-5 cursor-pointer"
+                          src={session?.user?.image || userIcon}
+                          width={24}
+                          height={24}
+                          className="size-7 cursor-pointer rounded-full"
                           alt="user"
                         />
                       </div>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent className="w-56 mt-4">
+                    <DropdownMenuContent className="w-56 mt-3">
                       <DropdownMenuLabel className="text-center">
                         {session?.user?.name || userInfo?.name}
                       </DropdownMenuLabel>

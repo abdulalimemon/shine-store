@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import DashboardSidebar from "@/app/(withUser)/user/DashboardSidebar";
+import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { AppSidebar } from "@/components/app-sidebar";
 
 export const metadata: Metadata = {
   title: "Dashboard | Shine Store",
@@ -13,9 +14,14 @@ export default function AdminLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
-      <DashboardSidebar />
-      {children}
-    </div>
+    <>
+      <SidebarProvider>
+        <AppSidebar />
+        <SidebarInset>
+          <SidebarTrigger />
+          {children}
+        </SidebarInset>
+      </SidebarProvider>
+    </>
   );
 }
