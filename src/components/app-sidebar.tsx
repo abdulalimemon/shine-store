@@ -25,14 +25,10 @@ import {
   SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar"
+import { UserProps } from "@/type"
 
 // This is sample data.
 const data = {
-  user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
-  },
   teams: [
     {
       name: "Acme Inc",
@@ -156,18 +152,25 @@ const data = {
   ],
 }
 
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+// Define types for props, including UserProps if not previously defined
+
+
+interface AppSidebarProps extends React.ComponentProps<typeof Sidebar> {
+  session: UserProps | null;
+}
+
+export function AppSidebar({ session, ...props }: AppSidebarProps) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        <TeamSwitcher teams={data.teams} />
+        <TeamSwitcher />
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
         <NavProjects projects={data.projects} />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        <NavUser session={session} />
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
