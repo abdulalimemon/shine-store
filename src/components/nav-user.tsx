@@ -27,9 +27,20 @@ import {
 } from "@/components/ui/sidebar";
 import { UserProps } from "@/type";
 import Image from "next/image";
+import { getUserInfo, removeUser } from "@/utils/auth.services";
+import { useRouter } from "next/navigation";
+import { signOut } from "next-auth/react";
 
 export function NavUser({ session }: { session: UserProps | null }) {
   const { isMobile } = useSidebar();
+  const userInfo = getUserInfo();
+  const router = useRouter();
+
+  const handleLogOut = () => {
+    removeUser();
+    signOut();
+    router.refresh();
+  };
 
   return (
     <SidebarMenu>
@@ -87,17 +98,17 @@ export function NavUser({ session }: { session: UserProps | null }) {
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
-              <DropdownMenuItem>
+              <DropdownMenuItem className="cursor-pointer">
                 <BadgeCheck />
                 Profile
               </DropdownMenuItem>
-              <DropdownMenuItem>
+              <DropdownMenuItem className="cursor-pointer">
                 <Bell />
                 Notifications
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>
+            <DropdownMenuItem onClick={handleLogOut} className="cursor-pointer">
               <LogOut />
               Log out
             </DropdownMenuItem>

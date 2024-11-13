@@ -25,8 +25,8 @@ const ProductPage = async ({ params }: ProductId) => {
   const product = await res.json();
 
   const dynamicLink = {
-    name: "All Cleaning Supplies",
-    url: "cleaning-supplies",
+    name: "Products",
+    url: "products",
   };
 
   const moreProduct = await fetch(`${process.env.BACKEND_URL}/product`);

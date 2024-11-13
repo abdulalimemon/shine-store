@@ -2,11 +2,17 @@ import Container from "@/components/layout/Container";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
+import Navbar from "@/components/layout/main/Navbar";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/utils/authOptions";
+import Footer from "@/components/layout/main/Footer";
 
-const NotFound = () => {
+const NotFound = async () => {
+  const session = await getServerSession(authOptions);
   return (
     <>
-      <section className="my-10 h-[100vh] flex justify-center items-center">
+      <Navbar session={session} />
+      <section className="my-10 h-[90vh] flex justify-center items-center">
         <Container>
           <div className="py-10">
             <div className="text-center">
@@ -30,6 +36,7 @@ const NotFound = () => {
           </div>
         </Container>
       </section>
+      <Footer />
     </>
   );
 };

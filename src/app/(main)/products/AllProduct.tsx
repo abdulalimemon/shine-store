@@ -1,10 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { Product } from "@/type";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { Heart, Star, LayoutList, CircleDollarSign } from "lucide-react";
+import {  Star, LayoutList, CircleDollarSign } from "lucide-react";
 import { useState } from "react";
 import {
   Accordion,
@@ -13,6 +12,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import ProductCard from "@/components/component/product/ProductCard";
+import Container from "@/components/layout/Container";
 
 // type TSearchParams = {
 //   category: string;
@@ -80,7 +80,8 @@ const AllProduct = ({ data }: { data: Product[] }) => {
   // };
 
   return (
-    <div className="grid  w-full min-h-screen md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
+    <Container>
+      <div className="grid w-full min-h-screen md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
       <div className="hidden text-center border-r bg-muted/40 md:block">
         <div className="flex h-full flex-col gap-2">
           <div className="flex-1">
@@ -380,6 +381,7 @@ const AllProduct = ({ data }: { data: Product[] }) => {
         </main>
       </div>
     </div>
+    </Container>
   );
 };
 

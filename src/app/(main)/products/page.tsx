@@ -1,5 +1,8 @@
 import { Product } from "@/type";
 import AllProduct from "./AllProduct";
+import AllProductsBreadcrumb from "./AllProductsBreadcrumb";
+import NewProduct from "./NewProduct";
+// import TestProduct from "./TestProduct";
 
 const AllProductPage = async ({ searchParams }: { searchParams: string }) => {
   const res = await fetch(`${process.env.BACKEND_URL}/product`, {
@@ -12,7 +15,10 @@ const AllProductPage = async ({ searchParams }: { searchParams: string }) => {
 
   return (
     <>
+      <AllProductsBreadcrumb />
       <AllProduct data={data} />
+      {/* <TestProduct/> */}
+      <NewProduct data={data} />
     </>
   );
 };
