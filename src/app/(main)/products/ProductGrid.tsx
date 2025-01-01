@@ -8,9 +8,10 @@ const ProductGrid = ({ data }: { data: Product[] }) => {
     const [view, setView] = useState<number>(3); // Default view set to 3 columns
   const [sortType, setSortType] = useState<string>('Most Popular');
 
-  // Sorting logic
   const sortedProducts = [...data].sort((a, b) => {
-    if (sortType === 'Most Popular') return b.rating - a.rating;
+    const aRating = parseFloat(a.rating);
+    const bRating = parseFloat(b.rating);
+    if (sortType === 'Most Popular') return bRating - aRating;
     if (sortType === 'Price Low to High') return a.price - b.price;
     if (sortType === 'Price High to Low') return b.price - a.price;
     return 0;
@@ -69,7 +70,7 @@ const ProductGrid = ({ data }: { data: Product[] }) => {
         }`}
       >
         {sortedProducts.map((product) => (
-          <ProductPageCard key={product.id} product={product} />
+          <ProductPageCard key={product._id} product={product} />
         ))}
       </div>
     </div>

@@ -22,12 +22,15 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const Navbar = ({ session }: { session: UserProps | null }) => {
   const { setTheme } = useTheme();
   const userInfo = getUserInfo();
   const router = useRouter();
+  const currentPath = usePathname();
   const products = useAppSelector((store) => store.cart.products);
+  const routes = ["/", "products", "flash-sale"];
 
   const handleLogOut = () => {
     removeUser();
@@ -45,19 +48,32 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
             </Link>
           </div>
           <ul className="hidden font-semibold items-center justify-between gap-10 lg:flex">
-            <li className="group flex cursor-pointer flex-col">
-              <Link href="/">Home</Link>
-              <span className="navUnderline"></span>
-            </li>
-
-            <li className="group flex cursor-pointer flex-col">
-              <Link href="/products">Products</Link>
-              <span className="navUnderline"></span>
-            </li>
-            <li className="group flex cursor-pointer flex-col">
-              <Link href="/flash-sale">Flash Sale</Link>
-              <span className="navUnderline"></span>
-            </li>
+            {routes.map((link) => {
+              const fullPath = link === "/" ? "/" : `/${link}`;
+              return (
+                <li className="group flex cursor-pointer flex-col" key={link}>
+                  <Link
+                    href={fullPath}
+                    className={currentPath === fullPath ? "text-[#265450]" : ""}
+                  >
+                    {link === "/"
+                      ? "Home"
+                      : link
+                          .split("-")
+                          .map(
+                            (word) =>
+                              word.charAt(0).toUpperCase() + word.slice(1)
+                          )
+                          .join(" ")}
+                  </Link>
+                  <span
+                    className={
+                      currentPath === fullPath ? "navActive" : "navUnderline"
+                    }
+                  ></span>
+                </li>
+              );
+            })}
 
             <div className="flex gap-5 items-center justify-center">
               <li className="group flex cursor-pointer flex-col">

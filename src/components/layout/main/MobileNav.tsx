@@ -6,9 +6,12 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { UserProps } from "@/type";
 import { signOut } from "next-auth/react";
+import { usePathname } from "next/navigation";
 
 const MobileNav = ({ session }: { session: UserProps | null }) => {
   const [showSidebar, setShowSidebar] = useState(false);
+  const routes = ["/", "products", "flash-sale"];
+  const currentPath = usePathname();
 
   return (
     <div className="lg:hidden">
@@ -38,30 +41,38 @@ const MobileNav = ({ session }: { session: UserProps | null }) => {
           <div className="p-1 mt-2">
             <div>
               <div className="mt-6 flex flex-1 flex-col justify-between ">
-                <nav className="-mx-3 space-y-6 ">
-                  <div className="space-y-3 ">
-                    <li
-                      className="mobileNav"
-                      onClick={() => setShowSidebar(!showSidebar)}
-                    >
-                      Home
-                    </li>
-                    <li className="mobileNav">
-                      <Link
-                        href="/cleaning-supplies"
-                        onClick={() => setShowSidebar(!showSidebar)}
-                      >
-                        Products
-                      </Link>
-                    </li>
-                    <li className="mobileNav">
-                      <Link
-                        href="/flash-sale"
-                        onClick={() => setShowSidebar(!showSidebar)}
-                      >
-                        Flash Sale
-                      </Link>
-                    </li>
+                <nav className="-mx-3 space-y-6">
+                  <div className="space-y-3">
+                    {routes.map((route) => {
+                      const fullPath = route === "/" ? "/" : `/${route}`;
+                      return (
+                        <li
+                          key={route}
+                          className="mobileNav"
+                          onClick={() => setShowSidebar(!showSidebar)}
+                        >
+                          <Link
+                            href={fullPath}
+                            className={
+                              currentPath === fullPath
+                                ? "text-[#265450] font-semibold"
+                                : "font-semibold"
+                            }
+                          >
+                            {route === "/"
+                              ? "Home"
+                              : route
+                                  .split("-")
+                                  .map(
+                                    (word) =>
+                                      word.charAt(0).toUpperCase() +
+                                      word.slice(1)
+                                  )
+                                  .join(" ")}
+                          </Link>
+                        </li>
+                      );
+                    })}
 
                     {session?.user && (
                       <>
@@ -86,7 +97,10 @@ const MobileNav = ({ session }: { session: UserProps | null }) => {
 
                     <li className="mobileNav">
                       {session?.user ? (
-                        <Button onClick={() => signOut()} className="w-1/2 bg-[#265450] hover:bg-[#265450]/90">
+                        <Button
+                          onClick={() => signOut()}
+                          className="w-1/2 bg-[#265450] hover:bg-[#265450]/90"
+                        >
                           Logout
                         </Button>
                       ) : (
@@ -95,7 +109,9 @@ const MobileNav = ({ session }: { session: UserProps | null }) => {
                           className="w-full"
                           onClick={() => setShowSidebar(!showSidebar)}
                         >
-                          <Button className="w-1/2 bg-[#265450] hover:bg-[#265450]/90">Login</Button>
+                          <Button className="w-1/2 bg-[#265450] hover:bg-[#265450]/90">
+                            Login
+                          </Button>
                         </Link>
                       )}
                     </li>
