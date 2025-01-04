@@ -5,6 +5,7 @@ import { getServerSession } from "next-auth";
 import Footer from "@/components/layout/main/Footer";
 import Navbar from "@/components/layout/main/Navbar";
 import BackToTop from "@/components/layout/main/BackToTop";
+import TopNavbar from "@/components/layout/main/TopNavbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <TopNavbar/>
         <Navbar session={session} />
         {children}
         <BackToTop />
