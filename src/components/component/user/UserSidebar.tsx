@@ -3,11 +3,12 @@ import userBG from "../../../../public/userBG.png";
 import { getUserInfo } from "@/utils/auth.services";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/utils/authOptions";
+import UserSidebarNav from "./UserSidebarNav";
 
 const UserSidebar = async () => {
   const userInfo = getUserInfo();
   const session = await getServerSession(authOptions);
- 
+
   return (
     <>
       <div>
@@ -29,7 +30,7 @@ const UserSidebar = async () => {
             className="size-20 rounded-full border-2 border-[#265450] p-[2px]"
           />
         </div>
-        <div className="flex flex-col justify-center items-center my-3 mx-5 pb-3 border-b-2">
+        <div className="flex flex-col justify-center items-center my-2 mx-5 pb-3 border-b-2">
           <h2 className="text-base font-semibold">
             {session?.user?.name || userInfo?.name}
           </h2>
@@ -37,6 +38,9 @@ const UserSidebar = async () => {
             {session?.user?.email || userInfo?.email}
           </p>
         </div>
+      </div>
+      <div>
+        <UserSidebarNav />
       </div>
     </>
   );

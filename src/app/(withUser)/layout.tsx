@@ -6,6 +6,7 @@ import { authOptions } from "@/utils/authOptions";
 import type { Metadata } from "next";
 import { getServerSession } from "next-auth";
 import UserBreadcrumb from "./UserBreadcrumb";
+import TopNavbar from "@/components/layout/main/TopNavbar";
 
 export const metadata: Metadata = {
   title: "Dashboard | Shine Store",
@@ -21,15 +22,16 @@ export default async function DashboardLayout({
   const session = await getServerSession(authOptions);
   return (
     <>
+      <TopNavbar />
       <Navbar session={session} />
       <UserBreadcrumb />
       <div className="py-10">
         <Container>
           <div className="flex flex-col md:flex-row gap-5">
-            <div className="hidden md:flex flex-col space-y-4 md:w-1/4 border  rounded-md">
+            <div className="flex flex-col space-y-4 md:w-4/12 lg:w-1/4 border  rounded-md">
               <UserSidebar />
             </div>
-            <div className="hidden md:flex flex-col space-y-4 border rounded-md w-full lg:w-3/4">
+            <div className="flex flex-col space-y-4 border rounded-md w-full md:w-8/12 lg:w-3/4">
               <div className="flex flex-col">{children}</div>
             </div>
           </div>

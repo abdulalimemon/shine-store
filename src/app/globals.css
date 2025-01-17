@@ -106,6 +106,12 @@
   .mobileNav {
     @apply flex transform items-center rounded-lg px-3 py-1 text-gray-900 dark:text-gray-100 transition-colors duration-300 font-semibold;
   }
+  .sidebarNav{
+    @apply flex transform items-center justify-start px-8 py-2 text-gray-900 dark:text-gray-300 transition-colors duration-300 font-semibold;
+  }
+  .sidebarNavActive{
+    @apply flex transform items-center justify-start px-8 py-2 text-gray-800 transition-colors duration-300 bg-green-200 dark:bg-green-300 border-l-4 border-[#265450];
+  }
   .accordionNav {
     @apply flex items-center justify-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:bg-primary cursor-pointer hover:text-white dark:hover:text-black;
   }

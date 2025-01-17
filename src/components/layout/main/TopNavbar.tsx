@@ -3,7 +3,7 @@ import Container from "../Container";
 
 const TopNavbar = () => {
   return (
-    <section className="bg-[#0DA487] py-2">
+    <section className="bg-[#0DA487] py-2 hidden md:block">
       <Container>
         <div className="flex items-center justify-between">
           <div className="">
