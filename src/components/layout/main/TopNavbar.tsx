@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Container from "../Container";
+import TopNavbarTextLoop from "./TopNavbarTextLoop";
 
 const TopNavbar = () => {
   return (
@@ -8,6 +9,9 @@ const TopNavbar = () => {
         <div className="flex items-center justify-between">
           <div className="">
             <h4 className="text-xs text-white">Welcome to Shine Store</h4>
+          </div>
+          <div>
+            <TopNavbarTextLoop />
           </div>
           <div className="flex gap-5 justify-center items-center">
             <Link href="/" className="text-xs text-white hover:text-blue-500">
