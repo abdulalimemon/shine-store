@@ -1,6 +1,6 @@
 "use client";
 
-import { HomeIcon } from "lucide-react";
+import { HomeIcon, ShoppingBag, Heart, MapPin, User } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -8,27 +8,27 @@ const routes = [
   {
     path: "/user",
     label: "Dashboard",
-    icon: <HomeIcon className="size-6" aria-hidden="true" />,
+    icon: <HomeIcon className="size-5" aria-hidden="true" />,
   },
   {
     path: "/user/order",
     label: "Orders",
-    icon: <HomeIcon className="size-6" aria-hidden="true" />,
+    icon: <ShoppingBag className="size-5" aria-hidden="true" />,
   },
   {
     path: "/user/wishlist",
     label: "Wishlist",
-    icon: <HomeIcon className="size-6" aria-hidden="true" />,
+    icon: <Heart className="size-5" aria-hidden="true" />,
   },
   {
     path: "/user/address",
     label: "Address",
-    icon: <HomeIcon className="size-6" aria-hidden="true" />,
+    icon: <MapPin className="size-5" aria-hidden="true" />,
   },
   {
     path: "/user/profile",
     label: "Profile",
-    icon: <HomeIcon className="size-6" aria-hidden="true" />,
+    icon: <User className="size-5" aria-hidden="true" />,
   },
 ];
 
