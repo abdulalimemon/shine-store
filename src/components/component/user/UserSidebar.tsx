@@ -10,7 +10,7 @@ const UserSidebar = async () => {
   const session = await getServerSession(authOptions);
 
   return (
-    <>
+    <div className="">
       <div>
         <div>
           <Image
@@ -42,7 +42,7 @@ const UserSidebar = async () => {
       <div>
         <UserSidebarNav />
       </div>
-    </>
+    </div>
   );
 };
 

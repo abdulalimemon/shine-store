@@ -28,10 +28,12 @@ export default async function DashboardLayout({
       <div className="py-10">
         <Container>
           <div className="flex flex-col md:flex-row gap-5">
-            <div className="flex flex-col space-y-4 md:w-4/12 lg:w-1/4 border  rounded-md">
-              <UserSidebar />
+            <div className="flex flex-col space-y-4 md:w-4/12 lg:w-1/4">
+              <div className="border rounded-md sticky top-10 z-50">
+                <UserSidebar />
+              </div>
             </div>
-            <div className="flex flex-col space-y-4 border rounded-md w-full md:w-8/12 lg:w-3/4">
+            <div className="flex flex-col space-y-4 w-full md:w-8/12 lg:w-3/4">
               <div className="flex flex-col">{children}</div>
             </div>
           </div>
