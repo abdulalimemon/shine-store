@@ -23,7 +23,7 @@ const ProductCard = ({ product, link }: { product: Product; link: string }) => {
           />
         </div>
       </div>
-      <div className="p-4">
+      <div className="p-4 dark:bg-[#121212]">
         <h2 className="text-center text-sm font-semibold">
           <Link href={`/${link}/${product._id}`} className="w-full">
             {product.name.length > 30
@@ -32,7 +32,7 @@ const ProductCard = ({ product, link }: { product: Product; link: string }) => {
           </Link>
         </h2>
       </div>
-      <div className="px-4 pb-4">
+      <div className="px-4 pb-4 dark:bg-[#121212]">
         <div className="mb-3 flex justify-between items-center">
           <p className="block text-sm font-semibold text-center">
             ${product.price}
