@@ -29,7 +29,7 @@ export default async function DashboardLayout({
         <Container>
           <div className="flex flex-col md:flex-row gap-5">
             <div className="flex flex-col space-y-4 md:w-4/12 lg:w-1/4">
-              <div className="border rounded-md sticky top-10 z-50">
+              <div className="border rounded-md sticky top-10 z-10">
                 <UserSidebar />
               </div>
             </div>
