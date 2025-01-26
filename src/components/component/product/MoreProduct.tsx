@@ -1,5 +1,12 @@
 import { Product } from "@/type";
 import ProductCard from "./ProductCard";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const MoreProducts = ({ products }: { products: Product[] }) => {
   return (
@@ -10,16 +17,20 @@ const MoreProducts = ({ products }: { products: Product[] }) => {
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5 my-10">
-        {products?.slice(0, 4)?.map((product) => (
-          <div
-            key={product._id}
-            className="rounded-md border flex flex-col justify-between"
-          >
-            <ProductCard product={product} link="products" />
-          </div>
-        ))}
-      </div>
+      <Carousel>
+        <CarouselContent className="my-10 gap-5">
+          {products?.slice(0, 4)?.map((product) => (
+            <CarouselItem
+              key={product._id}
+              className="rounded-md border flex flex-col justify-between md:basis-1/3 lg:basis-1/4"
+            >
+              <ProductCard product={product} link="products" />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
     </section>
   );
 };
