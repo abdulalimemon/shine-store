@@ -6,6 +6,7 @@ import Footer from "@/components/layout/main/Footer";
 import Navbar from "@/components/layout/main/Navbar";
 import BackToTop from "@/components/layout/main/BackToTop";
 import TopNavbar from "@/components/layout/main/TopNavbar";
+import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,6 +29,7 @@ export default async function RootLayout({
         <Navbar session={session} />
         {children}
         <BackToTop />
+        <Toaster />
         <Footer />
       </body>
     </html>

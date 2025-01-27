@@ -7,6 +7,7 @@ import { AppSidebar } from "@/components/app-sidebar";
 import AdminNavbar from "@/components/component/admin/AdminNavbar";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/utils/authOptions";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: "Admin | Shine Store",
@@ -27,6 +28,7 @@ export default async function AdminLayout({
         <SidebarInset>
           <AdminNavbar session={session} />
           {children}
+          <Toaster />
         </SidebarInset>
       </SidebarProvider>
     </>
