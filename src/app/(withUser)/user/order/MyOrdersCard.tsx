@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import { ArrowRight, Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,11 +16,11 @@ const MyOrdersCard = () => {
             height={100}
           />
         </div>
-        <div className="">
+        <div className="flex items-center justify-center md:justify-start">
           <div className="p-4 space-y-2">
             <h2 className="text-lg">
               Delivere{" "}
-              <span className="py-1 px-2 bg-red-500 text-white rounded-md text-sm mx-2">
+              <span className="py-1 px-2 bg-red-500 text-white rounded-md text-xs mx-2">
                 Pending
               </span>
             </h2>
@@ -37,14 +38,12 @@ const MyOrdersCard = () => {
                 <Star className="size-5 fill-yellow-400 text-yellow-400 ml-1" />
               </span>
             </p>
-            <div>
-              <Link href={`/products/`} className="w-full flex gap-1 items-center hover:text-blue-500 hover:underline">
-                View Details <ArrowRight className="size-5 ml-2" />
+            <div className="flex gap-5 pt-3">
+              <Link href={`/products/`}>
+                <Button className="bg-[#265450] hover:bg-[#265450]/90 text-white">Order History</Button>
               </Link>
-            </div>
-            <div>
-              <Link href={`/products/`} className="w-full flex gap-1 items-center hover:text-blue-500 hover:underline">
-                Buy Again <ArrowRight className="size-5 ml-2" />
+              <Link href={`/products/`}>
+                <Button className="bg-[#265450] hover:bg-[#265450]/90 text-white">Buy Again</Button>
               </Link>
             </div>
           </div>
