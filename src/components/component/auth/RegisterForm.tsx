@@ -175,7 +175,7 @@ const RegisterForm = () => {
           <p className="text-sm">Sign up with social accounts</p>
           <div className="flex-1 h-px bg-gray-500"></div>
         </div>
-        <LoginWithGoogle />
+        <LoginWithGoogle text="Sign up" />
         <div className="mt-5 text-center ">
           <p className="text-sm text-center gap-2 flex justify-center sm:px-6 ">
             Already have an account?

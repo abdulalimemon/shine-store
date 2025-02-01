@@ -1,13 +1,13 @@
 "use client"
 import { signIn } from "next-auth/react";
 
-const LoginWithGoogle = () => {
+const LoginWithGoogle = ({text}: {text: string}) => {
   return (
     <div className="w-full max-w-md">
       <button className="flex items-center justify-center px-6 py-3 mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600 w-full" 
       onClick={() =>
         signIn("google", {
-          callbackUrl: "https://shine-store.vercel.app/dashboard",
+          callbackUrl: "https://shine-store.vercel.app/user",
         })}
       >
         <svg className="w-6 h-6 mx-2" viewBox="0 0 40 40">
@@ -29,7 +29,7 @@ const LoginWithGoogle = () => {
           />
         </svg>
 
-        <span className="mx-2">Sign in with Google</span>
+        <span className="mx-2">{text} with Google</span>
       </button>
     </div>
   );

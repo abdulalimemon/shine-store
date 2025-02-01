@@ -131,7 +131,7 @@ const LoginForm = () => {
           <p className="text-sm">Login with social accounts</p>
           <div className="flex-1 h-px bg-gray-500"></div>
         </div>
-        <LoginWithGoogle />
+        <LoginWithGoogle text="Sign in" />
 
         <div className="mt-5 text-center">
           <p className="text-sm flex justify-center gap-2">
