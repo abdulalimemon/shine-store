@@ -1,12 +1,16 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-const MyOrdersCard = () => {
+const MyOrdersCard = ({ view }: { view: number }) => {
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 bg-slate-100 dark:bg-slate-900 rounded-md">
+      <div
+        className={`grid bg-slate-100 dark:bg-slate-900 rounded-md ${
+          view === 1 ? "grid-cols-2 gap-5" : "grid-cols-1"
+        }`}
+      >
         <div className="p-5">
           <Image
             className="rounded-lg bg-black/40 h-60 w-full"
@@ -16,8 +20,10 @@ const MyOrdersCard = () => {
             height={100}
           />
         </div>
-        <div className="flex items-center justify-center md:justify-start">
-          <div className="p-4 space-y-2">
+        <div className={`flex  ${
+          view === 1 ? "items-center justify-center md:justify-start" : "items-center justify-center"
+        }`}>
+          <div className="space-y-2 p-4">
             <h2 className="text-lg">
               Delivere{" "}
               <span className="py-1 px-2 bg-red-500 text-white rounded-md text-xs mx-2">
@@ -40,10 +46,14 @@ const MyOrdersCard = () => {
             </p>
             <div className="flex gap-5 pt-3">
               <Link href={`/products/`}>
-                <Button className="bg-[#265450] hover:bg-[#265450]/90 text-white">Order History</Button>
+                <Button className="bg-[#265450] hover:bg-[#265450]/90 text-white">
+                  Order History
+                </Button>
               </Link>
               <Link href={`/products/`}>
-                <Button className="bg-[#265450] hover:bg-[#265450]/90 text-white">Buy Again</Button>
+                <Button className="bg-[#265450] hover:bg-[#265450]/90 text-white">
+                  Buy Again
+                </Button>
               </Link>
             </div>
           </div>
