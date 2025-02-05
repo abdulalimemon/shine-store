@@ -16,9 +16,10 @@ const AllProductPage = async ({ searchParams }: { searchParams: string }) => {
   return (
     <>
       <AllProductsBreadcrumb />
-      <AllProduct data={data} />
+      {/* <AllProduct data={data} /> */}
       {/* <TestProduct/> */}
       <NewProduct data={data} />
+
     </>
   );
 };
