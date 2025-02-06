@@ -1,110 +1,101 @@
-"use client"
+"use client";
 
-import * as React from "react"
+import * as React from "react";
 import {
-  AudioWaveform,
-  BookOpen,
-  Bot,
-  Command,
-  Frame,
-  GalleryVerticalEnd,
-  Map,
-  PieChart,
+  ShoppingBag,
+  ListCollapse,
+  Star,
   Settings2,
-  SquareTerminal,
-} from "lucide-react"
-
-import { NavMain } from "@/components/nav-main"
-import { NavProjects } from "@/components/nav-projects"
-import { NavUser } from "@/components/nav-user"
-import { TeamSwitcher } from "@/components/team-switcher"
+  Gift,
+  Users,
+} from "lucide-react";
+import { NavMain } from "@/components/nav-main";
+import { NavUser } from "@/components/nav-user";
+import { TeamSwitcher } from "@/components/team-switcher";
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
   SidebarRail,
-} from "@/components/ui/sidebar"
-import { UserProps } from "@/type"
+} from "@/components/ui/sidebar";
+import { UserProps } from "@/type";
 
 // This is sample data.
 const data = {
-  teams: [
-    {
-      name: "Acme Inc",
-      logo: GalleryVerticalEnd,
-      plan: "Enterprise",
-    },
-    {
-      name: "Acme Corp.",
-      logo: AudioWaveform,
-      plan: "Startup",
-    },
-    {
-      name: "Evil Corp.",
-      logo: Command,
-      plan: "Free",
-    },
-  ],
   navMain: [
     {
-      title: "Playground",
+      title: "Orders",
       url: "#",
-      icon: SquareTerminal,
+      icon: ShoppingBag,
       isActive: true,
       items: [
         {
-          title: "History",
+          title: "Order List",
           url: "#",
         },
         {
-          title: "Starred",
-          url: "#",
-        },
-        {
-          title: "Settings",
+          title: "Order Details",
           url: "#",
         },
       ],
     },
     {
-      title: "Models",
+      title: "Products",
       url: "#",
-      icon: Bot,
+      icon: Gift,
       items: [
         {
-          title: "Genesis",
+          title: "Products",
           url: "#",
         },
         {
-          title: "Explorer",
-          url: "#",
-        },
-        {
-          title: "Quantum",
+          title: "Add New Product",
           url: "#",
         },
       ],
     },
     {
-      title: "Documentation",
+      title: "Category",
       url: "#",
-      icon: BookOpen,
+      icon: ListCollapse,
       items: [
         {
-          title: "Introduction",
+          title: "Category List",
           url: "#",
         },
         {
-          title: "Get Started",
+          title: "Add New Category",
+          url: "#",
+        },
+      ],
+    },
+    {
+      title: "Reviews",
+      url: "#",
+      icon: Star,
+      items: [
+        {
+          title: "Product Reviews",
+          url: "#",
+        },
+      ],
+    },
+    {
+      title: "Users",
+      url: "#",
+      icon: Users,
+      items: [
+        {
+          title: "All Users",
           url: "#",
         },
         {
-          title: "Tutorials",
+          title: "Admin",
           url: "#",
         },
         {
-          title: "Changelog",
+          title: "Add New User",
           url: "#",
         },
       ],
@@ -115,45 +106,19 @@ const data = {
       icon: Settings2,
       items: [
         {
-          title: "General",
+          title: "Profile",
           url: "#",
         },
         {
           title: "Team",
           url: "#",
         },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
-        },
       ],
     },
   ],
-  projects: [
-    {
-      name: "Design Engineering",
-      url: "#",
-      icon: Frame,
-    },
-    {
-      name: "Sales & Marketing",
-      url: "#",
-      icon: PieChart,
-    },
-    {
-      name: "Travel",
-      url: "#",
-      icon: Map,
-    },
-  ],
-}
+};
 
 // Define types for props, including UserProps if not previously defined
-
 
 interface AppSidebarProps extends React.ComponentProps<typeof Sidebar> {
   session: UserProps | null;
@@ -167,12 +132,11 @@ export function AppSidebar({ session, ...props }: AppSidebarProps) {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
       </SidebarContent>
       <SidebarFooter>
         <NavUser session={session} />
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
-  )
+  );
 }
