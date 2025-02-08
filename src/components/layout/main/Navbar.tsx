@@ -7,7 +7,7 @@ import Link from "next/link";
 import { UserProps } from "@/type";
 import { signOut } from "next-auth/react";
 import { useTheme } from "next-themes";
-import { Moon, Sun, ShoppingCart } from "lucide-react";
+import { Moon, Sun, ShoppingCart, Heart } from "lucide-react";
 import { getUserInfo, removeUser } from "@/utils/auth.services";
 import { useRouter } from "next/navigation";
 import { useAppSelector } from "@/redux/hooks";
@@ -47,7 +47,7 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
               <h2>Shine Store</h2>
             </Link>
           </div>
-          <ul className="hidden font-semibold items-center justify-between gap-10 lg:flex">
+          <ul className="hidden font-semibold items-center justify-between gap-8 lg:flex">
             {routes.map((link) => {
               const fullPath = link === "/" ? "/" : `/${link}`;
               return (
@@ -93,6 +93,11 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
                   <span className="rounded-full absolute text-xs top-[-10px] left-[15px] bg-[#265450] text-white flex items-center justify-center size-[1.25rem]">
                     {products.length}
                   </span>
+                </Link>
+              </li>
+              <li className="cursor-pointer ml-2">
+                <Link href="/wishlist">
+                  <Heart className="size-[1.25rem]" />
                 </Link>
               </li>
             </div>
