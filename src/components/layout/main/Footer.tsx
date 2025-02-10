@@ -14,7 +14,7 @@ const Footer = () => {
                 <h2 className="font-semibold pb-2 text-center md:text-left text-xl">
                   Shine Store
                 </h2>
-                <p className="font-medium text-center md:text-left text-sm mt-2">
+                <p className="font-medium text-center md:text-left text-sm mt-2 mr-0 lg:mr-5">
                   Your source for premium cleaning supplies that make every
                   surface gleam. Explore eco-friendly solutions and effective
                   cleaners for a sparkling home.
