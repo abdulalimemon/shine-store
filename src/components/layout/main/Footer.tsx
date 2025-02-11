@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Container from "../Container";
+import { MailIcon, PhoneCall } from "lucide-react";
 
 const Footer = () => {
   const d = new Date();
@@ -9,7 +10,7 @@ const Footer = () => {
       <Container>
         <footer>
           <div className="flex flex-col lg:flex-row">
-            <div className="w-full lg:w-1/3 py-7 md:py-10">
+            <div className="w-full lg:w-1/4 py-7 md:py-10">
               <div className="content-center md:content-start pl-5 md:pl-0 pr-5">
                 <h2 className="font-semibold pb-2 text-center md:text-left text-xl">
                   Shine Store
@@ -21,7 +22,7 @@ const Footer = () => {
                 </p>
               </div>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 py-7 md:py-10 w-full lg:w-2/3 gap-10">
+            <div className="grid grid-cols-2 md:grid-cols-3 py-7 md:py-10 w-full lg:w-2/4 gap-5">
               <nav>
                 <h2 className="font-semibold pb-2 text-lg">Pages</h2>
                 <ul className="space-y-2">
@@ -105,6 +106,34 @@ const Footer = () => {
                   </li>
                 </ul>
               </nav>
+              
+            </div>
+            <div className="w-full lg:w-1/4 py-7 md:py-10">
+              <div className="content-center md:content-start">
+              <nav>
+                <h2 className="font-semibold pb-2 text-lg">Contact Us</h2>
+                <ul className="space-y-2">
+                  <li className="flex gap-3 border-b-2 pb-3 border-dashed">
+                    <div>
+                      <PhoneCall className="size-5" />
+                      </div>
+                    <div>
+                      <p className="text-sm">Hotline 24/7 :</p>
+                      <p className="text-sm font-bold mt-2">+880 11111-1111</p>
+                    </div>
+                  </li>
+                  <li className="flex gap-3 border-b-2 py-3 border-dashed">
+                    <div>
+                      <MailIcon className="size-5" />
+                      </div>
+                    <div>
+                      <p className="text-sm">Email Address :</p>
+                      <p className="text-sm font-bold mt-2">abdulalimemon02@gmail.com</p>
+                    </div>
+                  </li>
+                </ul>
+              </nav>
+              </div>
             </div>
           </div>
         </footer>
