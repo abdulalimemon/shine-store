@@ -18,7 +18,9 @@ const AllProductPage = async ({ searchParams }: { searchParams: string }) => {
       <AllProductsBreadcrumb />
       {/* <AllProduct data={data} /> */}
       {/* <TestProduct/> */}
+      <div className="pt-5">
       <NewProduct data={data} />
+      </div>
 
     </>
   );

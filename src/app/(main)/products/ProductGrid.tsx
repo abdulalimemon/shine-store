@@ -30,7 +30,7 @@ const ProductGrid = ({ data }: { data: Product[] }) => {
     setView(columns);
   };
   return (
-    <div className="flex-1 p-4">
+    <div className="flex-1">
       <div className="mb-5 border-b pb-5">
         <h2 className="font-semibold text-xl">Products</h2>
         <h3 className="font-semibold pt-1">
@@ -93,7 +93,7 @@ const ProductGrid = ({ data }: { data: Product[] }) => {
 
       {/* Product Grid */}
       <div
-        className={`grid gap-4 ${
+        className={`grid gap-4 mb-10 ${
           view === 1
             ? "grid-cols-1"
             : view === 3

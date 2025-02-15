@@ -6,215 +6,113 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { Product } from "@/type";
 import { LayoutList, Star, CircleDollarSign } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const ProductSidebar = ({ data }: { data: Product[] }) => {
-  const [newData, setNewData] = useState(data);
+const ProductSidebar = ({ data, setFilteredData }: { data: Product[], setFilteredData: (products: Product[]) => void }) => {
+  const [filtered, setFiltered] = useState<Product[]>(data);
+
+  useEffect(() => {
+    setFilteredData(filtered);
+  }, [filtered, setFilteredData]);
+
+  const resetData = () => {
+    setFiltered(data);
+  };
+
+  const filterCategory = (category: string) => {
+    if (category === "All Categories") {
+      resetData();
+    } else {
+      const result = data.filter((item) => item.category === category);
+      setFiltered(result);
+    }
+  };
 
   const filterRating = (value: string) => {
     const ratingValue = parseFloat(value);
-    const minValue = ratingValue - 0.1;
-    const maxValue = ratingValue + 0.9;
-
-    const result = data.filter((curData) => {
-      return (
-        parseFloat(curData.rating) >= minValue &&
-        parseFloat(curData.rating) <= maxValue
-      );
-    });
-
-    setNewData(result);
+    const result = data.filter((item) => parseFloat(item.rating) >= ratingValue && parseFloat(item.rating) < ratingValue + 1);
+    setFiltered(result);
   };
 
-  const resetData = () => {
-    const result = data;
-    setNewData(result);
-  };
+  const filterPrice = (max: number) => {
+    let min = 0;
+    if (max === 10) min = 0;
+    else if (max === 20) min = 11;
+    else if (max === 30) min = 21;
 
-  const filterCategory = (value: string) => {
-    const result = data.filter((curData) => {
-      return curData.category === value;
-    });
-    setNewData(result);
-  };
-
-  const filterPrice = (value: string) => {
-    const priceValue = parseFloat(value);
-    let minValue: number, maxValue: number;
-
-    if (priceValue >= 0 && priceValue <= 10) {
-      minValue = 0;
-      maxValue = 10;
-    } else if (priceValue >= 11 && priceValue <= 20) {
-      minValue = 11;
-      maxValue = 20;
-    } else if (priceValue >= 21 && priceValue <= 30) {
-      minValue = 21;
-      maxValue = 30;
-    } else {
-      return;
-    }
-
-    const result = data.filter((curData) => {
-      return curData.price >= minValue && curData.price <= maxValue;
-    });
-
-    setNewData(result);
+    const result = data.filter((item) => item.price >= min && item.price <= max);
+    setFiltered(result);
   };
 
   return (
-    <div className="hidden text-center border-r md:block sticky top-1 z-10 h-screen">
-        <div className="flex h-full flex-col gap-2">
+    <ScrollArea className="h-screen border-r">
+      <div className="hidden text-center md:block h-screen">
+        <div className="flex h-screen flex-col gap-2">
           <div className="flex-1">
-            <nav className="grid items-center px-2 text-sm font-medium lg:px-4 pt-5">
+            <nav className="grid items-center px-2 text-sm font-medium mb-5">
               <Accordion type="multiple" className="w-[180px] mx-auto">
-                <AccordionItem value="item-1">
+                
+                {/* Category */}
+                <AccordionItem value="category">
                   <AccordionTrigger className="text-lg font-semibold py-2">
                     <span className="flex justify-center items-center">
                       <LayoutList className="size-5 mr-3" /> Category
                     </span>
                   </AccordionTrigger>
                   <AccordionContent>
-                    <p className="accordionNav" onClick={() => resetData()}>
-                      All Categories
-                    </p>
-                    <p
-                      className="accordionNav"
-                      onClick={() => filterCategory("Dishwashing Items")}
-                    >
-                      Dishwashing Items
-                    </p>
-                    <p
-                      className="accordionNav"
-                      onClick={() => filterCategory("Cleaning Tools")}
-                    >
-                      Cleaning Tools
-                    </p>
-
-                    <p
-                      className="accordionNav"
-                      onClick={() => filterCategory("General Cleaning")}
-                    >
-                      General Cleaning
-                    </p>
-                    <p
-                      className="accordionNav"
-                      onClick={() => filterCategory("Fabric Care")}
-                    >
-                      Fabric Care
-                    </p>
-
-                    <p
-                      className="accordionNav"
-                      onClick={() => filterCategory("Metal Cleaning")}
-                    >
-                      Metal Cleaning
-                    </p>
-                    <p
-                      className="accordionNav"
-                      onClick={() => filterCategory("Floor Cleaning")}
-                    >
-                      Floor Cleaning
-                    </p>
+                    {["All Categories", "Dishwashing Items", "Cleaning Tools", "General Cleaning", "Fabric Care", "Metal Cleaning", "Floor Cleaning"].map((category, index) => (
+                      <p key={index} className="cursor-pointer accordionNav" onClick={() => filterCategory(category)}>
+                        {category}
+                      </p>
+                    ))}
                   </AccordionContent>
                 </AccordionItem>
-                <AccordionItem value="item-2">
+
+                {/* Rating */}
+                <AccordionItem value="rating">
                   <AccordionTrigger className="text-lg font-semibold py-2">
                     <span className="flex justify-center items-center">
                       <Star className="size-5 mr-3" /> Rating
                     </span>
                   </AccordionTrigger>
                   <AccordionContent>
-                    <p className="accordionNav" onClick={() => resetData()}>
-                      All
-                    </p>
-                    <p
-                      className="accordionNav"
-                      onClick={() => filterRating("1")}
-                    >
-                      <Star className="star" />
-                    </p>
-                    <p
-                      className="accordionNav"
-                      onClick={() => filterRating("2")}
-                    >
-                      {Array(2)
-                        .fill(null)
-                        .map((_, index: number) => (
-                          <Star key={index} className="star" />
+                    <p className="cursor-pointer accordionNav" onClick={resetData}>All</p>
+                    {[1, 2, 3, 4, 5].map((rating) => (
+                      <p key={rating} className="cursor-pointer accordionNav flex" onClick={() => filterRating(rating.toString())}>
+                        {Array.from({ length: rating }).map((_, index) => (
+                          <Star key={index} className="star text-yellow-500" />
                         ))}
-                    </p>
-                    <p
-                      className="accordionNav"
-                      onClick={() => filterRating("3")}
-                    >
-                      {Array(3)
-                        .fill(null)
-                        .map((_, index: number) => (
-                          <Star key={index} className="star" />
-                        ))}
-                    </p>
-                    <p
-                      className="accordionNav"
-                      onClick={() => filterRating("4")}
-                    >
-                      {Array(4)
-                        .fill(null)
-                        .map((_, index: number) => (
-                          <Star key={index} className="star" />
-                        ))}
-                    </p>
-
-                    <p
-                      className="accordionNav"
-                      onClick={() => filterRating("5")}
-                    >
-                      {Array(5)
-                        .fill(null)
-                        .map((_, index: number) => (
-                          <Star key={index} className="star" />
-                        ))}
-                    </p>
+                      </p>
+                    ))}
                   </AccordionContent>
                 </AccordionItem>
-                <AccordionItem value="item-3">
+
+                {/* Price */}
+                <AccordionItem value="price">
                   <AccordionTrigger className="text-lg font-semibold py-2">
                     <span className="flex justify-center items-center">
                       <CircleDollarSign className="size-5 mr-3" /> Price
                     </span>
                   </AccordionTrigger>
                   <AccordionContent>
-                    <p className="accordionNav" onClick={() => resetData()}>
-                      All
-                    </p>
-                    <p
-                      className="accordionNav"
-                      onClick={() => filterPrice("10")}
-                    >
-                      0 to $10
-                    </p>
-                    <p
-                      className="accordionNav"
-                      onClick={() => filterPrice("20")}
-                    >
-                      $11 to $20
-                    </p>
-
-                    <p
-                      className="accordionNav mb-5"
-                      onClick={() => filterPrice("30")}
-                    >
-                      $21 to $30
-                    </p>
+                    <p className="cursor-pointer accordionNav" onClick={resetData}>All</p>
+                    {[{ label: "0 to $10", value: 10 }, { label: "$11 to $20", value: 20 }, { label: "$21 to $30", value: 30 }].map(({ label, value }, index) => (
+                      <p key={index} className={`cursor-pointer accordionNav ${index === 2 ? "mb-5" : ""}`} onClick={() => filterPrice(value)}>
+                        {label}
+                      </p>
+                    ))}
                   </AccordionContent>
                 </AccordionItem>
+
               </Accordion>
             </nav>
           </div>
         </div>
       </div>
+    </ScrollArea>
   );
 };
 
