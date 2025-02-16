@@ -48,12 +48,12 @@ const ProductSidebar = ({ data, setFilteredData }: { data: Product[], setFiltere
   };
 
   return (
-    <ScrollArea className="h-screen border-r">
-      <div className="hidden text-center md:block h-screen">
+    <ScrollArea className="md:h-screen md:border-r">
+      <div className="text-center md:h-screen">
         <div className="flex h-screen flex-col gap-2">
           <div className="flex-1">
             <nav className="grid items-center px-2 text-sm font-medium mb-5">
-              <Accordion type="multiple" className="w-[180px] mx-auto">
+              <Accordion type="multiple" className="w-full mx-auto pr-5">
                 
                 {/* Category */}
                 <AccordionItem value="category">

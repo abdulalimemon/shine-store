@@ -69,7 +69,7 @@ const ProductGrid = ({ data }: { data: Product[] }) => {
           </div>
           <div
             onClick={() => handleViewChange(3)}
-            className={`p-2 border rounded ${
+            className={`p-2 border rounded hidden md:block ${
               view === 3
                 ? "bg-slate-200 hover:bg-slate-100 dark:bg-[#27272A] dark:hover:bg-[#27272A]"
                 : "hover:bg-slate-100 dark:hover:bg-[#27272A]"
@@ -80,7 +80,7 @@ const ProductGrid = ({ data }: { data: Product[] }) => {
 
           <div
             onClick={() => handleViewChange(4)}
-            className={`p-2 border rounded ${
+            className={`p-2 border rounded hidden md:block ${
               view === 4
                 ? "bg-slate-200 hover:bg-slate-100 dark:bg-[#27272A] dark:hover:bg-[#27272A]"
                 : "hover:bg-slate-100 dark:hover:bg-[#27272A]"

@@ -13,18 +13,18 @@ const FlashSaleProduct = ({
     <section className="my-20">
       <Container>
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <h2 className="text-2xl font-bold flex items-center justify-center mb-5 md:mb-0">
-            Flash Sale{" "}
-            <Zap className="size-6 ml-2 font-bold text-red-500 fill-red-500" />
-          </h2>
+          <div>
+            <h2 className="text-2xl font-bold flex justify-center md:justify-start">
+              Flash Sale{" "}
+              <Zap className="size-6 ml-2 font-bold text-red-500 fill-red-500" />
+            </h2>
+            <h2 className="text-center md:text-left font-semibold mb-5 mt-2">
+              Check Out the Exclusive {flashSaleProducts.length} Flash Sale
+              Products!
+            </h2>
+          </div>
 
           <CountdownTimer />
-        </div>
-        <div>
-          <h2 className="font-semibold my-5">
-            Check Out the Exclusive {flashSaleProducts.length} Flash Sale
-            Products!
-          </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5 my-10">
           {flashSaleProducts?.map((product) => (
